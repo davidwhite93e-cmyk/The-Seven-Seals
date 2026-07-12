@@ -34,3 +34,12 @@
   `GAME_BIBLE.md` governing how this class of fix should be handled
   going forward: one or two sentences, no exposition, never explained
   on the page.
+- Drafted Design Spec 006 (Book One Story Architecture) into
+  `GAME_BIBLE.md` at the Creative Director's request: chapter-by-chapter
+  breakdown for Ch3-9 (objective, Guardian, mystery, emotional theme,
+  relationship progression, what the player learns/misunderstands,
+  Seal progression, ending hook), the Seven Seals' virtue/shrine
+  assignments, a Seal-cost escalation track, and per-chapter Qadir/
+  Black Vizier presence notes. Marked explicitly DRAFT, pending
+  Creative Director review and approval -- no Chapter 3 implementation
+  has begun.
