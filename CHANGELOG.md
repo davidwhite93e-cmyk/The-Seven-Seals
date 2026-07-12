@@ -77,3 +77,10 @@
   broken-circle ward-sign, folk echoes already present in shipped
   Chapters 1-2, and on-page usage rules. Marked DRAFT with five open
   questions. All chapter implementation suspended until approved.
+- Logged the partial Design Spec 008 review (transmission arrived
+  truncated mid-sentence): core philosophy, promises-not-virtues, and
+  farewells-as-worn-Oaths approved; oath language approved with a
+  brevity/timelessness revision owed; founders-are-the-First-Guardians
+  now CANON. The oath-text tightening pass and rulings on the
+  Closing-in-Ch9, folk labels, and the sole-successor asymmetry await
+  the remainder of the review.

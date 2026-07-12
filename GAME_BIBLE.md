@@ -12,9 +12,9 @@ Guardian Bible, Part I — Foundational Design, v1.0), Design Spec 006
 Creative Director with revisions recorded in its Post-Review Revisions
 block; provisional elements remain non-canon), Design Spec 007 (The
 Mythology Bible, v1.0 — **approved with modifications**, all folded
-into its text), and Design Spec 008 (The Seven Founding Oaths, v1.0
-draft — **pending review and approval**; all chapter implementation
-suspended until approved).
+into its text), and Design Spec 008 (The Seven Founding Oaths, v1.0 —
+**under review**: partial ruling received and logged, remainder of the
+truncated review awaited; all chapter implementation suspended).
 
 ## Book One Goal
 
@@ -1159,9 +1159,44 @@ Still open:
 
 # The Seven Founding Oaths (Design Spec 008)
 
-**Status: DRAFT — awaiting Creative Director review and approval. All
-chapter implementation remains suspended until this document is
-approved.**
+**Status: UNDER REVIEW — partial Creative Director ruling received;
+the review transmission was cut off mid-sentence and the remainder is
+awaited. All chapter implementation remains suspended.**
+
+## Received Rulings (canon as of the partial review)
+
+1. **Core philosophy — APPROVED.** The Seven Oaths are now the oldest
+   surviving words in the setting. Everything else descended from
+   them: the Covenant, the Guardians, the Trials, the Seals, Amir's
+   journey. They are the spiritual foundation of the series.
+2. **Never RPG virtues — APPROVED.** The Oaths are promises. Every
+   Guardian embodies one promise, and every Trial asks one question:
+   *"Will you freely make this promise yourself?"* The player is never
+   asked to recite an Oath — they prove it through action.
+3. **Language — APPROVED WITH REVISION.** The ideas stand; the wording
+   must become even more timeless. Imagine them recited a thousand
+   years after first spoken: inevitable, simple, memorable. Children
+   should be able to remember them; old people should still discover
+   new meaning in them. Prefer one unforgettable sentence over four
+   beautiful ones — brevity creates permanence. *(Revision pass on the
+   oath texts below is pending the complete review, in case the
+   truncated remainder contains per-oath notes.)*
+4. **The Founders ARE the First Guardians — CANON.** Basim did not
+   inherit the First Oath; he spoke it, chose it, helped bind the
+   Covenant. Every Guardian still living is one of the original Seven,
+   waiting centuries for successors worthy enough to release them.
+   Players are unknowingly speaking with living history.
+5. **Farewells as worn Oaths — APPROVED.** Basim's farewell being the
+   First Oath worn smooth is now the intentional pattern: each
+   Guardian's most memorable line should eventually be recognizable as
+   their own Oath transformed by a lifetime of experience. *(The
+   ruling's final sentence — "The player should only realize this on
+   a…" — arrived truncated; its completion is awaited before this rule
+   is treated as fully specified.)*
+
+Rulings NOT yet received (truncated): the Closing-in-Chapter-9
+proposal, folk labels for Oaths 2–7, the rite/sole-successor
+asymmetry, and any remaining review items.
 
 The deepest layer of the mythology. Everything above it hangs from
 this document: **the Oaths create the Guardians. The Guardians embody
@@ -1189,14 +1224,15 @@ They were not chosen. They were simply the ones who stayed.
 
 The original tongue is lost; what the mythology preserves is the sense
 of it, worn smooth by translation the way Basim's staff is worn smooth
-by his grip. **Proposed reading (flagged for approval): the seven who
+by his grip. **Canon (per Creative Director ruling): the seven who
 swore are the seven who keep.** The current Guardians are not
 successors of the founders — they *are* the founders, still keeping
 the promises they made, on time lent to them for exactly that purpose.
-This reading follows Design Spec 005 ("centuries of waiting," "the
-title of Guardian became inseparable from the individual") and makes
-every farewell in the series the end of an eight-hundred-year
-sentence. Basim did not inherit the First Oath. He said it.
+This follows Design Spec 005 ("centuries of waiting," "the title of
+Guardian became inseparable from the individual") and makes every
+farewell in the series the end of an eight-hundred-year sentence.
+Basim did not inherit the First Oath. He spoke it. He chose it. He
+helped bind the Covenant.
 
 ## The Oaths
 
@@ -1369,22 +1405,27 @@ or to request as a follow-up proposal.
 
 ## Open Questions for Creative Director Review
 
-1. **The oath texts themselves** — each line is offered for revision;
-   these should be iterated until they feel inevitable.
-2. **"The seven who swore are the seven who keep"** — confirm or
-   reject the founders-are-the-Guardians reading. (If rejected, the
-   rite of renewal history needs a successor-generation account.)
-3. **The rite and the sole successor** — the rite of renewal
-   contemplates seven successors; Book One delivers every Seal to one.
-   Whether that asymmetry is Qadir's deepest manipulation of all, a
-   Book Two door, or both, is deliberately left undecided here.
-4. **The Closing in Chapter 9** — proposal, flagged: Qadir, holding
-   all seven Seals at the moment of his freedom, might speak the
-   Closing's second line — "let it hold while we hold" — as a quiet
-   epitaph for the Covenant. He was there when it was first spoken. It
-   would be the only time in Book One the player hears any part of the
-   Closing, and it would be true. Accept, revise, or reject.
-5. **Folk labels for Oaths 2–7** — derived by the Creative Director
-   directly, or proposed by the Implementation Lead as a follow-up?
+1. **The oath texts themselves** — RULING RECEIVED: approved with
+   revision. A tightening pass toward greater brevity and timelessness
+   is owed ("one unforgettable sentence over four beautiful ones"),
+   held pending the complete review in case the truncated remainder
+   contains per-oath notes.
+2. **"The seven who swore are the seven who keep"** — RESOLVED: CANON,
+   per Creative Director ruling.
+3. **The rite and the sole successor** — still open; no ruling
+   received. The rite of renewal contemplates seven successors; Book
+   One delivers every Seal to one. Whether that asymmetry is Qadir's
+   deepest manipulation of all, a Book Two door, or both, is
+   deliberately left undecided here.
+4. **The Closing in Chapter 9** — still open; no ruling received.
+   Proposal stands: Qadir, holding all seven Seals at the moment of
+   his freedom, might speak the Closing's second line — "let it hold
+   while we hold" — as a quiet epitaph for the Covenant. He was there
+   when it was first spoken. It would be the only time in Book One the
+   player hears any part of the Closing, and it would be true.
+5. **Folk labels for Oaths 2–7** — still open; no ruling received.
+   Derived by the Creative Director directly, or proposed by the
+   Implementation Lead as a follow-up?
 
-Awaiting review. All chapter implementation suspended until approved.
+The remainder of the truncated review is awaited. All chapter
+implementation remains suspended.
