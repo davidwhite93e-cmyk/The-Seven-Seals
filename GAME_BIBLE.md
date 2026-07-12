@@ -77,8 +77,19 @@ play?**
 The Creative Director has issued per-chapter Story Overviews —
 emotional blueprints, not passage specs. Received so far: **Chapter 1
 (Festival of Lanterns)**, **Chapter 2 (The Shrine Beneath the Sands)**,
-**Chapter 3 (Echoes in the Dust)**, and **Chapter 4 (The Fortress That
-Watches the Wind)**. Shipped Ch1–2 content was
+**Chapter 3 (Echoes in the Dust)**, **Chapter 4 (The Fortress That
+Watches the Wind)**, and **Chapter 5 (The Orchard of Forgotten
+Springs)** — Ch5 key beats: a fertile valley village whose ancient
+springs are failing (collapsed Covenant-era aqueducts, the symbol
+beneath mineral deposits); the Third Guardian living unrecognized as
+the valley's oldest gardener; the trial is staying to help when
+leaving would be reasonable ("You stayed"); one night encounter
+protecting villagers from cavern creatures displaced by the failing
+springs (environmental choices over slaughter); Yasmina's emotional
+chapter — her knowledge earns the village's trust on her own name;
+Qadir's concealed move is years-old infrastructure defunding that let
+time do the damage; ends bittersweet: "I hope we remember places like
+this." / "I don't think I could forget." Shipped Ch1–2 content was
 audited against its overviews and conforms, with one tone patch
 applied (the Chapter 1 ending now closes on determination and
 anticipation rather than dread, per the Ch1 overview's final emotional

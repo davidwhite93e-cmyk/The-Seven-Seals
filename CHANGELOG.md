@@ -112,6 +112,17 @@
   one tone patch to the Chapter 1 ending (determination and
   anticipation, not dread). Annotated Spec 006's Ch3/Ch4 sections
   where the overviews supersede them.
+- Implemented Chapter 4 (The Fortress That Watches the Wind) per its
+  Story Overview: 17 new passages -- demanding mountain travel, the
+  hours-behind rival signs (never revealed), Tariq the mason-Guardian
+  and his unannounced responsibility trial, the desperate hired
+  raiders and an uncomfortable victory, the sandstorm collapse with
+  Salt-beard's rescue and Yasmina's pattern-calling, the canonical
+  silence before "Courage is rarely loud," and the Second Seal.
+  Added `$npc.tariq` (provisional name) and `$places.windFortress`;
+  recorded Qadir's maps-for-collectors concealed move in
+  `MYSTERY_LEDGER.md`. Logged the Chapter 5 Story Overview (The
+  Orchard of Forgotten Springs) for implementation next.
 - Implemented Chapter 3 (Echoes in the Dust) per its Story Overview:
   19 new passages -- Zafirah rumor fallout, the generational
   broken-circle pattern, the Sunken Library, the gray scholars (first

@@ -2,6 +2,18 @@
 
 Record each completed scene package.
 
+## 2026-07-12 — Chapter 4 (Chapter 4 Story Overview)
+
+The Fortress That Watches the Wind: broken-cliff travel and the rope
+bridge -> hours-behind rival signs -> the fortress and its banners ->
+Tariq at the wall (trial begins unannounced) -> carvings/training
+yard/watchtower exploration -> sheltering travelers -> the raider
+fight (uncomfortable victory) -> the storm collapse and rescues ->
+trial-ends-in-silence -> "Courage is rarely loud" -> the Second Seal
+-> the lingering stone-by-stone image. 17 new passages. New state:
+`$npc.tariq`, `$places.windFortress`, Second Seal flags/item; `$trial`
+reused invisibly, `$combat` reused. Bridged Ch3 -> Ch4.
+
 ## 2026-07-12 — Chapter 3 (Chapter 3 Story Overview)
 
 Echoes in the Dust: rumor fallout in Zafirah -> the pattern across

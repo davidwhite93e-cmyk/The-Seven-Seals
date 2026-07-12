@@ -263,6 +263,13 @@ Example: $npc.yasmina.relationship
         title: "The First Guardian",
         met: false,
         relationship: 0
+    },
+
+    tariq: {
+        name: "Tariq",
+        title: "The Second Guardian",
+        met: false,
+        relationship: 0
     }
 
 }>>
@@ -281,7 +288,8 @@ Example: $places.market.visited
     harbor: { name: "River Docks", visited: false },
     mosque: { name: "Great Mosque", visited: false },
     shrine: { name: "Shrine of the First Guardian", visited: false },
-    sunkenLibrary: { name: "The Sunken Library", visited: false }
+    sunkenLibrary: { name: "The Sunken Library", visited: false },
+    windFortress: { name: "The Fortress That Watches the Wind", visited: false }
 
 }>>
 
@@ -2963,4 +2971,613 @@ Somewhere east, past the last of the maps, an old fortress is watching the wind 
 
 Time to see what it's been waiting for.
 
+<<link "Leave at first light" "Ch4_Road">><</link>>
+
 <!-- End of Chapter 3 -->
+
+
+:: Ch4_Road {"position":"1825,3475","size":"100,100"}
+/*==================================================
+CHAPTER 4 — SCENE 1
+The road runs out
+==================================================*/
+
+<<set $game.chapter = 4>>
+<<set $game.scene = 1>>
+<<set $game.day = 16>>
+<<set $game.time = "Afternoon">>
+<<set $game.location = "The Broken Cliffs">>
+<<set $trial.active = false>>
+<<set $trial.progress = 0>>
+<<set $trial.attempts = 0>>
+
+Three days east of Zafirah, the road gives up.
+
+It doesn't end so much as admit defeat -- dissolving into a goat-track that climbs into a country of broken cliffs, where the desert runs up against the mountains and loses. The rock is the color of old bone. The wind never entirely stops. By afternoon you're walking with your hands as much as your feet, and Yasmina has stopped making notes because both her hands are otherwise employed.
+
+The first rope bridge is where the adventure stops being a word.
+
+It spans a gorge you can't see the bottom of, and it was built by someone with great skill a very long time ago, and neither of those facts is entirely comforting.
+
+<<link "Cross first, and test every board for her" "Ch4_Camp">>
+	<<personality "honor" 1>>
+	<<relationship "yasmina" 1>>
+	You go first, testing each plank with your full weight before she trusts it with hers, calling back which boards to skip. By the far side your knuckles are white and your voice is steady, and only one of those is a lie.
+
+	"You know I watched where you stepped," she says, arriving. "You could have just said 'follow my feet.'"
+
+	"Follow my feet."
+
+	"Too late. I'm keeping the full service."
+<</link>>
+
+<<link "Send the packs across on the line first" "Ch4_Camp">>
+	<<personality "discipline" 1>>
+	You rig the packs to the old guide-line and haul them over first -- if the bridge takes a load badly, better it takes the one that doesn't scream. It holds. You cross light and quick, one at a time, the wind plucking at the ropes like an instrument it's played for centuries.
+<</link>>
+
+<<link "Ask Yasmina to read the bridge before anyone touches it" "Ch4_Camp">>
+	<<personality "curiosity" 1>>
+	<<relationship "yasmina" 2>>
+	"You read old things," you say. "Read this one."
+
+	She looks pleased despite herself and walks the anchor points like a scholar walking shelves: the knots ("re-tied, this generation"), the boards ("replaced piecemeal -- someone maintains this"), the worn handrail ("used, regularly, by someone light"). She steps back. "It'll hold. And Amir -- someone still *uses* this bridge."
+
+	It holds. And all the way across, you think about who.
+<</link>>
+
+
+:: Ch4_Camp {"position":"1925,3475","size":"100,100"}
+/*==================================================
+CHAPTER 4 — SCENE 1 (cont.)
+Cold camp
+==================================================*/
+
+<<set $game.time = "Night">>
+
+The cold up here is a different animal from desert cold -- it comes down off the peaks with intent. You camp in the lee of a boulder the size of Bilal's shop, and dinner is flatbread and dates and the last of Farah's fig preserve, which Yasmina has been rationing with the discipline of a quartermaster and the expression of a woman who would kill for the recipe.
+
+"When this is over," she says, around the last spoonful, "I'm asking your mother to teach me."
+
+"She'll say no. Then she'll teach you."
+
+"That's how Father teaches too." She hands back the jar. "It's how I'll teach, probably."
+
+It happens easily now, this -- the talk, the silences between the talk. Somewhere in the last three weeks the silences stopped needing management. You couldn't say when. You suspect she could -- she notices everything -- but she's never said, and you've never asked, and that, too, is part of it.
+
+<<link "Sleep, and climb at dawn" "Ch4_Signs">><</link>>
+
+
+:: Ch4_Signs {"position":"1825,3575","size":"100,100"}
+/*==================================================
+CHAPTER 4 — SCENE 2
+Hours behind
+==================================================*/
+
+<<set $game.scene = 2>>
+<<set $game.day = 17>>
+<<set $game.time = "Morning">>
+
+The last ascent is a chimney of rock with a fixed rope hanging down it.
+
+A *new* rope. Clean fibers. Fresh anchor-work at the top, done by someone who knew exactly what they were doing.
+
+Below it, in the wind-shadow where the dust lies still: boot prints. Two sets, maybe three. And in a hollow off the track, the remains of a small fire -- stone-ringed, neat, professionally cold. Yasmina crouches and holds her palm over the ashes.
+
+"Hours," she says. "Not days. *Hours.*"
+
+Something hot and unfamiliar climbs up the back of your neck. Zafirah, the library, and now here -- always the swept threshold, always the cold fire, always *just* behind someone you've never once seen. You are getting very, very tired of arriving second.
+
+<<link "Swallow it, and ask her what the signs say" "Ch4_Fortress">>
+	<<personality "discipline" 1>>
+	<<relationship "yasmina" 2>>
+	<<set $trial.progress += 1>>
+	You breathe out the anger, because anger reads nothing, and ask her to read.
+
+	"Three climbers. Traveling light -- no pack-drag marks. They didn't cook, just warmed themselves: no bones, no crumbs. That's discipline." She stands, dusting her hands. "And they left the rope. Either they're coming back... or they don't care who follows."
+
+	Neither possibility improves your morning. But you know more than you did, which is the only thing that ever helps.
+<</link>>
+
+<<link "Let the frustration out at the empty track" "Ch4_Fortress">>
+	<<personality "honor" 1>>
+	"*Once,*" you say to the boot prints, to the cold fire, to the entire silent mountain. "I'd like to arrive somewhere *once* before them. Just to see what an undisturbed anything looks like."
+
+	Yasmina lets you have the moment, then: "Complaint noted. Climb anyway?"
+
+	"Climb anyway."
+<</link>>
+
+
+:: Ch4_Fortress {"position":"1825,3675","size":"100,100"}
+/*==================================================
+CHAPTER 4 — SCENE 3
+The Fortress That Watches the Wind
+==================================================*/
+
+<<set $game.scene = 3>>
+<<set $game.time = "Midday">>
+<<set $game.location = "The Fortress That Watches the Wind">>
+<<set $places.windFortress.visited = true>>
+<<codex "places" "The Fortress That Watches the Wind">>
+
+You come up over the last shoulder of rock, and there it is, and for a while neither of you manages a word.
+
+It was never a palace. Every line of it says so: walls thick as houses, towers built squat and stubborn into the living cliff, no ornament anywhere except where strength itself is an ornament. Half the towers are broken now, open to the sky, and the wind pours through the gaps in one long unending note, like the fortress is breathing.
+
+And from the highest surviving tower -- from heights no ladder could reach and no sane person would climb -- prayer banners are flying. Faded past color, faded to the gray-white of bone, frayed to streamers. They've been up there for centuries. Someone raised them, once, when they were bright.
+
+It should feel haunted. It doesn't. It feels like an old soldier asleep in the sun -- lonely, not dangerous. Someone loved this place. Someone kept it. And then, for a long time, no one did.
+
+"Amir." Yasmina's voice is low. She's looking at the outer wall, where the fortifications step down toward the cliff edge.
+
+There's a man there. Working.
+
+<<journal "Reached the Fortress That Watches the Wind -- squat, magnificent, half-broken, prayer banners still flying from impossible heights. A man is repairing the outer wall. Alone.">>
+
+<<link "Approach the wall" "Ch4_Wall">><</link>>
+
+
+:: Ch4_Wall {"position":"1825,3775","size":"100,100"}
+/*==================================================
+CHAPTER 4 — SCENE 4
+The man at the wall
+==================================================*/
+
+<<set $game.scene = 4>>
+
+He's old -- Basim-old, that agelessness that reads as sixty until you look at the eyes -- with forearms like dock rope and stone dust worked so deep into his hands it's become part of their color. He's rebuilding a breach in the outer wall, alone, stone by stone: lift, turn, set, check the line, unhurried as weather.
+
+He doesn't look up until you're close. When he does, there's no surprise in it at all.
+
+"Took the chimney rope, did you." Not a question. His voice is like the rest of him: short, square, load-bearing. "Good rope. Not mine."
+
+He studies you both for exactly as long as it takes to study a stone, then nods at the breach.
+
+"I could use hands. Then there's shade and water inside." He turns back to the wall, conversation apparently complete, then adds, over his shoulder: "The wall first. It won't wait. Everything else here waits."
+
+<<set $npc.tariq.met = true>>
+<<codex "people" "Tariq, the Mason of the Fortress">>
+
+<<link "Work the wall beside him, and match his pace" "Ch4_Wall_Work">>
+	<<set $trial.progress += 1>>
+	<<personality "discipline" 1>>
+<</link>>
+
+<<link "Work, but ask your questions while you do" "Ch4_Wall_Work">>
+	<<set $trial.progress += 1>>
+	<<personality "curiosity" 1>>
+	You work and ask at the same time -- who he is, how long he's been here, whether three climbers passed through. He answers roughly one question in three, always the least interesting one, always truthfully.
+
+	"Name's Tariq. Long time. And aye -- yesterday. Took the lamp out of the east niche and left." He sets a stone. "They asked nothing. So the fortress gave them nothing."
+
+	You're still unpacking that sentence an hour later.
+<</link>>
+
+
+:: Ch4_Wall_Work {"position":"1925,3775","size":"100,100"}
+/*==================================================
+SCENE 4 (cont.) — an afternoon of stone
+==================================================*/
+
+The work is brutally simple and simply brutal. Lift, turn, set, check the line. The stones weigh what they weigh. Tariq corrects your placement twice, both times by picking up the offending stone himself and setting it right without commentary, which is somehow more instructive than any lecture.
+
+Yasmina works too -- she doesn't ask if she should, just falls in, passing the smaller stones, packing rubble core. At one point Tariq stops, watches her fit a stone into an awkward gap, and hands her the next one without a word -- the way a master hands tools to someone who's passed a test she didn't know she was taking.
+
+By late afternoon the breach is a hand's width shorter than it was, out of a height twice a man's. At this rate the wall will take years. He works like he has them.
+
+"Why?" you ask finally, straightening your back with a crack. "The war this wall was built for is centuries done. Who's it for?"
+
+Tariq sets his stone. Checks the line.
+
+"Whoever comes," he says.
+
+<<journal "Spent the afternoon repairing the fortress wall beside a mason named Tariq. He corrects mistakes by fixing them. He's rebuilding the whole wall, alone. 'Whoever comes,' he says.">>
+
+<<link "Follow him inside at dusk" "Ch4_Hub">><</link>>
+
+
+:: Ch4_Hub {"position":"1825,3875","size":"100,100"}
+/*==================================================
+CHAPTER 4 — SCENE 5
+Inside the fortress
+==================================================*/
+
+<<set _visitedAll = ($choices.sawCarvings and $choices.sawTrainingYard and $choices.sawWatchtower)>>
+<<set $game.time = "Dusk">>
+
+<<if !$choices.ch4HubSeen>>
+	<<set $choices.ch4HubSeen = true>>
+	Inside, the fortress is a maze of courts and stairs and long barrel-vaulted halls, most of them open to the sky now, all of them swept by the same endless wind. Tariq waves you toward water and shade and goes about some errand of his own. There's light enough left to look around.
+<<else>>
+	The fortress waits, patient as its mason.
+<</if>>
+
+<<if !$choices.sawCarvings>>
+* <<link "A long hall lined with worn carvings" "Ch4_Carvings">><</link>>
+<</if>>
+<<if !$choices.sawTrainingYard>>
+* <<link "The old training yard, drill-counts scratched in stone" "Ch4_TrainingYard">><</link>>
+<</if>>
+<<if !$choices.sawWatchtower>>
+* <<link "The watchtower stair, climbing toward the banners" "Ch4_Watchtower">><</link>>
+<</if>>
+
+<<if _visitedAll>>
+	Voices carry up from the gate court -- new voices, tired ones. Travelers.
+<<else>>
+	Voices carry up from the gate court -- new voices, tired ones. Travelers.
+<</if>>
+
+<<link "Go down to the gate court" "Ch4_Travelers">><</link>>
+
+
+:: Ch4_Carvings {"position":"1925,3825","size":"100,100"}
+/*--------------------------------------------------
+Fortress: the hall of carvings
+--------------------------------------------------*/
+
+<<set $choices.sawCarvings = true>>
+<<codex "lore" "The Hall of the Standing People">>
+
+The carvings run the length of the hall at shoulder height, worn shallow by centuries of the wind's patient sanding -- and they are not what fortress carvings are supposed to be.
+
+No kings. No victories. No enemies trampled under hooves.
+
+Just people, standing. A line of them, shoulder to shoulder, the whole length of the hall: a farmer still holding his mattock, a potter with clay-heavy hands, a woman with a baby on her hip, an old man leaning on a boy. Whatever they were facing has worn entirely away -- if it was ever carved at all.
+
+Only the standing remains.
+
+"Whatever came at them," Yasmina says softly, reading the wall like a page, "the carver didn't think it was the point."
+
+<<link "Return" "Ch4_Hub">>
+	<<personality "faith" 1>>
+<</link>>
+
+
+:: Ch4_TrainingYard {"position":"1925,3875","size":"100,100"}
+/*--------------------------------------------------
+Fortress: the training yard
+--------------------------------------------------*/
+
+<<set $choices.sawTrainingYard = true>>
+<<codex "lore" "The Drill Yard's Motto">>
+
+The training yard's flagstones are scratched with generations of tally-marks -- drill counts, hundreds upon thousands of them, the arithmetic of ordinary people making themselves steady one repetition at a time. Courage, whoever ran this yard believed, was not a feeling. It was a discipline. You drilled it like footwork.
+
+Over the yard's gate, in the old script, a single line is cut deep enough that the wind hasn't managed to erase it. Yasmina works through it twice to be sure.
+
+"*Fear stands in the line too,*" she reads. She frowns at it -- not disapproving. Memorizing.
+
+Neither of you says anything more about it.
+
+<<link "Return" "Ch4_Hub">>
+	<<personality "discipline" 1>>
+<</link>>
+
+
+:: Ch4_Watchtower {"position":"1925,3925","size":"100,100"}
+/*--------------------------------------------------
+Fortress: the watchtower
+--------------------------------------------------*/
+
+<<set $choices.sawWatchtower = true>>
+
+From the watchtower's surviving height, the world is all teeth and distance -- ranges beyond ranges going blue toward the edge of everything, and the wind so constant it stops being sound.
+
+Directly overhead, the prayer banners crack and stream. Up close they're even older than they looked: cloth gone thin as breath, hand-stitched characters faded to ghosts. No ladder reaches them. No stair survives that high. Whoever raised them meant them to outlast the raising.
+
+Below, in the gate court's dust, you can see boot prints that aren't yours, crossing to the east hall and back out again. Yesterday's visitors. They came, took one lamp, and left a fortress full of history untouched.
+
+They knew exactly what they wanted. That's what worries you.
+
+<<link "Return" "Ch4_Hub">>
+	<<personality "curiosity" 1>>
+<</link>>
+
+
+:: Ch4_Travelers {"position":"1825,3975","size":"100,100"}
+/*==================================================
+CHAPTER 4 — SCENE 6
+Shelter
+==================================================*/
+
+<<set $game.scene = 6>>
+<<set $game.time = "Night">>
+
+The travelers are five: a mountain guide with a face like the local geology, a herder named Khalid with three goats and the stunned look of a man far off his usual paths, his daughter Noor -- eight, maybe nine, unstunned by anything -- and two footsore pilgrims who took a wrong turning six days ago and have been paying for it since.
+
+"Wind's wrong," the guide says to Tariq, by way of greeting. He says it the way city men say *fire*. "Three days of it coming, maybe worse. We'll shelter here."
+
+Tariq nods at the east range -- the roofed hall, the sound cistern -- like a host with one good room. Then he looks at you. Just looks: an old man with a wall to mend, a storm coming, and five tired guests.
+
+<<link "Take charge of the shelter work" "Ch4_Travelers_Work">>
+	<<set $trial.progress += 1>>
+	<<personality "discipline" 1>>
+<</link>>
+
+<<link "See to the family first -- food, water, a place for the child" "Ch4_Travelers_Work">>
+	<<set $trial.progress += 1>>
+	<<personality "mercy" 1>>
+<</link>>
+
+
+:: Ch4_Travelers_Work {"position":"1925,3975","size":"100,100"}
+/*==================================================
+SCENE 6 (cont.) — the evening before
+==================================================*/
+
+The evening goes to work: hauling water while the hauling is good, stowing the goats in a roofless side-court that Tariq walls over with a speed that makes your afternoon's labor look ornamental, wedging the east hall's shutters, carrying, fixing, checking.
+
+Yasmina, you notice, has stopped being a stranger without any visible transition. She's shown the pilgrims how to wrap their blistered feet, learned Noor's name and the goats' names and adjudicated a dispute about whether one of the goats is stupid (verdict: yes, but beloved), and organized the food into something that will feed seven people plus a mason for three days instead of one day of feasting and two of regret.
+
+You catch Tariq watching her tally the stores. "Good quartermaster," he says. From him it sounds like a knighthood.
+
+Late, when the others are settled, Noor appears at your elbow with the directness of the very young. "Are you the ghūl man? From the city?"
+
+"...I was there."
+
+She looks you over -- the sword, the road-wear, the whole legend of you -- and delivers her verdict: "You look tireder than the stories say." Then she's gone, and Yasmina, across the fire, laughs at you with her whole silent face.
+
+<<journal "Travelers took shelter at the fortress ahead of a three-day wind. We spent the evening making the east range ready. Yasmina has somehow become the guide, quartermaster, and physician of a fortress that had none by sundown.">>
+
+<<link "Sleep while you can" "Ch4_Raiders">><</link>>
+
+
+:: Ch4_Raiders {"position":"1825,4075","size":"100,100"}
+/*==================================================
+CHAPTER 4 — SCENE 7
+The raiders
+==================================================*/
+
+<<set $game.scene = 7>>
+<<set $game.day = 18>>
+<<set $game.time = "Morning">>
+
+They come up the goat-track at first light: eleven men, sun-blackened, road-starved, armed with the tired assortment of weapons that says *hired* rather than *soldiers*. Their leader has a salt-gray beard and the eyes of a man who has been making one bad bargain after another for years and knows it.
+
+"The fortress," he calls up, "and whatever's old in it. That's all we want. Collector's coin, paid on delivery -- relics, carvings, the famous *lamp* if it's still here." His men spread out along the approach with more hunger than skill. "There's drought in the south country, boy. My village eats this winter or it doesn't. Stand aside and this stays polite."
+
+Behind you, the fortress holds five travelers, three goats, one child, and an old man who has gone very still beside the wall he spent yesterday mending.
+
+"They believe it," Yasmina says quietly, reading them the way she reads everything. "Every man there thinks he's feeding his family. That's worse than greed, Amir. Desperate men don't bluff."
+
+<<link "Try words first -- name what the fortress actually is" "Ch4_Raiders_Fight">>
+	<<set $choices.ch4Parley = true>>
+	<<personality "mercy" 1>>
+	"There's no treasure here," you call down. "There's an old man mending a wall and children sheltering from the wind that's coming. The collectors lied to you. There's nothing here that feeds anyone."
+
+	Salt-beard's face moves -- doubt, real doubt -- and for a heartbeat it almost lands. Then one of his men shouts something about the famous relic *you're* carrying, and the moment breaks, and they come.
+<</link>>
+
+<<link "Draw steel and set your feet -- talk was over when they armed" "Ch4_Raiders_Fight">>
+	<<set $choices.ch4Parley = false>>
+	<<personality "discipline" 1>>
+	You draw and set your feet in the gate's narrow throat, where numbers stop mattering, and let the blade answer for you. Salt-beard sighs like a man clocking in to work he hates.
+
+	They come.
+<</link>>
+
+
+:: Ch4_Raiders_Fight {"position":"1925,4075","size":"100,100"}
+/*==================================================
+SCENE 7 (cont.) — Round 1
+==================================================*/
+
+<<set $combat.active = true>>
+<<set $combat.round = 1>>
+
+The gate's throat is the whole battle. Two men can hold it against eleven if the two men know why they're standing there -- and you have never in your life known it more clearly.
+
+It's ugly fighting, close and gasping, nothing like the ghūl and nothing like the scholars. These are men. They grunt when you hurt them. One of them is younger than you. One of them fights with a shepherd's crook, for God's sake, because it's what he owns.
+
+<<link "Hold the gate -- nothing gets past you to the east hall" "Ch4_Raiders_Fight2">>
+	<<set $choices.ch4FightFirst = "gate">>
+	<<personality "discipline" 1>>
+	<<damage 10>>
+	You become a door. It costs you -- a crook-blow across the shoulder that will sing for a week -- but not one man passes the gate's throat, and behind you the east hall stays exactly as quiet as five travelers holding their breath.
+<</link>>
+
+<<link "Disarm the youngest first -- get the boy out of this fight" "Ch4_Raiders_Fight2">>
+	<<set $choices.ch4FightFirst = "boy">>
+	<<personality "mercy" 1>>
+	<<damage 5>>
+	You pick the youngest -- the one whose spear-grip is all wrong, whose eyes are all fear -- and take his weapon with a twist your uncle taught you, and shove him firmly out of the fight into a wall. "*Stay down.*" He stays down. He looks relieved to have the choice removed.
+<</link>>
+
+<<link "Cut your way to Salt-beard -- end it at the top" "Ch4_Raiders_Fight2">>
+	<<set $choices.ch4FightFirst = "leader">>
+	<<personality "honor" 1>>
+	<<damage 15>>
+	You go through the line -- taking a graze along the ribs as toll -- and bring the fight to the one man here whose choice actually matters. Steel rings on steel twice, three times, and then you're inside his guard and both of you know it.
+<</link>>
+
+
+:: Ch4_Raiders_Fight2 {"position":"2025,4075","size":"100,100"}
+/*==================================================
+SCENE 7 (end) — Round 2: how it ends
+==================================================*/
+
+<<set $combat.round = 2>>
+
+However it plays, it ends the same way these things end when one side is desperate and the other side is *sure*: their line cracks against the gate's narrowness and your certainty, and the fight drains out of them like water into sand.
+
+<<link "Offer terms while they can still take them" "Ch4_Raiders_End">>
+	<<set $choices.ch4FightEnd = "terms">>
+	<<personality "mercy" 1>>
+	"*Enough!*" Your voice comes out with an authority you didn't plan. "Weapons down and you shelter here through the storm and eat tonight. Keep swinging and the mountain buries you unpaid. *Choose.*"
+
+	Salt-beard looks at his winded, starving men. Looks at the gate you're still standing in. Chooses.
+<</link>>
+
+<<link "Break their line and let them run" "Ch4_Raiders_End">>
+	<<set $choices.ch4FightEnd = "rout">>
+	<<personality "discipline" 1>>
+	You surge forward at the moment their nerve goes, and the line becomes a scatter. Four of them flee down the goat-track. The rest -- winded, disarmed, or simply done -- sit down where they stand with their hands visible, too tired even for shame.
+<</link>>
+
+
+:: Ch4_Raiders_End {"position":"2125,4075","size":"100,100"}
+/*==================================================
+SCENE 7 (aftermath) — what victory costs
+==================================================*/
+
+<<set $combat.active = false>>
+<<set $combat.victory = true>>
+
+Victory turns out to be seven exhausted men sitting in the gate court with their hands in their laps, a boy with a bruised back trying not to cry in front of strangers, and a shepherd's crook lying in the dust because the man who owns it owns nothing else to fight with.
+
+It doesn't feel like the festival square. Nothing about it does. The ghūl was a nightmare you could hate. These are men you could have *been*, born two provinces south in a drought year.
+
+Salt-beard sits apart, working a wrenched shoulder, watching you with an expression you finally place: he's trying to figure out what you're going to do with them, and bracing for the worst, because in his experience the worst is what winners do.
+
+"The man who hired us," he says at last, "said the old places were empty." He looks up at the fortress walls. "He didn't say they were *kept.*"
+
+<<journal "We held the gate against eleven hired raiders -- hungry men from the drought country, promised collector's coin. Victory never felt less like winning. Their leader said the man who hired them called the old places empty. 'He didn't say they were kept.'">>
+
+<<link "Look to the wounded on both sides" "Ch4_Storm">>
+	<<set $trial.progress += 1>>
+	<<personality "mercy" 1>>
+<</link>>
+
+
+:: Ch4_Storm {"position":"1825,4175","size":"100,100"}
+/*==================================================
+CHAPTER 4 — SCENE 8
+The storm
+==================================================*/
+
+<<set $game.scene = 8>>
+<<set $game.time = "Dusk">>
+
+The guide was wrong about one thing: the storm doesn't take three days to arrive. It arrives that evening, early and furious, as if the mountain had been holding its breath through the battle out of politeness.
+
+It comes as a wall -- a dun-colored sky-filling wall that eats the western ranges one by one, and then the light, and then all sound except itself. Sand and grit and wind that hits the fortress like the old wars come back. Everyone is crammed into the east range: travelers, raiders, goats, the lot, ancient masonry groaning above the lamplight.
+
+Then, over the wind, the *crack* -- deep, structural, wrong -- and the section of the west court where the raiders stowed their gear starts to come down, and a voice you recognize as the boy-raider's screams from inside it.
+
+Beside you, calm as a man reporting weather, Tariq says:
+
+"You already know what matters."
+
+<<link "Go -- into the collapsing court, for the boy" "Ch4_Storm_Rescue">>
+	<<set $trial.progress += 1>>
+	<<personality "mercy" 1>>
+<</link>>
+
+<<link "Go -- and take Salt-beard with you, it's his man in there" "Ch4_Storm_Rescue">>
+	<<set $trial.progress += 1>>
+	<<personality "honor" 1>>
+	You grab Salt-beard by his good shoulder on the way. You don't need to say anything. He's already moving.
+<</link>>
+
+
+:: Ch4_Storm_Rescue {"position":"1925,4175","size":"100,100"}
+/*==================================================
+SCENE 8 (cont.) — stone by stone
+==================================================*/
+
+The west court is a throat full of dust and falling sky. The boy is pinned under a fallen roof-beam and a slither of masonry, alive, screaming, and the wind is prying at everything that hasn't fallen yet.
+
+What happens next you will remember in pieces:
+
+Salt-beard going in ahead of you -- *ahead* of you, into the worst of it, a man who three hours ago was your enemy, getting his back under the beam his boy is trapped by and lifting like a man arguing with a mountain. You beside him, finding the fulcrum, both of you roaring the count into the wind. The beam giving. The boy sliding free, hauled by his collar into the clear.
+
+And Yasmina -- in the doorway where the air is barely breathable, absolutely refusing to leave, directing the whole thing at the top of her voice: *left, the wall's going left, three steps, NOW* -- seeing the collapse's rhythm the way she sees everything, patterns first, and calling them out, and being right every single time.
+
+The wall comes down where she said it would. Everyone is standing somewhere else.
+
+<<journal "The storm dropped part of the west court with the raider boy inside. Salt-beard went in ahead of me -- his own life for his man's. Yasmina read the collapse from the doorway and called every fall before it came. Everyone lives.">>
+
+<<link "Get everyone into the east range, and outlast the wind" "Ch4_Storm_After">><</link>>
+
+
+:: Ch4_Storm_After {"position":"1825,4275","size":"100,100"}
+/*==================================================
+CHAPTER 4 — SCENE 9
+After the wind
+==================================================*/
+
+<<set $game.scene = 9>>
+<<set $game.day = 19>>
+<<set $game.time = "Dawn">>
+
+The storm blows itself out an hour before dawn, and the world it leaves behind is scoured clean and utterly silent, as if the mountain has said everything it had to say.
+
+The count, when you make it: cuts, bruises, one wrenched shoulder (previous), one broken finger (goat-related, somehow), the boy's leg badly gashed but sound. Nobody dead. Nobody even close, thanks to a doorway full of shouted patterns.
+
+The raiders leave at first light. There was no discussion of it; there was nothing left to discuss. Salt-beard pauses in front of you, and whatever he was braced for last night, he's not braced anymore.
+
+"South country's still hungry," he says. "That part was true. It's all still true, that's the poison of it." He glances back at the boy, limping between two others. "But there's coin I won't take twice." He offers his hand -- the arm you didn't wrench. "If you're ever in the drought country, ask for me. Doors will open."
+
+<<link "Take his hand" "Ch4_Seal">>
+	<<relationship "yasmina" 1>>
+	<<journal "The raiders left at dawn, carrying their boy. Salt-beard shook my hand. 'There's coin I won't take twice.' Good men can stand on opposite sides of the same fight. I know that now, and I'd rather not have learned it.">>
+	You take it. His grip is a working man's grip, and his eyes, this close, are just a father's eyes in a bad year.
+<</link>>
+
+
+:: Ch4_Seal {"position":"1825,4375","size":"100,100"}
+/*==================================================
+CHAPTER 4 — SCENE 10
+Stone by stone
+==================================================*/
+
+<<set $game.scene = 10>>
+
+Tariq finds you at sunrise -- or lets himself be found, at the outer wall, where yesterday's mended course held through everything the storm threw at it.
+
+He doesn't speak. He picks up a stone, turns it, sets it, checks the line. The wind, gentled now, moves along the wall like a hand along a railing. You stand beside him in the kind of silence you learned at another shrine -- the kind that isn't waiting for anything, the kind that is itself the point -- and the whole of the last two days settles over you slowly, the way dust settles: the gate, the boy, the beam, the man who went in ahead of you.
+
+You held a door for strangers. You dug your enemy's soldier out of the sky's wreckage with your enemy beside you. No one asked. No one would have blamed you.
+
+That, you understand at last, standing in the silence -- *that* was the whole examination.
+
+"Courage is rarely loud," Tariq says.
+
+He takes from inside his dust-gray shirt a stone disc the color of old mortar, a single unbroken circle worn into its face, warm as a stone kept a lifetime in a working man's pocket, and he puts it into your hands with no more ceremony than he'd hand you the next stone for the wall.
+
+<<set $seals.second = true>>
+<<set $seals.total += 1>>
+<<run $inventory.keyItems.push("The Second Seal")>>
+<<codex "items" "The Second Seal">>
+<<relationship "tariq" 3>>
+<<personality "honor" 1>>
+<<journal "Tariq entrusted me with the Second Seal at the wall, in silence, at dawn. 'Courage is rarely loud.' No other explanation. None needed.">>
+
+Then he picks up the next stone for the wall.
+
+<<link "Help him set one last course before you go" "Ch4_Farewell">>
+	<<set $trial.progress += 1>>
+	<<personality "discipline" 1>>
+<</link>>
+
+
+:: Ch4_Farewell {"position":"1825,4475","size":"100,100"}
+/*==================================================
+CHAPTER 4 — SCENE 10 (end)
+The lingering image
+==================================================*/
+
+<<set $game.time = "Morning">>
+
+You work one last course beside him, the three of you, and the wall grows another hand's width against whoever comes.
+
+At parting, Tariq walks you as far as the gate -- his whole ceremony, you suspect. He takes Yasmina's hand briefly in both his stone-colored ones and looks at it like a mason reading a tool.
+
+"You set stones like someone who'll need to know how," he tells her.
+
+She waits for more. There is no more. He nods to you both, once, and turns back to his work.
+
+The descent is easier than the climb, the way descents are. At the first switchback, where the track turns and the fortress is about to pass out of sight behind the shoulder of the mountain, you both stop -- neither of you suggests it, you both simply stop -- and look back.
+
+The fortress stands against the morning sky, half-broken, unbeaten, banners streaming from heights no one can reach. And small against the outer wall, already back at it, an old man is rebuilding the thing he knows he will never finish.
+
+Lift. Turn. Set. Check the line.
+
+Stone by stone.
+
+<<objective "Return to Zafirah with the Second Seal">>
+<<journal "We looked back once from the switchback. He was already at the wall again. Some responsibilities are worth carrying even when they can never be completed. I understand that now. I think I'm starting to carry one.">>
+
+<!-- End of Chapter 4 -->

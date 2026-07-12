@@ -62,3 +62,10 @@ dialogue text ahead of their scripted reveal.
   expedition. The escapee's incomplete copies will reach him via the
   pilgrim-road drop. Everything appears coincidental. Reveal: Ch9.
   Status: Active (concealed).
+- **Maps for Collectors** (Ch4) — Qadir quietly ensured old maps
+  describing the Fortress reached collectors who would pay for
+  forgotten relics; greed hired the raiders. They were never expected
+  to succeed — the point was to weaken the Fortress and force the
+  Second Guardian to entrust the Seal sooner than he otherwise would
+  have. Qadir commanded no one. Reveal: Ch9. Status: Active
+  (concealed).
