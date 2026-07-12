@@ -256,6 +256,13 @@ Example: $npc.yasmina.relationship
         title: "Unknown",
         met: false,
         relationship: 0
+    },
+
+    basim: {
+        name: "Sheikh Basim",
+        title: "The First Guardian",
+        met: false,
+        relationship: 0
     }
 
 }>>
@@ -272,7 +279,8 @@ Example: $places.market.visited
     library: { name: "House of Wisdom", visited: false },
     palace: { name: "The Sultan's Palace", visited: false },
     harbor: { name: "River Docks", visited: false },
-    mosque: { name: "Great Mosque", visited: false }
+    mosque: { name: "Great Mosque", visited: false },
+    shrine: { name: "Shrine of the First Guardian", visited: false }
 
 }>>
 
@@ -336,6 +344,17 @@ BOOK ONE — THE SEVEN SEALS
     fifth: false,
     sixth: false,
     seventh: false
+}>>
+
+/*--------------------------------------------------
+TRIAL SYSTEM
+Tracks progress through a Guardian's trial. Reset per attempt;
+"attempts" persists for the life of the current trial.
+--------------------------------------------------*/
+<<set $trial = {
+    active: false,
+    progress: 0,
+    attempts: 0
 }>>
 
 /*--------------------------------------------------
@@ -1633,3 +1652,644 @@ Somewhere behind you, already receding, is every part of your life that made sen
 <<link "Leave the caravan and continue on foot" "Ch2_Desert">>
 	<<journal "Left the caravan at the hill road. The shrine is a day's walk from here.">>
 <</link>>
+
+
+:: Ch2_Desert {"position":"1225,1675","size":"100,100"}
+/*==================================================
+CHAPTER 2 — SCENE 4
+The Empty Desert
+==================================================*/
+
+<<set $game.scene = 4>>
+<<set $game.location = "The Northern Desert">>
+<<set $game.day = 4>>
+<<set $quest.main = "Find the Shrine of the First Guardian">>
+
+The caravan doesn't so much stop as thin out around you until it's gone, wagon wheels and camel bells fading into a quiet that has weight to it. What's left is an old stone marker, waist-high, worn nearly featureless by centuries of wind, and beyond it nothing but dunes in every direction that matters.
+
+The driver who peels off to set you down doesn't linger. He barely looks at the marker at all -- the look of a man who's done this before and stopped being curious about it a long time ago.
+
+"If the Guardian wishes to meet you, you will," he says, already turning his camel back toward the road.
+
+"That's it?" Yasmina asks. "No path? No landmark?"
+
+He doesn't answer. He's already three lengths gone, and by the time you think to call after him, he's little more than a shape in the heat-shimmer, and then not even that.
+
+The silence that's left behind doesn't feel empty. It feels like it's waiting for something.
+
+<<goto "Ch2_Desert_Hub">>
+
+
+:: Ch2_Desert_Hub {"position":"1325,1675","size":"100,100"}
+/*==================================================
+CHAPTER 2 — SCENE 4 (cont.)
+Desert Hub
+==================================================*/
+
+<<set _visitedAll = ($choices.sawDesertStones and $choices.sawDesertCarvings and $choices.sawDesertCampsite and $choices.sawDesertWell)>>
+
+<<if !$choices.desertHubSeen>>
+	<<set $choices.desertHubSeen = true>>
+	There's no obvious direction to walk in, so you let curiosity choose for you.
+<<else>>
+	You look around a while longer before deciding.
+<</if>>
+
+<<if !$choices.sawDesertStones>>
+* <<link "A scatter of wind-worn stones, oddly placed" "Ch2_Desert_Stones">><</link>>
+<</if>>
+<<if !$choices.sawDesertCarvings>>
+* <<link "Faded carvings on the marker itself" "Ch2_Desert_Carvings">><</link>>
+<</if>>
+<<if !$choices.sawDesertCampsite>>
+* <<link "An old, abandoned campsite half-buried nearby" "Ch2_Desert_Campsite">><</link>>
+<</if>>
+<<if !$choices.sawDesertWell>>
+* <<link "A dried well, its stones sun-bleached white" "Ch2_Desert_Well">><</link>>
+<</if>>
+
+<<if _visitedAll>>
+	You've looked as far as looking will get you. Whatever happens next isn't going to announce itself from a hole in the ground.
+<</if>>
+
+<<link "Walk on into the dunes" "Ch2_Shrine_Appears">><</link>>
+
+
+:: Ch2_Desert_Stones {"position":"1425,1625","size":"100,100"}
+/*--------------------------------------------------
+Landmark: Wind-worn stones
+--------------------------------------------------*/
+
+<<set $choices.sawDesertStones = true>>
+<<codex "lore" "The Waymarker Stones">>
+
+A dozen stones, no two alike, are set in a loose ring some distance from the marker -- too deliberate to be natural, too worn to have been placed recently. When you crouch beside the nearest one, you can just make out a shape ground into its face, smoothed almost flat by wind and time.
+
+It might be a hand. It might be nothing at all.
+
+<<link "Move on" "Ch2_Desert_Hub">>
+	<<personality "curiosity" 1>>
+<</link>>
+
+
+:: Ch2_Desert_Carvings {"position":"1425,1675","size":"100,100"}
+/*--------------------------------------------------
+Landmark: Faded carvings
+--------------------------------------------------*/
+
+<<set $choices.sawDesertCarvings = true>>
+<<codex "lore" "The Marker's Carvings">>
+
+Up close, the stone marker isn't as featureless as it looked from a distance. Faint lines run its length, a script you don't recognize, worn down to shadow rather than shape. You trace one groove with a fingertip and can't tell if you're reading a warning or a welcome.
+
+<<if $choices.tookCompass>>
+	The compass in your pocket sits very still. Stiller than it's sat in days.
+<</if>>
+
+<<link "Move on" "Ch2_Desert_Hub">>
+	<<personality "curiosity" 1>>
+<</link>>
+
+
+:: Ch2_Desert_Campsite {"position":"1425,1725","size":"100,100"}
+/*--------------------------------------------------
+Landmark: Abandoned campsite
+--------------------------------------------------*/
+
+<<set $choices.sawDesertCampsite = true>>
+<<codex "lore" "The Abandoned Camp">>
+
+The remains of a fire ring, long cold, sit half-swallowed by drifted sand. Whoever camped here left in a hurry, or didn't leave at all -- there's a waterskin, cracked and empty, and a single sandal too small for an adult's foot.
+
+Yasmina crouches beside it a long moment, saying nothing, and doesn't offer a theory. Neither do you.
+
+<<link "Move on" "Ch2_Desert_Hub">>
+	<<personality "mercy" 1>>
+<</link>>
+
+
+:: Ch2_Desert_Well {"position":"1425,1775","size":"100,100"}
+/*--------------------------------------------------
+Landmark: Dried well
+--------------------------------------------------*/
+
+<<set $choices.sawDesertWell = true>>
+<<codex "lore" "The Dry Well">>
+
+The well's stones have been bleached the color of bone, and whatever water it once held is long gone, leaving only a dark throat that swallows the light a few feet down. You drop a pebble in out of habit more than curiosity. You don't hear it land.
+
+"People don't build wells in places that were never going to need one," Yasmina says quietly. "Something lived out here. Once."
+
+<<link "Move on" "Ch2_Desert_Hub">>
+	<<personality "curiosity" 1>>
+<</link>>
+
+
+:: Ch2_Shrine_Appears {"position":"1325,1775","size":"100,100"}
+/*==================================================
+CHAPTER 2 — SCENE 5
+The Shrine Appears
+==================================================*/
+
+<<set $game.scene = 5>>
+
+You walk until the marker is a memory behind you and the dunes ahead look exactly like the dunes you've already crossed -- and then, without any particular moment you could point to, the wind simply stops.
+
+Not dies down. Stops, all at once, the way a held breath does.
+
+The sand around your feet begins to settle, grain by grain, in a silence so complete you can hear your own pulse. And where a moment ago there was only slope and shadow, a staircase is emerging from beneath the dune -- old stone, one step at a time, as the wind that's held it hidden for who knows how long simply lets it go.
+
+"It was always there," Yasmina breathes, staring. "We just couldn't see it."
+
+<<set $places.shrine.visited = true>>
+<<set $game.location = "The First Shrine">>
+<<codex "places" "Shrine of the First Guardian">>
+<<journal "The desert wind died without warning, and a stone staircase rose out of the sand -- the First Shrine, hidden until it chose to be found.">>
+
+At the bottom of the stairs, modest and unadorned, is a doorway with no door in it. No treasure glints from within. No grandeur announces itself. Only age, patient and unhurried, the way only very old things are.
+
+<<link "Descend the staircase" "Ch2_Guardian_Basim">><</link>>
+
+
+:: Ch2_Guardian_Basim {"position":"1325,1875","size":"100,100"}
+/*==================================================
+CHAPTER 2 — SCENE 6
+The First Guardian
+==================================================*/
+
+<<set $game.scene = 6>>
+
+The doorway opens onto a single bare chamber, cool and dim, and an old man is already waiting there as if he'd been expecting you since long before you arrived. He's dressed in simple white robes, a wooden staff in one hand worn smooth by decades of the same grip, and he doesn't turn toward the sound of your footsteps so much as turn toward *you*, specifically, the way a person does when they already know exactly who's walked in.
+
+His eyes are clouded pale with age. He is, you realize a half-second later, entirely blind.
+
+"Amir." He says it plainly, warmly, the way you'd greet someone you'd been waiting on. Not a guess. Not a question.
+
+You didn't tell him your name. Neither, you're fairly sure, did anyone else.
+
+<<set $npc.basim.met = true>>
+<<codex "people" "Sheikh Basim">>
+<<journal "Met Sheikh Basim, the First Guardian. He knew my name before I gave it.">>
+
+"How do you know that?" Yasmina asks, before you can.
+
+Basim's smile doesn't waver. "The same way I knew you'd ask." He says it without mischief, the way you'd state a fact about the weather. "I was told you were coming, child. Names travel faster than feet, out here, if you know how to listen for them."
+
+<<link "Ask how long he's known" "Ch2_Guardian_Basim_Talk">>
+	<<personality "curiosity" 1>>
+	"How long have you known I was coming?" you ask, more startled than you'd like to admit.
+<</link>>
+
+<<link "Ask what he is" "Ch2_Guardian_Basim_Talk">>
+	<<personality "honor" 1>>
+	"What are you?" you ask -- not unkindly, but plainly, the way you'd ask a soldier his rank.
+<</link>>
+
+<<link "Simply greet him in return" "Ch2_Guardian_Basim_Talk">>
+	<<personality "faith" 1>>
+	You incline your head instead of asking anything at all. Whatever he is, he clearly means no harm, and some things don't need an explanation before they're offered respect.
+<</link>>
+
+
+:: Ch2_Guardian_Basim_Talk {"position":"1425,1875","size":"100,100"}
+/*--------------------------------------------------
+Scene 6 (cont.) — Basim explains himself
+--------------------------------------------------*/
+
+"Long enough that I've stopped counting in years," Basim says, settling onto a low stone bench with the unhurried care of someone who trusts his own balance completely. "I keep watch here. That's the whole of it. Not a riddle -- simply a very long, very quiet job."
+
+"Keep watch over what?" Yasmina asks, glancing around the bare chamber. "There's nothing here."
+
+"There is exactly what there needs to be." He tilts his head toward Amir, unerringly, though there's nothing in the room to have told him where you were standing. "You've come a long way to ask a stone a question it isn't going to answer for you. I can offer something better, if you're willing."
+
+"What's that?" you ask.
+
+"A door." He rises, staff tapping once against the floor. "Whether you walk through it is entirely your own affair."
+
+<<link "Follow him" "Ch2_Trial_Enter">><</link>>
+
+
+:: Ch2_Trial_Enter {"position":"1425,1975","size":"100,100"}
+/*==================================================
+CHAPTER 2 — SCENE 7
+The Trial Begins
+==================================================*/
+
+<<set $game.scene = 7>>
+<<set $trial.active = true>>
+<<set $trial.progress = 0>>
+<<set $quest.main = "Complete the First Guardian's trial">>
+
+<<if $trial.attempts is 0>>
+	Basim leads you to the back of the chamber, where the stone gives way to a passage you'd have sworn wasn't there a moment ago -- low, dark, and cool with air that's been trapped underground for longer than your whole life.
+
+	"There is no trick to this," he says, before you can ask. "No riddle waiting in the dark to trip you. Only the walking, and whatever you decide to do with it." He pauses at the threshold. "You may stop at any point. That is not failure. That is simply stopping."
+<<else>>
+	Basim leads you back to the same dark passage without comment, the way you'd return to an unfinished conversation. "Whenever you're ready," is all he says.
+<</if>>
+
+Yasmina falls into step just behind you, satchel left topside, her expression somewhere between curious and unreadable.
+
+<<link "Enter the passage" "Ch2_Trial_Passage1">><</link>>
+
+
+:: Ch2_Trial_Passage1 {"position":"1525,1975","size":"100,100"}
+/*==================================================
+SCENE 7 (cont.) — The Collapsed Corridor
+==================================================*/
+
+<<if !$choices.trialPassage1Seen>>
+	<<set $choices.trialPassage1Seen = true>>
+	The passage narrows fast, and twenty paces in you meet the first collapse -- old stone fallen from the ceiling in a heap you have to climb rather than walk over. Basim goes around it by a route he clearly doesn't need his eyes to know, staff tapping a steady rhythm against the rubble.
+
+	"We can turn back here, if you'd like," he says, not unkindly, not testing you with it. "There's no shame in a short walk."
+<<else>>
+	You're back at the collapsed corridor. It hasn't gotten any easier to look at.
+<</if>>
+
+<<if !$choices.sawTrialObserve1>>
+* <<link "Look closer at the fallen stone" "Ch2_Trial_Passage1_Observe">><</link>>
+<</if>>
+<<if !$choices.sawTrialYasmina1>>
+* <<link "Check on Yasmina" "Ch2_Trial_Passage1_Yasmina">><</link>>
+<</if>>
+<<if !$choices.sawTrialBasim1>>
+* <<link "Ask Basim something" "Ch2_Trial_Passage1_Basim">><</link>>
+<</if>>
+
+<<link "Continue deeper" "Ch2_Trial_Passage2">>
+	<<set $trial.progress += 1>>
+	<<personality "discipline" 1>>
+<</link>>
+
+<<link "Turn back" "Ch2_Trial_Retreat">><</link>>
+
+
+:: Ch2_Trial_Passage1_Observe {"position":"1625,1925","size":"100,100"}
+/*--------------------------------------------------
+Trial Passage 1: Observe
+--------------------------------------------------*/
+
+<<set $choices.sawTrialObserve1 = true>>
+
+The fallen stone isn't random rubble -- you can make out cut edges under the dust, blocks that were shaped by hands once, long before they were shaped by collapse. Someone built this corridor to be walked, not to be broken. Something else did the breaking.
+
+<<link "Return to the passage" "Ch2_Trial_Passage1">>
+	<<personality "curiosity" 1>>
+<</link>>
+
+
+:: Ch2_Trial_Passage1_Yasmina {"position":"1625,1975","size":"100,100"}
+/*--------------------------------------------------
+Trial Passage 1: Yasmina
+--------------------------------------------------*/
+
+<<set $choices.sawTrialYasmina1 = true>>
+
+"You don't have to do this too," you tell her, low enough that Basim, ahead, may or may not hear it.
+
+"I know." She doesn't stop climbing over the rubble. "I'm not doing it for you. I'm doing it because I'd rather see it than read about it later." A faint, dust-streaked smile. "Don't let it go to your head."
+
+<<link "Return to the passage" "Ch2_Trial_Passage1">>
+	<<relationship "yasmina" 1>>
+<</link>>
+
+
+:: Ch2_Trial_Passage1_Basim {"position":"1625,2025","size":"100,100"}
+/*--------------------------------------------------
+Trial Passage 1: Ask Basim
+--------------------------------------------------*/
+
+<<set $choices.sawTrialBasim1 = true>>
+
+"How many people turn back?" you ask him.
+
+"More than you'd think. Fewer than you'd fear." He says it without judgment either way, the words as level as the ground he's walking despite never once looking down at it. "The ones who turn back are not the ones I worry for."
+
+<<link "Return to the passage" "Ch2_Trial_Passage1">>
+	<<personality "curiosity" 1>>
+<</link>>
+
+
+:: Ch2_Trial_Passage2 {"position":"1525,2025","size":"100,100"}
+/*==================================================
+SCENE 7 (cont.) — The Steep Climb
+==================================================*/
+
+<<if !$choices.trialPassage2Seen>>
+	<<set $choices.trialPassage2Seen = true>>
+	The passage tilts upward and keeps tilting, until you're climbing more than walking, hands finding holds in stone worn smooth by centuries of other hands doing exactly the same thing. Your legs are starting to feel it. So, you notice, is your breathing.
+
+	"We could return tomorrow," Basim offers, from somewhere just ahead, unbothered by the climb in a way that seems faintly unfair. "The stairs will still be here."
+<<else>>
+	The climb is exactly as steep the second time.
+<</if>>
+
+<<if !$choices.sawTrialObserve2>>
+* <<link "Look for handholds worn deliberately, not by accident" "Ch2_Trial_Passage2_Observe">><</link>>
+<</if>>
+<<if !$choices.sawTrialYasmina2>>
+* <<link "Check on Yasmina" "Ch2_Trial_Passage2_Yasmina">><</link>>
+<</if>>
+<<if !$choices.sawTrialBasim2>>
+* <<link "Ask Basim something" "Ch2_Trial_Passage2_Basim">><</link>>
+<</if>>
+
+<<link "Continue climbing" "Ch2_Trial_Passage3">>
+	<<set $trial.progress += 1>>
+	<<personality "discipline" 1>>
+<</link>>
+
+<<link "Turn back" "Ch2_Trial_Retreat">><</link>>
+
+
+:: Ch2_Trial_Passage2_Observe {"position":"1625,2075","size":"100,100"}
+/*--------------------------------------------------
+Trial Passage 2: Observe
+--------------------------------------------------*/
+
+<<set $choices.sawTrialObserve2 = true>>
+
+Where you'd expect natural rock, your fingers keep finding shallow grooves instead -- handholds, placed with intent, spaced for a stride shorter than your own. Someone smaller than you climbed this before you did. More than once, from the wear.
+
+<<link "Return to the climb" "Ch2_Trial_Passage2">>
+	<<personality "curiosity" 1>>
+<</link>>
+
+
+:: Ch2_Trial_Passage2_Yasmina {"position":"1625,2125","size":"100,100"}
+/*--------------------------------------------------
+Trial Passage 2: Yasmina
+--------------------------------------------------*/
+
+<<set $choices.sawTrialYasmina2 = true>>
+
+"You're breathing like you're dying," you tell her, only half joking, offering a hand up the next ledge.
+
+"I'm reading and climbing at the same time," she says, waving off the hand and taking the ledge herself, satchel-less and stubborn. "Forgive me for not making it look easy." But she takes the next handhold you point out without arguing, which is its own kind of answer.
+
+<<link "Return to the climb" "Ch2_Trial_Passage2">>
+	<<relationship "yasmina" 1>>
+<</link>>
+
+
+:: Ch2_Trial_Passage2_Basim {"position":"1625,2175","size":"100,100"}
+/*--------------------------------------------------
+Trial Passage 2: Ask Basim
+--------------------------------------------------*/
+
+<<set $choices.sawTrialBasim2 = true>>
+
+"Doesn't this ever get easier for you?" you ask, watching him take the climb without a single misstep.
+
+"No," he says, simply, sounding almost pleased about it. "But I stopped needing it to be easy a long time ago. That's not the same as it being hard, either. It's just the shape of the road."
+
+<<link "Return to the climb" "Ch2_Trial_Passage2">>
+	<<personality "faith" 1>>
+<</link>>
+
+
+:: Ch2_Trial_Passage3 {"position":"1525,2075","size":"100,100"}
+/*==================================================
+SCENE 7 (cont.) — The Narrow Ledge
+==================================================*/
+
+<<if !$choices.trialPassage3Seen>>
+	<<set $choices.trialPassage3Seen = true>>
+	The last light from the passage behind you gives out entirely, and what's left is a ledge barely wider than your own two feet, running along a drop you can hear more than see -- a faint, distant echo when a loose pebble goes over the edge. Your legs ache. Your hands are scraped raw. The dark presses close enough to feel like a hand at your back.
+
+	"This is usually where people stop," Basim says, voice steady and close in the blackness. "Not because they can't go on. Because they've run out of reasons to believe there's anything left to reach."
+<<else>>
+	The ledge is no kinder the second time through, and no shorter for the familiarity.
+<</if>>
+
+<<if !$choices.sawTrialObserve3>>
+* <<link "Listen to the dark instead of fighting it" "Ch2_Trial_Passage3_Observe">><</link>>
+<</if>>
+<<if !$choices.sawTrialYasmina3>>
+* <<link "Check on Yasmina" "Ch2_Trial_Passage3_Yasmina">><</link>>
+<</if>>
+<<if !$choices.sawTrialBasim3>>
+* <<link "Ask Basim something" "Ch2_Trial_Passage3_Basim">><</link>>
+<</if>>
+
+<<link "Continue along the ledge" "Ch2_Trial_Threshold">>
+	<<set $trial.progress += 1>>
+	<<personality "discipline" 1>>
+<</link>>
+
+<<link "Turn back" "Ch2_Trial_Retreat">><</link>>
+
+
+:: Ch2_Trial_Passage3_Observe {"position":"1625,2225","size":"100,100"}
+/*--------------------------------------------------
+Trial Passage 3: Observe
+--------------------------------------------------*/
+
+<<set $choices.sawTrialObserve3 = true>>
+
+You stop fighting the dark and let your other senses do the work instead -- the dry, mineral smell of very old stone, the faint draft that means the passage keeps going somewhere, the sound of your own footsteps changing pitch as the walls narrow and widen around you. It doesn't make the ledge less narrow. It makes it less frightening.
+
+<<link "Return to the ledge" "Ch2_Trial_Passage3">>
+	<<personality "faith" 1>>
+<</link>>
+
+
+:: Ch2_Trial_Passage3_Yasmina {"position":"1625,2275","size":"100,100"}
+/*--------------------------------------------------
+Trial Passage 3: Yasmina
+--------------------------------------------------*/
+
+<<set $choices.sawTrialYasmina3 = true>>
+
+"Talk to me," you say into the dark, and hear her exhale, half a laugh, entirely relieved to be asked.
+
+"I'm terrified," she admits, plainly, no performance in it at all. "I don't like not being able to read anything. I don't like not knowing how far down that drop is." A pause, footsteps steadying. "I'm still walking, though. Don't let that go to your head either."
+
+<<link "Return to the ledge" "Ch2_Trial_Passage3">>
+	<<relationship "yasmina" 1>>
+<</link>>
+
+
+:: Ch2_Trial_Passage3_Basim {"position":"1625,2325","size":"100,100"}
+/*--------------------------------------------------
+Trial Passage 3: Ask Basim
+--------------------------------------------------*/
+
+<<set $choices.sawTrialBasim3 = true>>
+
+"What's waiting at the end of this?" you ask.
+
+"I don't know," Basim says, and it sounds like the truth, plain and unadorned. "I've never walked it as the one being tested. Only as the one walking beside." A beat. "I can tell you what it isn't, if that helps. It isn't a trap. Whatever you find, you'll have earned the finding of it."
+
+<<link "Return to the ledge" "Ch2_Trial_Passage3">>
+	<<personality "curiosity" 1>>
+<</link>>
+
+
+:: Ch2_Trial_Retreat {"position":"1525,2375","size":"100,100"}
+/*==================================================
+SCENE 7 (cont.) — Turning Back
+==================================================*/
+
+<<set $trial.active = false>>
+<<set $trial.progress = 0>>
+<<set $trial.attempts += 1>>
+
+You stop. Somewhere ahead, Basim's steady footsteps stop too, without a trace of disappointment in them.
+
+"That's enough for today," he says, turning back the way you came as easily as if he'd planned to all along. "There's no debt in this. Rest. Eat something. The passage isn't going anywhere."
+
+Yasmina doesn't argue, and doesn't look at you like you've failed at anything, which somehow makes it easier to consider trying again.
+
+<<link "Rest, then try again" "Ch2_Trial_Enter">><</link>>
+
+
+:: Ch2_Trial_Threshold {"position":"1525,2425","size":"100,100"}
+/*==================================================
+SCENE 7 (end) — The Final Chamber's Threshold
+==================================================*/
+
+The ledge finally widens into a landing, and ahead of you the dark gives way to the faint outline of a doorway -- the last one, you're certain of it, though you couldn't say how you know.
+
+Basim stops. Yasmina, a step behind him, stops too, and something in the stillness tells you this isn't her choice to make.
+
+"This road belongs to him," Basim says gently, turning his clouded eyes toward her anyway, the way he seems to see everyone regardless. "You've carried him well this far. The rest of it, he carries alone."
+
+Yasmina looks at you for a long moment. Whatever she's thinking, she doesn't hand it to you as a question.
+
+"Go on, then," she says simply. "I'll be here."
+
+<<link "Step through alone" "Ch2_Trial_Chamber">>
+	<<personality "faith" 1>>
+	<<set $trial.progress += 1>>
+<</link>>
+
+
+:: Ch2_Trial_Chamber {"position":"1525,2475","size":"100,100"}
+/*==================================================
+CHAPTER 2 — SCENE 8
+The Empty Chamber
+==================================================*/
+
+<<set $game.scene = 8>>
+
+The doorway opens onto a room that is, as far as you can tell, entirely empty.
+
+No pedestal. No light. No Seal waiting on an altar the way you'd half-expected despite yourself. Just bare stone, and your own breathing, and the settling realization that you've bled and climbed and walked through the dark for nothing you can see.
+
+You stand there long enough that it stops feeling like a delay and starts feeling like an answer.
+
+"There's nothing here," you say, when Basim's footsteps finally reach the doorway behind you.
+
+"No," he agrees, unbothered. "There hasn't been, for several hours now."
+
+<<link "Ask what he means" "Ch2_Trial_Seal">><</link>>
+
+
+:: Ch2_Trial_Seal {"position":"1525,2525","size":"100,100"}
+/*==================================================
+CHAPTER 2 — SCENE 8 (cont.)
+The Seal of Resolve
+==================================================*/
+
+"The trial ended a long way back," Basim says, "somewhere around the second turn back you didn't take, if I had to guess." A faint smile. "I wasn't testing whether you could climb, or see in the dark, or outlast a bad ledge. I was testing whether you'd keep walking once you stopped believing there was a reward waiting for you at the end of it."
+
+<<if $trial.attempts gt 0>>
+	"You needed more than one pass at it," he adds, not unkindly. "That doesn't diminish it. Most people do."
+<</if>>
+
+"That's Resolve," he says. "Not strength. Not cleverness. Just the choosing, over and over, long after the choosing stopped being easy."
+
+He reaches into his robe and withdraws a smooth white stone disc, palm-sized, a single unbroken circle worn into its face and old script circling its edge. It isn't glowing. It isn't doing anything at all, except sitting warm in his open palm, as if it had been carried against a body for a very long time.
+
+"I've had this the entire walk," he says. "It was never hidden from you. Only from your certainty that it was there."
+
+He holds it out.
+
+<<link "Take the Seal of Resolve" "Ch2_Trial_Aftermath">>
+	<<set $seals.first = true>>
+	<<set $seals.total += 1>>
+	<<run $inventory.keyItems.push("Seal of Resolve")>>
+	<<codex "items" "Seal of Resolve">>
+	<<relationship "basim" 3>>
+	<<personality "faith" 1>>
+	<<journal "Sheikh Basim entrusted me with the Seal of Resolve. It was never hidden -- only waiting to see if I'd keep walking without one.">>
+	It doesn't feel taken. It feels given -- freely, the way you'd hand something to a person you trusted to carry it, not the way you'd surrender a prize to someone who'd earned the right to take it by force. You close your hand around it. It's warmer than the air.
+<</link>>
+
+
+:: Ch2_Trial_Aftermath {"position":"1525,2575","size":"100,100"}
+/*==================================================
+CHAPTER 2 — SCENE 9
+Aftermath
+==================================================*/
+
+<<set $game.scene = 9>>
+<<set $trial.active = false>>
+
+Yasmina is waiting exactly where she said she'd be, and whatever question she'd been holding back at the threshold, she doesn't ask it now either. She just looks at the disc in your hand, then at you, and something in her expression has quietly rearranged itself.
+
+"You're different," she says, "than you were going in."
+
+"Good different or bad different?"
+
+"Undecided." But she's smiling when she says it.
+
+As you gather your things to leave, Basim draws her aside for a moment -- not far, not secretive exactly, just a few words pitched too low for you to catch all of. You hear only the tail end of it, not meant for you at all.
+
+"...your road will ask different things," he tells her.
+
+She doesn't explain it to you. You don't ask.
+
+<<link "Climb back to the surface" "Ch2_ChapterEnd">><</link>>
+
+
+:: Ch2_ChapterEnd {"position":"1525,2625","size":"100,100"}
+/*==================================================
+CHAPTER 2 — SCENE 9 (end)
+Six More Who Remember
+==================================================*/
+
+<<set $game.time = "Dusk">>
+
+Above ground, the desert has gone the color of embers, and the staircase behind you is already beginning to soften back into the dune, patient about it, the way it's clearly done a hundred times before.
+
+Basim walks you as far as the old stone marker and no further.
+
+"There are six more who remember," he says, staff planted in the sand like a full stop. "Not six Seals waiting to be collected. Six who will know, the moment you arrive, exactly why you've come -- and decide, each in their own way, whether that's reason enough."
+
+"How do we find them?" Yasmina asks.
+
+"You don't, generally. They find you. Or they let themselves be found, when the finding matters." A pause, and something almost fond crosses his weathered face. "Your scholar father may have better luck than either of us at guessing which."
+
+<<objective "Return to Zafirah and consult Hakim Nadir">>
+<<journal "Left the First Shrine with the Seal of Resolve. Basim says six more Guardians remain, each with their own history -- and their own reasons for choosing to be found.">>
+
+<<link "Begin the journey home" "Ch2_ReturnHome">><</link>>
+
+
+:: Ch2_ReturnHome {"position":"1525,2675","size":"100,100"}
+/*==================================================
+CHAPTER 2 — EPILOGUE
+The Road Home
+==================================================*/
+
+<<set $game.day = 8>>
+<<set $game.location = "House of Wisdom">>
+
+The road back is easier than the road out, the way return journeys always are once the destination has stopped being a question. Sabiha's caravan carries you as far as the northern gate; the rest of Zafirah does the rest, loud and unbothered and entirely unaware of what's changed.
+
+Hakim doesn't ask how it went. He takes one look at the disc in your palm and sits down rather suddenly, as if his legs had been waiting for permission to stop holding him up.
+
+"Seven divisions," he says, half to himself, already turning back to a wall of hurriedly cross-referenced maps and trade ledgers he's clearly been building since you left. "One found. Six remain, and Basim was right to warn you -- none of them will be found the same way twice."
+
+<<set $knowledge.knowsSevenSeals = true>>
+<<set $quest.main = "Recover the Seven Seals">>
+<<objective "Await word of the Second Guardian">>
+
+Yasmina sets her satchel down by the door instead of shouldering it. Not tonight, the gesture says. But soon.
+
+"Get some sleep, both of you," Hakim says, not looking up from the maps. "I have a feeling I'm going to need you rested."
+
+<!-- End of Chapter 2 -->
