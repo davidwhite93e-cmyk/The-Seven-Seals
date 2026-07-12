@@ -15,3 +15,8 @@
   close. Chapter 2 is now complete. Added `$trial` state object,
   `$npc.basim`, and `$places.shrine`. Recorded Qadir's concealed
   shrine-funding move in `MYSTERY_LEDGER.md`.
+- Logged Design Spec 004 (Book One Production Philosophy) into
+  `GAME_BIBLE.md` as canon: emotional arc, design pillars, and voice
+  rules for Qadir, Yasmina, the Guardians, and the Seals across all of
+  Book One. No new scene content -- this is a style/philosophy
+  reference, not a Chapter 3 spec.
