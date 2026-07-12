@@ -103,3 +103,20 @@
   biographical specifics and all father/river content stay behind
   their standing deferrals. Marked DRAFT with four open questions;
   implementation resumes from Chapter 3 upon approval.
+- Logged the Creative Direction Reset as canon in `GAME_BIBLE.md`:
+  story over mythology, character over lore, chapter-driven
+  implementation, novelist writing standards. Spec 009 review is now
+  non-blocking.
+- Logged the Chapter 1-4 Story Overviews as authoritative emotional
+  blueprints. Audited shipped Ch1-2 against theirs (conform); applied
+  one tone patch to the Chapter 1 ending (determination and
+  anticipation, not dread). Annotated Spec 006's Ch3/Ch4 sections
+  where the overviews supersede them.
+- Implemented Chapter 3 (Echoes in the Dust) per its Story Overview:
+  19 new passages -- Zafirah rumor fallout, the generational
+  broken-circle pattern, the Sunken Library, the gray scholars (first
+  human conflict; one canon escapee carrying copies), the damaged
+  journal with its cut ending, and the three-source identification of
+  "The Fortress That Watches the Wind." Added `$places.sunkenLibrary`,
+  the Damaged Journal key item, and Ch3 mystery rows/concealed events
+  in `MYSTERY_LEDGER.md`. Bridged Ch2 -> Ch3.

@@ -13,10 +13,11 @@ Creative Director with revisions recorded in its Post-Review Revisions
 block; provisional elements remain non-canon), Design Spec 007 (The
 Mythology Bible, v1.0 — **approved with modifications**, all folded
 into its text), Design Spec 008 (The Seven Founding Oaths, v1.0 —
-**approved with revisions**, all folded into its text), and Design
-Spec 009 (Character Bible, v1.0 draft — **pending review and
-approval**; chapter implementation resumes from Chapter 3 once it is
-approved).
+**approved with revisions**, all folded into its text), Design Spec
+009 (Character Bible, v1.0 draft — pending review, **non-blocking**
+per the Creative Direction Reset), and the **Creative Direction Reset**
+(v1.0 — canonical; supersedes prior direction where they conflict, and
+moves the project to chapter-driven implementation).
 
 ## Book One Goal
 
@@ -38,6 +39,56 @@ responsibility**. Every generation chooses whether the promises of the
 previous generation continue. The Seals are only the physical reminder
 of those promises. That is the story players should remember long
 after they forget the mechanics.
+
+## Creative Direction Reset (canonical — supersedes where conflicting)
+
+The mythology exists to support the story; the story does not exist to
+explain the mythology. Every creative decision is now evaluated
+against one question: **does this make the story more engaging to
+play?**
+
+- The most important parts of Book One are people, not lore: Amir,
+  Yasmina, Qadir, the people they meet, the lives they save, the
+  promises they choose to keep. Character over lore, always.
+- Every chapter is an adventure: memorable places, unforgettable
+  people, dangerous creatures, immediate problems, a world left a
+  little better. The Seals provide structure; they are not the purpose.
+- Constant discovery; never two consecutive chapters visually or
+  emotionally similar.
+- Relationships develop through shared victories and failures,
+  campfires, disagreements, quiet moments, danger, laughter. Romance
+  emerges from trust, not attraction.
+- Qadir stays exactly as designed — warm, helpful, patient, likable.
+- Guardians appear, change Amir, entrust the Seal, and let the story
+  continue. Philosophy never overshadows the living world.
+- Every chapter: exploration, character interaction, at least one
+  memorable set piece, meaningful choices, a satisfying climax, a
+  strong emotional ending. Reveal lore through action.
+- Write like a novelist: scenes begin late, end early; dialogue
+  reveals character; description vivid but economical.
+- **Implementation is chapter-driven, not documentation-driven.** Do
+  not stop implementation to request foundational documents unless a
+  true contradiction or blocker exists. Identify creative gaps clearly
+  and continue with reasonable implementation. The goal is to finish
+  Book One.
+
+## Chapter Story Overviews (authoritative)
+
+The Creative Director has issued per-chapter Story Overviews —
+emotional blueprints, not passage specs. Received so far: **Chapter 1
+(Festival of Lanterns)**, **Chapter 2 (The Shrine Beneath the Sands)**,
+**Chapter 3 (Echoes in the Dust)**, and **Chapter 4 (The Fortress That
+Watches the Wind)**. Shipped Ch1–2 content was
+audited against its overviews and conforms, with one tone patch
+applied (the Chapter 1 ending now closes on determination and
+anticipation rather than dread, per the Ch1 overview's final emotional
+note). Chapters implement against their overview first, then the Spec
+006 architecture; **where they conflict, the Story Overview wins.**
+For Chapter 3 specifically, the overview supersedes parts of the Spec
+006 sketch: there is no palace-court sequence, the
+trusted-intermediary introduction is deferred beyond Ch3, and Qadir's
+concealed move is revised (see the Ch3 annotation in Spec 006 and the
+Mystery Ledger).
 
 ## Chapter Structure
 
@@ -517,6 +568,16 @@ throughline:
 
 ### Chapter 3 — Consequences
 
+*(Superseded in part by the Chapter 3 Story Overview "Echoes in the
+Dust," which governs: no palace-court sequence; the
+trusted-intermediary introduction is deferred beyond Ch3; the chapter
+centers on rumor fallout in Zafirah, a ruined library predating the
+city, corrupted scholars as the first human conflict, a damaged
+journal proving the Guardians real, and the "Fortress That Watches the
+Wind" lead. Qadir's concealed move is revised: he ensured the right
+records became available to the wrong people, and the escaping
+scholar's incomplete copies will eventually reach him.)*
+
 - **Primary objective:** Navigate political fallout in Zafirah after
   news of the ghūl attack and the shrine expedition spreads; secure
   standing and information for the road ahead.
@@ -560,6 +621,16 @@ throughline:
   Seals?"
 
 ### Chapter 4 — The Fortress
+
+*(Superseded in part by the Chapter 4 Story Overview "The Fortress
+That Watches the Wind," which governs: the on-page enemies are
+desperate desert raiders hired through collectors — not the rival
+faction, which stays unseen and unrevealed; no intermediary relay; the
+Guardian is met repairing the outer wall, the trial is responsibility
+and a sandstorm crisis, the farewell line is "Courage is rarely loud,"
+and Qadir's concealed move is ensuring old fortress maps reached
+collectors whose greed hired the raiders, forcing the Seal's
+entrusting earlier than the Guardian intended.)*
 
 - **Primary objective:** Reach the Second Guardian's shrine while the
   Veiled Hand actively pursues the same goal.
@@ -1481,9 +1552,10 @@ Still open:
 
 # Character Bible (Design Spec 009)
 
-**Status: DRAFT — awaiting Creative Director review and approval.
-Once approved, implementation proceeds continuously from Chapter 3
-onward.**
+**Status: DRAFT — submitted for review. Non-blocking per the Creative
+Direction Reset: implementation proceeds chapter-driven while review
+is awaited, and these entries serve as working reference rather than
+locked canon until approved.**
 
 Arcs, not biographies, per the commission. Constraints honored
 throughout: Yasmina's entries are arc-level only — her biographical
@@ -1766,5 +1838,5 @@ hinted at, or foreshadowed by implementation without a future spec.
 4. **Qadir's "anomaly file"** — his flaw never punished in Book One,
    only seeded; confirm this stays entirely subtextual.
 
-Awaiting review. Chapter implementation resumes from Chapter 3 upon
-approval, per the Creative Director's production gate.
+Awaiting review; non-blocking. Implementation proceeds chapter-driven
+per the Creative Direction Reset.

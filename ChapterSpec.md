@@ -1,56 +1,70 @@
-# Chapter 2 — The First Seal
+# Chapter 3 — Echoes in the Dust
 
-Status: **Complete**, per Design Spec 003 (v1.0).
-
-Purpose: teach what a Seal is, teach how Guardians work, establish
-that worthiness matters more than strength, player earns the First
-Seal, Qadir quietly removes another obstacle (concealed from the
-player — see `MYSTERY_LEDGER.md`).
+Status: **Complete**, implemented against the Chapter 3 Story Overview
+(authoritative) with the Spec 006 architecture as secondary reference.
+The overview superseded the earlier Spec 006 sketch: no palace-court
+sequence, the trusted-intermediary introduction is deferred beyond
+Ch3, and Qadir's concealed move is records-into-the-wrong-hands (see
+`MYSTERY_LEDGER.md`).
 
 ## Scenes
 
-1. Hakim's Study — the shrine is named, Yasmina joins the party.
-2. Departure — farewell to Farah, leaving Zafirah.
-3. The Caravan — road to the hill country, optional NPC beats (Sabiha,
-   the pilgrim, Yasmina).
-4. The Empty Desert (`Ch2_Desert`) — caravan drop-off, lore-only
-   exploration hub (waymarker stones, carvings, campsite, dry well).
-5. The Shrine Appears (`Ch2_Shrine_Appears`) — the staircase reveals
-   itself once the wind dies.
-6. The First Guardian (`Ch2_Guardian_Basim`) — meeting Sheikh Basim,
-   who already knows Amir's name.
-7. The Trial (`Ch2_Trial_Enter` through `Ch2_Trial_Threshold`) — a
-   three-stage endurance sequence (Collapsed Corridor, Steep Climb,
-   Narrow Ledge) built entirely from Continue/Turn-Back choices plus
-   optional Observe/Yasmina/Basim beats at each stage. Turning back is
-   penalty-free and always allows a fresh attempt via `Ch2_Trial_Enter`.
-8. The Empty Chamber & the Seal of Resolve (`Ch2_Trial_Chamber`,
-   `Ch2_Trial_Seal`) — the trial's twist (it ended attempts ago) and
-   Basim entrusting the Seal.
-9. Aftermath & Chapter End (`Ch2_Trial_Aftermath`, `Ch2_ChapterEnd`,
-   `Ch2_ReturnHome`) — Yasmina's private foreshadowing beat with Basim,
-   the "six more who remember" line, and the return to Hakim.
+1. Opening (`Ch3_Opening`) — the story outgrows Amir; Zafirah rumor
+   texture; Farah's "the fishmonger bowed to me."
+2. Rumors hub (`Ch3_Rumors_Hub` + Bilal / pilgrim / guard captain
+   optionals) — the world pushes back: exaggeration, veneration,
+   skepticism. Contains the Black Vizier idle-curse texture line
+   (unremarked, per the Spec 006 presence requirement).
+3. The pattern (`Ch3_Study`) — the symbol recurs across generations of
+   travelers' accounts; the accounts converge on the Sunken Library.
+4. The road east (`Ch3_Road`) — campfire scene, three-way relationship
+   choice; seeds the Amir-listens arc.
+5. The Sunken Library (`Ch3_Library_Arrival` + hub with reading hall /
+   map room / scriptorium optionals) — beauty in decay; signs of prior
+   visitors; the charcoal "WHICH OF THE SEVEN?"; Yasmina's joy scene
+   (scriptorium); a Third-Oath folk echo (child's copybook,
+   unremarked); the survey fragment (optional, pays off in scene 9).
+6. The gray scholars (`Ch3_Scholars` → `Ch3_Scholars_Fight` →
+   `Ch3_Scholars_Fight2` → `Ch3_Scholars_End`) — debate first (with a
+   let-Yasmina-answer growth option), then the first human conflict:
+   two rounds, choice-driven, no fatalities; some surrender, some
+   flee; the youngest always escapes with copied pages ("Not to
+   them!").
+7. The damaged journal (`Ch3_Journal`) — written by someone who
+   personally knew a Guardian; final pages cut, not rotted; the intact
+   line: "the fortress that watches the wind."
+8. Aftermath (`Ch3_Aftermath`) — the used, pitiable scholars
+   (recruited by faceless learned letters); mercy choice
+   (release/hand over).
+9. Night camp + return (`Ch3_NightCamp`, `Ch3_Return`) — Yasmina lays
+   out the whole pattern; "we" stops needing saying; Hakim confirms
+   three independent sources for the Fortress; urgency hook; End of
+   Chapter 3 (no forward link — Chapter 4 next).
 
-Chapter ends cleanly on `Ch2_ReturnHome` with an `<!-- End of Chapter 2
--->` marker and **no forward link** — this is intentional, not the
-dead-end class of bug fixed earlier. Chapter 3 has no spec yet, so
-nothing was invented past this point per Design Spec 002's own rule
-("implement only what has been specified").
+## New/expanded state
 
-## New/expanded state (StoryInit)
+- `$places.sunkenLibrary` — new location entry.
+- Key item "Damaged Journal"; codex entries (places, lore, items).
+- New `$choices` flags: `ch3RumorsHubSeen`, `sawRumorBilal/Pilgrim/
+  Captain`, `ch3CampTalk`, `ch3LibraryHubSeen`, `sawReadingHall/
+  MapRoom/Scriptorium`, `ch3Debate`, `ch3FightFirst`, `ch3FightEnd`,
+  `ch3ScholarsFate`.
+- Reuses `$combat` for the two-round human conflict; all state
+  mutation through existing widgets.
 
-- `$npc.basim` — new NPC entry, follows the existing database pattern.
-- `$places.shrine` — new location entry, follows the existing pattern.
-- `$trial` — new top-level object (`active`, `progress`, `attempts`),
-  modeled directly on `$combat`'s shape. Justified as a recurring
-  system: the Game Bible's "Seal Rhythm" implies every future Guardian
-  chapter will need the same kind of trial-progress tracking.
-- `$seals.first`, `$seals.total`, `$knowledge.knowsSevenSeals` — all
-  pre-existing fields, now actually being set.
+## Flagged creative gaps (filled with reasonable implementation, per the Reset)
 
-## Awaiting next Design Specification
+- **"The Sunken Library"** — name coined here; easy to rename.
+- **The gray scholars** — deliberately NOT identified with the
+  protective rival-faction concept; their patron is faceless. The
+  Unseen Searcher's identity stays open per the overview ("the answer
+  should remain hidden").
+- **The escaped scholar** — uncast and unnamed ("thin, young"); the
+  overview says he becomes important, so casting is left fully open.
+- **Trusted-intermediary introduction** — deferred beyond Ch3 by the
+  overview; needs a landing spot in a future chapter.
 
-Chapter 3 purpose (per the Book One roadmap): consequences, political
-fallout, rumors spread, first hint of rival seekers, introduce a
-recurring ally. No scene-level content exists yet — implementation
-will resume once that Scene Package arrives.
+## Next
+
+Chapter 4 — The Fortress That Watches the Wind (Story Overview
+received and logged in `GAME_BIBLE.md`; implementation next).

@@ -280,7 +280,8 @@ Example: $places.market.visited
     palace: { name: "The Sultan's Palace", visited: false },
     harbor: { name: "River Docks", visited: false },
     mosque: { name: "Great Mosque", visited: false },
-    shrine: { name: "Shrine of the First Guardian", visited: false }
+    shrine: { name: "Shrine of the First Guardian", visited: false },
+    sunkenLibrary: { name: "The Sunken Library", visited: false }
 
 }>>
 
@@ -1380,7 +1381,7 @@ He studies the sketch Yasmina hurriedly copied from the flagstone for a long mom
 
 Outside, the lanterns are still burning over a city that doesn't yet know how much has changed.
 
-You don't sleep well. You don't expect to.
+Sleep is a long time coming -- not from fear, but from the feeling, new and strange, that the world has doors in it you never noticed, and one of them has just come open.
 
 <<link "Return to Hakim's study the next morning" "Ch2_HakimStudy">>
 	<<journal "Returned to the House of Wisdom the morning after the festival, as Hakim asked.">>
@@ -2297,4 +2298,669 @@ Yasmina sets her satchel down by the door instead of shouldering it. Not tonight
 
 "Get some sleep, both of you," Hakim says, not looking up from the maps. "I have a feeling I'm going to need you rested."
 
+<<link "Sleep, and wake to a city that knows your name" "Ch3_Opening">><</link>>
+
 <!-- End of Chapter 2 -->
+
+
+:: Ch3_Opening {"position":"1625,2775","size":"100,100"}
+/*==================================================
+CHAPTER 3 — SCENE 1
+Echoes in the Dust — the story outgrows you
+==================================================*/
+
+<<set $game.chapter = 3>>
+<<set $game.scene = 1>>
+<<set $game.day = 9>>
+<<set $game.time = "Morning">>
+<<set $game.location = "Amir's Home">>
+
+By the third morning, the story has outgrown you.
+
+You hear it before you're fully down the stairs -- a neighbor woman in your mother's kitchen, retelling the festival attack with tremendous authority to someone who was actually there. In her version there were three ghūls. In her version you carried the Sultan's own nephew out of the fire. There was no fire. The Sultan has no nephew.
+
+"And now he's off east with a sorceress," the woman finishes, with relish, "carrying a relic worth a province."
+
+"He's off to the market with a basket," Farah says flatly, "carrying my shopping. Amir, bread and onions. Go."
+
+Outside, the Lantern Quarter has learned your name in a way it never needed to before. It used to know you as Farah's boy. Now children point. A man you've never met claps your shoulder like an old debt repaid. Somewhere behind you, someone repeats the thing about the nephew.
+
+"The fishmonger bowed to me yesterday," Farah told you last night, with the expression of a woman describing a crime. "I've known him since he had one tooth. I told him to stop."
+
+Stories, you're beginning to understand, travel faster than the people they're about -- and they don't ask permission before they change.
+
+<<goto "Ch3_Rumors_Hub">>
+
+
+:: Ch3_Rumors_Hub {"position":"1725,2775","size":"100,100"}
+/*==================================================
+CHAPTER 3 — SCENE 1 (cont.)
+The Quarter, listening back
+==================================================*/
+
+<<set _visitedAll = ($choices.sawRumorBilal and $choices.sawRumorPilgrim and $choices.sawRumorCaptain)>>
+
+<<if !$choices.ch3RumorsHubSeen>>
+	<<set $choices.ch3RumorsHubSeen = true>>
+	The market can wait a little. The street, apparently, cannot -- it has questions, and opinions, and versions of your own week to tell you about.
+<<else>>
+	The street isn't finished with you yet.
+<</if>>
+
+<<if !$choices.sawRumorBilal>>
+* <<link "Old Bilal is holding court outside his shop" "Ch3_Rumors_Bilal">><</link>>
+<</if>>
+<<if !$choices.sawRumorPilgrim>>
+* <<link "A dusty traveler has been asking the neighbors where you live" "Ch3_Rumors_Pilgrim">><</link>>
+<</if>>
+<<if !$choices.sawRumorCaptain>>
+* <<link "The guard captain from the market is watching you, arms crossed" "Ch3_Rumors_Captain">><</link>>
+<</if>>
+
+<<link "Head for the House of Wisdom -- Hakim sent word at dawn" "Ch3_Study">><</link>>
+
+
+:: Ch3_Rumors_Bilal {"position":"1825,2725","size":"100,100"}
+/*--------------------------------------------------
+Rumors: Bilal's version
+--------------------------------------------------*/
+
+<<set $choices.sawRumorBilal = true>>
+
+Bilal has an audience of six and is not letting facts slow him down. In his telling, you stood on the dais itself, between the ghūl and the Sultan, and the lanterns overhead burned brighter as you fought -- "brighter, I tell you, I make lanterns, I *notice*."
+
+"I wasn't anywhere near the dais," you say.
+
+"You were in spirit." He waves you off without a flicker of shame. "I sell lanterns, boy. You think I don't know how light spreads?"
+
+<<link "Leave him to it" "Ch3_Rumors_Hub">>
+	<<personality "mercy" 1>>
+	You leave him to it. The story will do what stories do, whether you stand here objecting or not -- and his version, at least, is told with love.
+<</link>>
+
+<<link "Correct the record, loudly, for the audience" "Ch3_Rumors_Bilal_Correct">>
+<</link>>
+
+
+:: Ch3_Rumors_Bilal_Correct {"position":"1925,2725","size":"100,100"}
+/*--------------------------------------------------
+Rumors: correcting Bilal
+--------------------------------------------------*/
+
+<<personality "honor" 1>>
+
+"There was one ghūl," you tell the audience, "I was nowhere near the dais, and the bravest thing I saw that night was a mother running *toward* the screaming."
+
+A respectful pause.
+
+"That's the modesty," Bilal tells his audience, nodding gravely. "They all have it. The great ones." The audience nods back. You give up.
+
+<<link "Give up" "Ch3_Rumors_Hub">><</link>>
+
+
+:: Ch3_Rumors_Pilgrim {"position":"1825,2775","size":"100,100"}
+/*--------------------------------------------------
+Rumors: the pilgrim woman
+--------------------------------------------------*/
+
+<<set $choices.sawRumorPilgrim = true>>
+
+She's older than Farah, road-worn, and she's been waiting near your door since before you came out -- you can tell by how the neighbors have already given her a stool and tea, because this is still that kind of street.
+
+"You're the one," she says. Not a question. "They say you carry something holy. My son is sick in Wadi Nur." She holds out one cracked hand, palm up, asking without asking. "Let me touch it. For his sake, not mine."
+
+The Seal sits in your breast pocket, ordinary as a river stone. Whatever the stories say it is, you know what it isn't.
+
+<<link "Let her hold it a moment" "Ch3_Rumors_Hub">>
+	<<personality "mercy" 1>>
+	<<journal "A pilgrim asked to touch the Seal for her sick son. I let her. I don't know what it did for him. I know what it did for her.">>
+	You put the white stone in her hands. It does nothing at all -- no light, no warmth beyond what your own body left in it. She closes her eyes anyway, and whatever she takes from that moment, she takes it with both hands and gives you back the stone like it weighs more now.
+
+	You don't have the heart to tell her it's just a stone. You're no longer entirely sure it would be true.
+<</link>>
+
+<<link "Tell her gently that it's not what the stories say" "Ch3_Rumors_Hub">>
+	<<personality "discipline" 1>>
+	"It's a stone, auntie," you say, as gently as the words allow. "An old promise, maybe. Not a cure."
+
+	"Promises have mended more sons than physicians have," she says, unbothered, and pats your hand as if *you* were the one needing comfort, and goes.
+<</link>>
+
+
+:: Ch3_Rumors_Captain {"position":"1825,2825","size":"100,100"}
+/*--------------------------------------------------
+Rumors: the guard captain, unconvinced
+--------------------------------------------------*/
+
+<<set $choices.sawRumorCaptain = true>>
+
+<<if $choices.sawGuardCaptain>>
+	The guard captain from the marketplace hasn't changed -- same crossed arms, same eyes that never stop doing arithmetic on a crowd. She nods at you the way she did before any of this happened, which is worth more than the bowing.
+<<else>>
+	A guard captain you half-recognize from the marketplace is watching you with her arms crossed and the expression of a woman auditing a ledger that doesn't add up.
+<</if>>
+
+"Half the city says you saved it," she says. "The other half says whatever you dug up out there is what drew the thing in the first place. Both halves buy more bread either way, so the bakers are happy."
+
+"And you?"
+
+"I don't deal in halves." She looks you over once, professionally. "Chase your stories east if you must. Just don't drag the Black Vizier's luck back through my gate."
+
+It's an old curse -- something grandmothers say about spilled salt and late accounts. No one so much as blinks at it, you least of all.
+
+<<link "Promise her you'll try" "Ch3_Rumors_Hub">>
+	<<personality "honor" 1>>
+	"I'll try," you say, and mean it, and she accepts that the way she'd accept a watch report -- noted, filed, unsentimental.
+<</link>>
+
+<<link "Ask what she thinks drew the ghūl" "Ch3_Rumors_Hub">>
+	<<personality "curiosity" 1>>
+	She's quiet a moment, which from her is a speech. "Nineteen years on these walls. Nothing ever came up through the stones before." She looks past you, toward the square. "Whatever changed, it didn't change here. It changed somewhere else first, and we got the weather from it."
+
+	You'll think about that sentence for days.
+<</link>>
+
+
+:: Ch3_Study {"position":"1725,2875","size":"100,100"}
+/*==================================================
+CHAPTER 3 — SCENE 2
+The pattern in the ink
+==================================================*/
+
+<<set $game.scene = 2>>
+<<set $game.location = "House of Wisdom">>
+
+Hakim's study has stopped pretending to be a room and committed fully to being an argument between paper and gravity. Yasmina is in the middle of it, cross-legged on the one clear patch of floor, surrounded by open travelers' accounts in five different hands, and she doesn't say good morning. She says:
+
+"It was never the ghūl's mark."
+
+She turns a ledger toward you. A merchant's route-diary, sixty years old, describing a caravansary with a symbol scratched above the lintel -- *a circle, broken in seven places*. Then another, older: a well gone dry, the same mark on its coping stone, copied by a pilgrim who thought it was a ward against thieves. Then a third, older still, in a hand so faded it's more suggestion than script.
+
+"Different decades. Different roads. Different writers who never met." Her finger moves from page to page. "The ink ages. The hand changes. The question doesn't. Someone has been visiting the old places and leaving the same mark -- or looking for it -- for *generations*, Amir. The ghūl wasn't the beginning of anything. It was just the first time the search got loud enough for anyone to hear."
+
+Hakim, from the depths of his shelves, without turning: "Tell him where the accounts converge."
+
+"East." Her eyes have that lit-from-inside look. "Three of these mention a library. Older than Zafirah -- older than the *Sultanate*. Half-buried, roof fallen in, abandoned so long ago that no one alive remembers it working. The road-books call it the Sunken Library." A beat. "Whoever's been searching, they searched there. If the mark means anything, that's where somebody wrote it down."
+
+<<objective "Travel east to the Sunken Library">>
+<<journal "Yasmina found the broken-circle mark in travelers' accounts spanning generations. Someone has been searching the old places for a very long time. The accounts converge on a ruined library east of the city.">>
+
+She's already packing, you notice. Books, to go and look at books.
+
+<<link "Leave at first light" "Ch3_Road">><</link>>
+
+
+:: Ch3_Road {"position":"1725,2975","size":"100,100"}
+/*==================================================
+CHAPTER 3 — SCENE 3
+The road east, and a fire
+==================================================*/
+
+<<set $game.scene = 3>>
+<<set $game.day = 10>>
+<<set $game.time = "Night">>
+<<set $game.location = "The Eastern Road">>
+
+The eastern road is a day of flat scrubland and one range of low hills that take longer than they look, and by dusk you've made camp in the lee of a boundary stone so old its inscription has gone the way of all inscriptions.
+
+Yasmina reads until the light gives out, then closes the book and doesn't reach for a lamp -- which, you've learned, is her version of announcing she's willing to talk.
+
+The fire cracks. Overhead, the stars are doing what stars do out here, which is everything.
+
+<<link "Ask her what she's hoping is out there" "Ch3_Road_Continue">>
+	<<set $choices.ch3CampTalk = "hope">>
+	<<personality "curiosity" 1>>
+	<<relationship "yasmina" 2>>
+	She's quiet long enough that you think she might not answer.
+
+	"Proof that somebody wrote things down because they mattered," she says finally. "Not for a patron. Not for a court. Because they looked at something true and couldn't stand for it to be forgotten." She pulls her blanket tighter. "Every book I've ever loved was written by someone like that. I'd like to stand where they stood. Once."
+<</link>>
+
+<<link "Ask her who she thinks is ahead of them" "Ch3_Road_Continue">>
+	<<set $choices.ch3CampTalk = "rival">>
+	<<personality "discipline" 1>>
+	<<relationship "yasmina" 1>>
+	You ask it plainly, the way you'd ask her to read a difficult line -- because you want *her* reading of it, not your own guess repeated back.
+
+	She counts it off on ink-stained fingers. "They read old scripts, or travel with someone who does. They're funded -- generations of searching costs money. And they've never once announced themselves, which means either they're afraid of something..." she looks at the fire, "...or they're patient. I don't know which is worse."
+
+	Then, with a sidelong look: "You're asking me first now. Before you decide things." A pause. "Don't stop."
+<</link>>
+
+<<link "Say nothing, and let the quiet be enough" "Ch3_Road_Continue">>
+	<<set $choices.ch3CampTalk = "quiet">>
+	<<personality "faith" 1>>
+	<<relationship "yasmina" 1>>
+	You don't fill the silence, and neither does she, and somewhere in the not-filling, the silence stops being an absence and becomes a thing you're doing together.
+
+	"This is nice," she says eventually, to the fire, in the tone of a scholar conceding a point she hadn't planned to concede.
+<</link>>
+
+
+:: Ch3_Road_Continue {"position":"1825,2975","size":"100,100"}
+/*--------------------------------------------------
+Scene 3 (cont.) — morning
+--------------------------------------------------*/
+
+Morning comes early and cold. By midday the scrubland has given way to a country of pale, wind-carved stone, and the road -- what's left of it -- runs between outcrops like a memory of itself.
+
+Then the land drops away in front of you, and there it is.
+
+<<link "The Sunken Library" "Ch3_Library_Arrival">><</link>>
+
+
+:: Ch3_Library_Arrival {"position":"1725,3075","size":"100,100"}
+/*==================================================
+CHAPTER 3 — SCENE 4
+The Sunken Library
+==================================================*/
+
+<<set $game.scene = 4>>
+<<set $game.day = 11>>
+<<set $game.time = "Afternoon">>
+<<set $game.location = "The Sunken Library">>
+<<set $places.sunkenLibrary.visited = true>>
+<<codex "places" "The Sunken Library">>
+
+It fills a hollow between the stone hills the way sleep fills a body.
+
+Columns stand in ranks like a forest that decided, at some point centuries ago, to stop pretending to be anything but beautiful. Half the roof is gone; the rooms beneath the gaps are rooms of open sky, and the sand has moved in through the doorways in long, frozen tides, burying whole wings up to their windows. Swallows have the high shelves now. The light comes down in shafts, and the dust in the shafts moves like slow water.
+
+"Oh," Yasmina says. Just that. Her voice does something on the single syllable that you tactfully do not mention.
+
+It should feel dead. It doesn't. It feels *asleep* -- and knowledge, you think, looking at the ranked empty shelves, doesn't die when a place like this falls. It just gets forgotten, which is a different thing, because forgotten things can be found.
+
+Then you see the footprints.
+
+A neat line of them, crossing the sand-tide below the entrance -- recent enough that the wind hasn't finished with them. Near the threshold, a swept patch where someone knelt to copy the inscription on the doorpost. And on the wall inside, in charcoal, in a fast scholarly hand, someone has written a single line beside the old carved circle:
+
+*WHICH OF THE SEVEN?*
+
+"We're not the first ones here," Yasmina says quietly. "And whoever they are, they're asking our question."
+
+<<journal "Reached the Sunken Library -- beautiful, half-buried, asleep. Someone was here recently: footprints, copied inscriptions, and a question written in charcoal beside the broken circle: WHICH OF THE SEVEN?">>
+
+<<goto "Ch3_Library_Hub">>
+
+
+:: Ch3_Library_Hub {"position":"1825,3075","size":"100,100"}
+/*==================================================
+CHAPTER 3 — SCENE 4 (cont.)
+Exploring the Library
+==================================================*/
+
+<<set _visitedAll = ($choices.sawReadingHall and $choices.sawMapRoom and $choices.sawScriptorium)>>
+
+<<if !$choices.ch3LibraryHubSeen>>
+	<<set $choices.ch3LibraryHubSeen = true>>
+	The library is too large to search all at once, and the light won't last forever. You pick your way in over the frozen tide of sand.
+<<else>>
+	The stacks wait, patient as only very old things are.
+<</if>>
+
+<<if !$choices.sawReadingHall>>
+* <<link "The great reading hall, open to the sky" "Ch3_Library_ReadingHall">><</link>>
+<</if>>
+<<if !$choices.sawMapRoom>>
+* <<link "A map room, half-buried, its cabinets split by time" "Ch3_Library_MapRoom">><</link>>
+<</if>>
+<<if !$choices.sawScriptorium>>
+* <<link "The scriptorium, rows of copy-desks under drifted sand" "Ch3_Library_Scriptorium">><</link>>
+<</if>>
+
+<<if _visitedAll>>
+	Deeper in, past the buried wings, a corridor descends toward the archive stacks -- and from somewhere down its length, faint but unmistakable, comes lamplight. Moving.
+<<else>>
+	Deeper in, a corridor descends toward the archive stacks -- and from somewhere down its length, faint but unmistakable, comes lamplight. Moving.
+<</if>>
+
+<<link "Follow the light down into the stacks" "Ch3_Scholars">><</link>>
+
+
+:: Ch3_Library_ReadingHall {"position":"1925,3025","size":"100,100"}
+/*--------------------------------------------------
+Library: the reading hall
+--------------------------------------------------*/
+
+<<set $choices.sawReadingHall = true>>
+<<codex "lore" "A Child's Copybook">>
+
+The reading hall is the size of a mosque courtyard, and the sky has taken the roof so completely that grass grows between the flagstones where rain must pool in whatever passes for winter here.
+
+Under a collapsed lectern, protected by the very stone that crushed it, Yasmina finds a child's copybook -- a beginner's hand practicing the same line over and over down the page, steadier with each repetition, the way children learn everything:
+
+*What you loved in the light, do not leave in the dark.*
+*What you loved in the light, do not leave in the dark.*
+*What you loved in the light, do not leave in the dark.*
+
+"A copying exercise," Yasmina says. "A proverb, probably. They always made children practice on proverbs." She sets it down with unusual care, and neither of you says anything else about it.
+
+<<link "Return to the stacks" "Ch3_Library_Hub">>
+	<<personality "faith" 1>>
+<</link>>
+
+
+:: Ch3_Library_MapRoom {"position":"1925,3075","size":"100,100"}
+/*--------------------------------------------------
+Library: the map room
+--------------------------------------------------*/
+
+<<set $choices.sawMapRoom = true>>
+<<codex "lore" "The Old Survey Fragment">>
+
+The map cabinets split their seams a century ago, and most of what they held went to dust and beetles long before you were born. But vellum outlives paper, and one surveyor's fragment has survived in the bottom drawer like a coin at the bottom of a dry well.
+
+It shows the stone country you crossed yesterday -- recognizable even now -- and beyond it, eastward, mountains drawn in the old style, all teeth. Against one peak, a tiny square tower, and beside it three words in a script even Yasmina has to work at.
+
+"*The watching...*" She angles it to the light. "The second word is wind. The first I'd have to check against Father's grammars." She looks up. "Someone surveyed a fortress out there. Long enough ago that the mountains had different names."
+
+She takes a careful rubbing, the way her father taught her, and stows it flat between board covers.
+
+<<link "Return to the stacks" "Ch3_Library_Hub">>
+	<<personality "curiosity" 1>>
+<</link>>
+
+
+:: Ch3_Library_Scriptorium {"position":"1925,3125","size":"100,100"}
+/*--------------------------------------------------
+Library: the scriptorium — Yasmina, happy
+--------------------------------------------------*/
+
+<<set $choices.sawScriptorium = true>>
+<<relationship "yasmina" 1>>
+
+The scriptorium is rows of stone copy-desks under a foot of drifted sand, and Yasmina walks into it the way other people walk into gardens.
+
+"Forty copyists," she says, moving down the rows, brushing sand from a desk edge, "maybe fifty. Ink here -- see the stains, they never come out, my hands look the same." She laughs at a discovery you don't understand yet: "The floor. Look at the floor by this desk -- worn in a crescent, where students stood *waiting*. This was the master's desk. Apprentices lined up here to have their pages checked, shifting their feet, for -- what, a hundred years? Two?"
+
+She looks up at you, sand on her knees, dust in her hair, ink ghosts on her fingers from three days of handling old paper, and she is, you realize, entirely and unselfconsciously happy -- happier than you've ever seen her, here in a dead room full of absent people, hearing everything they left behind.
+
+"Don't say anything," she says, reading your face. "I know what I look like."
+
+"You look like you're home."
+
+"...That," she allows, "was better than what I expected you to say."
+
+<<link "Return to the stacks" "Ch3_Library_Hub">><</link>>
+
+
+:: Ch3_Scholars {"position":"1725,3175","size":"100,100"}
+/*==================================================
+CHAPTER 3 — SCENE 5
+The gray scholars
+==================================================*/
+
+<<set $game.scene = 5>>
+<<set $game.time = "Dusk">>
+
+You come down into the archive stacks quietly, and the argument reaches you before the light does.
+
+"--the shelf-marks run right to left, I've *told* you--"
+
+Five of them, gray-robed, working by lamplight in the deep stacks: two packing crates with careful, gloved hands, two copying wall-inscriptions at speed, and one -- older, spectacled, with the permanent ink calluses of a life spent exactly the way Yasmina intends to spend hers -- directing it all like a man who has waited years for this room.
+
+He sees you. He doesn't reach for a weapon. He takes off his spectacles, which is somehow worse.
+
+"The young man from Zafirah." He polishes the lenses on his sleeve, unhurried. "You've come for the same thing we have, so let us not waste the evening pretending otherwise. The difference between us is honesty: we admit the old knowledge was *taken* from the world. Locked away by self-appointed keepers who decided the rest of us couldn't be trusted with it." He resettles the spectacles. "Your Guardians nailed a door shut and called the nails holy. We've come to pull the nails. Knowledge belongs to everyone."
+
+Behind him, the crates fill, page by careful page.
+
+<<link "Answer him yourself" "Ch3_Scholars_Fight">>
+	<<set $choices.ch3Debate = "amir">>
+	<<personality "honor" 1>>
+	"I've met one of your self-appointed keepers," you say. "He'd have answered any question you asked him. You never went and asked. You came here instead, at night, with crates." You nod at the packing. "That's not freeing knowledge. That's robbing a grave and calling it a rescue."
+
+	Something flickers behind the spectacles -- not shame. Calculation.
+<</link>>
+
+<<link "Look to Yasmina -- this is her ground, not yours" "Ch3_Scholars_Fight">>
+	<<set $choices.ch3Debate = "yasmina">>
+	<<personality "discipline" 1>>
+	<<relationship "yasmina" 2>>
+	You hold your tongue and glance at Yasmina -- and she steps past you like a blade coming out of a sheath, if blades were made of citations.
+
+	"You're copying right-to-left shelf-marks left-to-right," she says. "You've crated water-damaged folios with sound ones, which will rot the lot by spring. And you're *burning lamp-oil next to eight-hundred-year-old paper.*" Her voice doesn't rise; it sharpens. "You don't want knowledge to belong to everyone. You want it to belong to *you*, and you can't even read it. That's not scholarship. It's looting with a vocabulary."
+
+	The old man's jaw tightens, one notch.
+<</link>>
+
+<<link "Skip the debate -- tell them to put it all back and go" "Ch3_Scholars_Fight">>
+	<<set $choices.ch3Debate = "warning">>
+	<<personality "mercy" 1>>
+	"I'm not going to argue philosophy in a burning-oil light next to dry paper," you say. "Put it back. All of it. Walk out the way you came, and nobody has to find out tonight what any of us is willing to do."
+
+	For one moment -- you'd swear it -- the old man almost considers it.
+<</link>>
+
+
+:: Ch3_Scholars_Fight {"position":"1825,3175","size":"100,100"}
+/*==================================================
+SCENE 5 (cont.) — the scuffle in the stacks: Round 1
+==================================================*/
+
+<<set $combat.active = true>>
+<<set $combat.round = 1>>
+
+Then the moment passes. The old man makes a small, tired gesture -- *take them* -- and the two copyists drop their charcoals and come at you with the awkward, committed violence of men who trained for this late in life and hoped never to need it.
+
+It's nothing like the ghūl. That was a nightmare in a crowd. This is close, and human, and clumsy, and somehow worse for it -- knocking through shelves that have stood eight hundred years, in a room built by people who believed writing things down mattered.
+
+<<link "Put yourself between them and Yasmina" "Ch3_Scholars_Fight2">>
+	<<set $choices.ch3FightFirst = "yasmina">>
+	<<personality "mercy" 1>>
+	<<damage 5>>
+	You take a copyist's wild swing on your forearm rather than let it travel past you to where she stands, and answer it with the flat of your sword and a shove that sits him down hard among the sand-drifts. Yasmina, to her credit, uses the shelter of you to snatch a crated folio back out of a gray sleeve.
+<</link>>
+
+<<link "Defend the crates -- the pages are what everyone's here for" "Ch3_Scholars_Fight2">>
+	<<set $choices.ch3FightFirst = "crates">>
+	<<personality "discipline" 1>>
+	You plant yourself between the crates and everyone else, and the fight comes to you on your terms. Whatever else happens in this room tonight, the pages will not leave it -- and the gray men's whole plan bends awkwardly around that single fixed fact.
+<</link>>
+
+<<link "Go straight for the old man" "Ch3_Scholars_Fight2">>
+	<<set $choices.ch3FightFirst = "leader">>
+	<<personality "honor" 1>>
+	<<damage 10>>
+	Cut off the head. You shoulder through the two copyists -- taking an elbow across the ear for it that you'll feel for days -- and put your blade's point in the lamplight a hand's width from the old man's chest, close enough that the whole room goes still around the two of you.
+<</link>>
+
+
+:: Ch3_Scholars_Fight2 {"position":"1925,3175","size":"100,100"}
+/*==================================================
+SCENE 5 (end) — Round 2: how it ends
+==================================================*/
+
+<<set $combat.round = 2>>
+
+The fight was decided before it started -- they're scholars with knives, and you're the man from the festival square, whatever the stories exaggerated -- and everyone in the room arrives at that understanding at roughly the same moment.
+
+What's left is how it ends.
+
+<<link "Disarm, don't wound -- these are men, not ghūls" "Ch3_Scholars_End">>
+	<<set $choices.ch3FightEnd = "disarm">>
+	<<personality "mercy" 1>>
+	You beat the knife from the nearest copyist's grip so hard his whole arm goes numb, and catch the second man's wrist and simply hold it, immovable, until the fight goes out of him like water out of a cracked jar. No one bleeds. It costs you more effort than hurting them would have. It's worth it.
+<</link>>
+
+<<link "Drive them toward the broken doors and out" "Ch3_Scholars_End">>
+	<<set $choices.ch3FightEnd = "rout">>
+	<<personality "discipline" 1>>
+	You give them a direction to flee and make every other direction worse, herding gray robes through the stacks the way the city guard herds festival drunks -- with momentum, noise, and the strong suggestion of consequences.
+<</link>>
+
+<<link "Put the old man down and demand their surrender" "Ch3_Scholars_End">>
+	<<set $choices.ch3FightEnd = "surrender">>
+	<<personality "honor" 1>>
+	You put the old man on his knees with an efficiency that surprises even you, and pitch your voice the way the guard captain pitches hers: "*Enough.* Knives down. All of you." And -- because it is that kind of voice, apparently, now -- knives go down.
+<</link>>
+
+
+:: Ch3_Scholars_End {"position":"2025,3175","size":"100,100"}
+/*==================================================
+SCENE 5 (aftermath) — the one who got away
+==================================================*/
+
+<<set $combat.active = false>>
+<<set $combat.victory = true>>
+
+It ends the way these things end: two of them kneeling in the sand-drift with their hands visible, one groaning under a toppled (empty, thank God) shelf, the old man's spectacles hanging from one ear.
+
+And one -- the youngest, thin as a reed, the one you never saw draw a knife at all -- already twenty feet up the great sand-slope that pours through the fallen roof, climbing like a lizard with a satchel slung across his back.
+
+"*Stop him--*" the old man croaks -- not to you. To the boy. "*Not to them! Not like this--*"
+
+The boy doesn't stop. At the lip of the broken roof he's a silhouette against the last of the dusk, and then he's gone, and the only thing left of him is a handful of loose pages spiraling down through the violet air.
+
+One lands at your feet. A copied inscription, half-finished: a circle, broken in seven places. And in the margin, in a quick, frightened hand, a single question:
+
+*which is first?*
+
+<<journal "We fought the gray scholars in the Sunken Library's stacks. Most surrendered or fled -- but the youngest escaped through the broken roof carrying a satchel of copied pages. The old man shouted after him: 'Not to them.' Whoever 'they' are.">>
+
+<<link "See to the ones who remain" "Ch3_Journal">><</link>>
+
+
+:: Ch3_Journal {"position":"1725,3275","size":"100,100"}
+/*==================================================
+CHAPTER 3 — SCENE 6
+The damaged journal
+==================================================*/
+
+<<set $game.scene = 6>>
+<<set $game.time = "Night">>
+
+The room the gray scholars were ransacking turns out to be a records-room -- ledgers, registries, the administrative bones of the library's daily life, which is exactly the kind of thing looters ignore and Yasmina goes through like a woman possessed.
+
+Which is how she finds it: wedged behind a split shelf-board where it slid, or was hidden, a lifetime of lifetimes ago. A journal. Leather-bound, water-stained, the size of two hands.
+
+She reads by lamplight -- carefully, far from the oil -- and her voice changes three sentences in.
+
+"Amir. This was written by someone who *knew* one of them." She doesn't look up. "Listen. '*Took the north track to the fortress with the autumn provisioning -- oil, salt, thread, his winter wool. He met me at the wall as always. Ninth year I have made this climb, and he looks no older, and I have stopped asking.*'" Her finger moves down the ruined page. "'*He laughed at my complaining like anyone laughs. That is the thing I can never make the others believe. They want him to be a story. He is only the most faithful man I have ever met.*'"
+
+She turns the page. Then turns it back. Then checks the binding, and her jaw goes tight.
+
+"The last pages are gone. Not rotted -- *cut*. Rot is patient; this was scissors." She holds the journal open to the stub-edges, clean and deliberate. "Someone read this before us. Maybe generations before us. And they took the ending."
+
+But the cut missed one line, on the last surviving leaf -- the writer's plain, unremarkable habit of noting a destination:
+
+*...set out at dawn for the fortress that watches the wind.*
+
+<<run $inventory.keyItems.push("Damaged Journal")>>
+<<codex "items" "The Damaged Journal">>
+<<codex "lore" "The Fortress That Watches the Wind">>
+<<journal "Yasmina found a journal written by someone who personally knew a Guardian -- provisioned him for years, watched him not age, loved him like family. The final pages were cut out. One line survives: 'the fortress that watches the wind.'">>
+
+"They were real," Yasmina says quietly, closing the journal like something living. "Not myths. Not allegories. Someone packed a man's winter wool and climbed a mountain to him for nine years." She looks up at you. "And someone else cut out the ending and has been hunting the rest of it ever since."
+
+<<link "Deal with the prisoners" "Ch3_Aftermath">><</link>>
+
+
+:: Ch3_Aftermath {"position":"1825,3275","size":"100,100"}
+/*==================================================
+CHAPTER 3 — SCENE 7
+What to do with beaten men
+==================================================*/
+
+<<set $game.scene = 7>>
+
+The old man sits against a pillar with his broken spectacles in his lap, and up close, in the honest light of the lamp, he is nothing like a servant of darkness. He's a tired scholar with sand in his beard and a lifetime of being almost-respected curdling behind his eyes.
+
+"We were *invited*," he says, to no one, before you've asked anything. "Letters. Learned letters -- citations, shelf-marks, questions no living scholar should have known to ask. Coin for expenses. Lists of places." A bitter little laugh. "Never a name. Never a face. I told myself it was a patron who valued discretion. A man believes what dignifies him."
+
+"And the boy?" Yasmina asks. "Where do the pages go?"
+
+"A drop-point on the pilgrim road. Then wherever they go." He finally looks up. "You think you're in a race with us. We thought we were in a race with *you*. I no longer believe either of us knows who is actually running."
+
+<<journal "The gray scholars were recruited by letters -- learned, funded, faceless. They never met their patron. The old man no longer believes either of us knows who is actually in this race.">>
+
+<<link "Let them go, with water enough to reach the road" "Ch3_NightCamp">>
+	<<set $choices.ch3ScholarsFate = "released">>
+	<<personality "mercy" 1>>
+	You give them water, and their own feet, and the advice to answer no more learned letters. The old man pauses at the edge of the lamplight, looks back at the shelves -- at everything he told himself he was saving -- and has the grace, at last, to look ashamed.
+<</link>>
+
+<<link "March them to the waystation garrison, a day south" "Ch3_NightCamp">>
+	<<set $choices.ch3ScholarsFate = "handed">>
+	<<personality "discipline" 1>>
+	<<reputation "city" 1>>
+	They walk ahead of you to the waystation without complaint -- relieved, you suspect, to have the decision taken from them. The garrison sergeant takes charge of them and writes your name in his ledger with the studied casualness of a man who will be retelling this at dinner for a month.
+<</link>>
+
+
+:: Ch3_NightCamp {"position":"1725,3375","size":"100,100"}
+/*==================================================
+CHAPTER 3 — SCENE 8
+The fire in the hall of sky
+==================================================*/
+
+<<set $game.scene = 8>>
+<<set $game.time = "Night">>
+<<set $game.location = "The Sunken Library">>
+
+You make camp in the great reading hall, under the missing roof, where grass grows between the flagstones and the stars have taken over the shelving.
+
+"Lay it out for me," you say. "All of it. You've been connecting things all day -- I've watched you doing it. I want to hear it the way you see it."
+
+Yasmina looks at you for a moment -- surprised, you think, though she'd deny it -- and then she builds it for you in the firelight, piece by piece, the way her father builds an argument:
+
+"Someone has searched the old places for generations -- the marks in the route-books prove that. Someone cut the ending out of that journal, maybe a hundred years ago, maybe more. Someone taught last month's ghūl to come up through a drain in the one city where a festival would hide its approach." She turns the charcoal page with the copied circle toward the fire. "And someone -- maybe the same someone, maybe not -- is *funding confused scholars by anonymous letter* to strip these places bare and send the pages down a pilgrim road to nowhere."
+
+She looks up.
+
+"Someone doesn't want the past read, Amir. And someone else is reading it anyway. And we are standing exactly between them, holding a stone."
+
+The fire cracks. You think about the captain's line -- *it changed somewhere else first, and we got the weather from it* -- and say nothing, and listen, because you're learning that listening is a thing you can be better at than anyone expects of a young man with a sword.
+
+"We," you say eventually. Not a question. Just checking the weight of it.
+
+"Obviously," she says, already unrolling her blanket. "You'd misread every shelf-mark without me."
+
+<<journal "Yasmina laid the whole pattern out by firelight. Someone doesn't want the past read; someone else is reading it anyway. We're between them. 'We,' it turns out, no longer needs saying.">>
+
+<<link "Sleep, and start home at dawn" "Ch3_Return">><</link>>
+
+
+:: Ch3_Return {"position":"1725,3475","size":"100,100"}
+/*==================================================
+CHAPTER 3 — SCENE 9
+Three sources
+==================================================*/
+
+<<set $game.scene = 9>>
+<<set $game.day = 13>>
+<<set $game.time = "Night">>
+<<set $game.location = "House of Wisdom">>
+
+Hakim reads the journal twice before he says anything at all. When he finally speaks, it's to the bookshelf, the way he does when the thought is too large to aim at a person.
+
+"The fortress that watches the wind." He shakes his head slowly. "I have read every map in this city worth the name, and it is on none of them. No tax roll. No garrison list. Nothing."
+
+"But?" Yasmina says, who knows her father's *but* the way sailors know weather.
+
+"But." He pulls down a battered folio and opens it to a soldier's pension-scroll, generations old, its clerk's hand crabbed and formal: *paid out his service at the fortress that watches the wind, and released.* "One. And now your journal -- two. Independent hands, independent years."
+
+<<if $choices.sawMapRoom>>
+	Yasmina is already unrolling her rubbing from the map room -- the surveyor's fragment, the tiny square tower against mountains drawn like teeth, the three words in the old script. She lays it on the desk without a word and permits herself exactly one small, insufferable smile.
+
+	"*Three*," Hakim says, and for a moment he looks twenty years younger.
+<<else>>
+	Hakim digs further, muttering, and surfaces at last with a caravan song written down by some bored customs clerk a lifetime ago -- a walking-verse about roads' ends: *...and the wind goes home to the fortress that watches it.* "A child's rhyme. But it makes *three*, in three different hands, across three different generations."
+<</if>>
+
+"Three sources," Yasmina says. "No modern map. A place real enough that soldiers were pensioned there and provisioners climbed to it every autumn -- and forgotten so thoroughly that the forgetting itself looks deliberate."
+
+"East," Hakim says. "Where the desert breaks against the mountains. Barren country. Hard travel." He looks at the two of you over his spectacles, and whatever he sees apparently settles something, because the worry in his face loses -- not the fear, but the argument.
+
+"Whoever cut those pages has had a very long start," he says. "And whoever bought last week's scholars reads faster than you walk. Leave early."
+
+<<objective "Find the Fortress That Watches the Wind">>
+<<journal "Three independent sources name the Fortress That Watches the Wind, east where the desert meets the mountains. No modern map records it. For the first time, we know where we're going before we understand why -- and we are not the only ones who know.">>
+
+Outside, Zafirah is lighting its ordinary evening lamps, one window at a time, a city-full of people who believe the strangest thing in the world is the price of onions. You find you love them for it -- and that the love has weight now, like a stone carried against the chest.
+
+Somewhere east, past the last of the maps, an old fortress is watching the wind come and go.
+
+Time to see what it's been waiting for.
+
+<!-- End of Chapter 3 -->
