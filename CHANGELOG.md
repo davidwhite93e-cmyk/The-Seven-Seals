@@ -43,3 +43,20 @@
   Black Vizier presence notes. Marked explicitly DRAFT, pending
   Creative Director review and approval -- no Chapter 3 implementation
   has begun.
+- Design Spec 006 approved in principle by the Creative Director with
+  six revisions, now recorded in an authoritative Post-Review
+  Revisions block: Guardian virtues 2-7 reduced to placeholders,
+  Guardian names 2-7 provisional, "Karim" redefined as a narrative
+  role (trusted intermediary inside Qadir's circle), the rival
+  faction's name/identity/history left open, Yasmina's Ch5 backstory
+  intentionally deferred to its own future spec, and "the Covenant"
+  retained as the Ancient Order's proper noun.
+- Drafted Design Spec 007 (The Mythology Bible) into `GAME_BIBLE.md`
+  at the Creative Director's request: the Black Vizier's history, the
+  Covenant's counter-pact binding, what Seals/Guardians/entrusting
+  actually are, the lost rite of renewal, the metaphysical cost of
+  carrying Seals, Qadir's Book One goal, the central lie/truth pair,
+  the rival faction's fragment of true doctrine, the
+  hidden-until-later-books list, and consistency rules for all future
+  implementation. Marked DRAFT with twelve sections and six flagged
+  open questions -- no chapter implementation until approved.

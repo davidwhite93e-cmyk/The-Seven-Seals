@@ -7,10 +7,12 @@ journal, or dialogue text ahead of its scripted reveal.
 
 Sources: Design Spec 002 (Book One Production Roadmap, v1.0), Design
 Spec 004 (Book One Production Philosophy, v1.0), Design Spec 005 (The
-Guardian Bible, Part I — Foundational Design, v1.0), and Design Spec
-006 (Book One Story Architecture, v1.0 — drafted by the Implementation
-Lead at the Creative Director's request; **pending review and
-approval**, not yet load-bearing until confirmed).
+Guardian Bible, Part I — Foundational Design, v1.0), Design Spec 006
+(Book One Story Architecture, v1.0 — **approved in principle** by the
+Creative Director with revisions recorded in its Post-Review Revisions
+block; provisional elements remain non-canon), and Design Spec 007
+(The Mythology Bible, v1.0 draft — **pending review and approval**; no
+chapter implementation until approved).
 
 ## Book One Goal
 
@@ -358,14 +360,42 @@ continues.
 
 # Book One Story Architecture (Design Spec 006)
 
-**Status: DRAFT — awaiting Creative Director review and approval.**
-Architecture only. No dialogue, no passages, no implementation. Built
-strictly within the constraints already established in Design Specs
-002/004/005, the existing Mystery Ledger, and Chapters 1–2 as shipped.
-Anything below not already fixed by prior canon (character names,
-Guardian virtues, the rival faction, specific reveal mechanics) is a
-proposal, clearly for the Creative Director to keep, alter, or
-discard.
+**Status: Approved in principle by the Creative Director, with the
+revisions below.** Architecture only. No dialogue, no passages, no
+implementation. The chapter skeleton (objectives, emotional themes,
+mystery/answer/raise structure, Seal pacing, Qadir's per-chapter
+moves, the escalation track) is canon. The revisions below override
+anything in the chapter text that conflicts with them.
+
+## Post-Review Revisions (Authoritative — Creative Director)
+
+1. **Guardian virtues are placeholders.** Only Resolve (Seal 1) is
+   canon, locked by shipped Chapter 2 content. Virtues 2–7 must emerge
+   from the completed Ancient Order mythology, not read as a
+   predefined list of RPG attributes. Do not finalize until the
+   Mythology Bible (Design Spec 007) is approved.
+2. **All Guardian names are provisional.** Working labels only, listed
+   in the Awaiting Approval section at the end of this spec. A name
+   does not become canon merely because implementation needs one.
+3. **"Karim" is a role, not a character.** The canon element is the
+   narrative function: *a trusted intermediary inside Qadir's circle
+   who unknowingly provides Amir with information.* Whether that role
+   belongs to a new character, several people, or someone already
+   introduced is a future Creative Director decision. Where the
+   chapter text below says "Karim," read the role.
+4. **The rival faction's name, identity, and history are open.** The
+   story function is canon: a believable rival faction that appears to
+   oppose Amir while actually trying to prevent something much worse.
+   "The Veiled Hand" is a working label only.
+5. **Yasmina's Chapter 5 backstory is intentionally deferred.** She is
+   an emotional pillar of the series; her history gets its own Design
+   Specification and is not to be finalized inside this architecture.
+6. **"The Covenant" is retained** as the proper noun for the Ancient
+   Order, unless future lore requires otherwise.
+
+Wherever the chapter architecture below uses a provisional name
+(Tariq, Amina, Idris, Zahra, Hassan, Rania, Karim, "the Veiled Hand")
+or a placeholder virtue, it is shorthand for readability — not canon.
 
 ## Continuity Notes
 
@@ -381,25 +411,28 @@ discard.
   ward-disturbance pattern has appeared at other forgotten shrines" —
   which also doubles as the first hint of the rival faction Design
   Spec 002 calls for in the same chapter.
-- **The Seven Seals' virtues**, one per chapter, chosen to avoid
-  overlap with the five Personality stats (Honor, Curiosity,
-  Discipline, Faith, Mercy) already tracked in `$personality`, and to
-  each demand a structurally distinct trial per Design Spec 005's
-  "avoid repeated trial structures" rule:
+- **The Seven Seals**, one per Seal chapter. Per Post-Review Revision
+  1, virtues 2–7 are placeholders pending the Mythology Bible; per
+  Revision 2, names 2–7 are provisional working labels. What IS canon
+  in this table: the shrine assignments (drawn verbatim from Design
+  Spec 005's own list), the chapter pacing, and Seal 1 as shipped.
 
-  | # | Seal / Virtue | Guardian (proposed) | Shrine | Chapter |
+  | # | Virtue (placeholder) | Guardian (provisional) | Shrine (canon) | Chapter (canon) |
   |---|---|---|---|---|
-  | 1 | Resolve | Sheikh Basim | Desert shrine | Ch2 (shipped) |
-  | 2 | Courage | Tariq | Abandoned fortress | Ch4 |
-  | 3 | Loyalty | Amina | Thriving orchard | Ch5 |
-  | 4 | Justice | Idris | Library | Ch6 |
-  | 5 | Truth | Zahra | Observatory | Ch7 |
-  | 6 | Sacrifice | Hassan | Lighthouse | Ch8 |
-  | 7 | Wisdom | Rania | Cliffside monastery | Ch8 |
+  | 1 | Resolve *(canon — shipped)* | Sheikh Basim *(canon — shipped)* | Desert shrine | Ch2 |
+  | 2 | "Courage" | "Tariq" | Abandoned fortress | Ch4 |
+  | 3 | "Loyalty" | "Amina" | Thriving orchard | Ch5 |
+  | 4 | "Justice" | "Idris" | Library | Ch6 |
+  | 5 | "Truth" | "Zahra" | Observatory | Ch7 |
+  | 6 | "Sacrifice" | "Hassan" | Lighthouse | Ch8 |
+  | 7 | "Wisdom" | "Rania" | Cliffside monastery | Ch8 |
 
   Ch8 carries two Guardians, matching Design Spec 002's own language
   ("Sixth and Seventh Seals acquired" in one chapter) and the roadmap's
   compressed, race-against-rivals pacing at that point in the book.
+  The proposed trial shapes attached to Chapters 4–8 are likewise
+  contingent on the final virtues and should be re-validated once
+  those are locked.
 
 ## The Cost of the Seals — Escalation Track
 
@@ -479,14 +512,15 @@ throughline:
   breather).
 - **Central mystery introduced:** The ward-disturbance pattern from
   Ch1 has been showing up at other forgotten shrine sites recently —
-  the Zafirah attack wasn't isolated. First hint of a rival faction
-  (proposed name: **the Veiled Hand**) already searching for the
-  Seals. *(Fulfills the Mystery Ledger's existing Ch3 commitment for
-  "Ghūl Symbol.")*
+  the Zafirah attack wasn't isolated. First hint of the rival faction
+  (working label: "the Veiled Hand" — name/identity/history open per
+  Post-Review Revision 4) already searching for the Seals. *(Fulfills
+  the Mystery Ledger's existing Ch3 commitment for "Ghūl Symbol.")*
 - **Core emotional theme:** Responsibility, growing mystery.
-- **Major relationship progression:** Introduces a recurring ally
-  (proposed: **Karim**, a clerk in Qadir's own household) as an
-  information source; Amir's standing with the court becomes
+- **Major relationship progression:** Introduces the *trusted
+  intermediary inside Qadir's circle* — a canon narrative role, not
+  yet a canon character, per Post-Review Revision 3 (working label:
+  "Karim") — as an information source; Amir's standing with the court becomes
   concretely trackable via `$reputation.city`; Yasmina begins visibly
   splitting attention between Amir and her obligations to Hakim
   (quiet setup for Ch5).
@@ -561,9 +595,10 @@ throughline:
 - **Guardian encountered:** Amina, Guardian of Loyalty (thriving
   orchard).
 - **Central mystery introduced:** Yasmina's personal connection to
-  this region or Guardian (family debt, an old promise of Hakim's, a
-  buried relative — left open for the Creative Director to specify)
-  becomes the chapter's emotional core.
+  this region or Guardian becomes the chapter's emotional core. Its
+  content is **intentionally deferred** per Post-Review Revision 5 —
+  her history gets its own dedicated Design Specification and must not
+  be improvised during Chapter 5 implementation.
 - **Core emotional theme:** Friendship, doubt, loss.
 - **Major relationship progression:** Book One's first serious
   disagreement between Amir and Yasmina — Amir wants to press on for
@@ -787,18 +822,317 @@ throughline:
   design.
 - **Raises:** Only what Book Two needs, deliberately nothing more.
 
-## Open Questions for Creative Director Review
+## Awaiting Approval (non-canon until the Creative Director signs off)
 
-- Character names (Tariq, Amina, Idris, Zahra, Hassan, Rania, Karim)
-  and the rival faction name ("the Veiled Hand") are proposals, not
-  commitments — easiest place to redirect before implementation locks
-  them in via Codex/NPC entries.
-- Yasmina's Ch5 personal history is deliberately left as a shape, not
-  specifics — this is squarely Creative Director territory.
+- **Guardian names 2–7:** "Tariq," "Amina," "Idris," "Zahra,"
+  "Hassan," "Rania" — provisional working labels only.
+- **Guardian virtues 2–7:** "Courage," "Loyalty," "Justice," "Truth,"
+  "Sacrifice," "Wisdom" — placeholders until the Ancient Order
+  mythology is complete (Design Spec 007).
+- **Rival faction:** name ("the Veiled Hand"), identity, and history
+  all open; only the story function is canon.
+- **Trusted-intermediary role:** casting open (new character,
+  multiple people, or someone already introduced); only the function
+  is canon.
 - Whether Amir's father's Covenant connection should hint at anything
   more specific by Ch7 (beyond "prior contact, unexplained") — current
   draft keeps it as vague as the existing Ledger entries require.
 - Whether Qadir personally "knowing" Amir's father should be confirmed
   or left ambiguous through the end of Book One.
 
-Awaiting review and approval before Chapter 3 implementation begins.
+## Intentionally Deferred (to dedicated future Design Specs)
+
+- **Yasmina's personal history** (needed before Chapter 5
+  implementation).
+- **The Mythology Bible** (Design Spec 007, drafted below — needed
+  before Chapter 3 implementation and before virtues 2–7 can be
+  finalized).
+
+---
+
+# The Mythology Bible (Design Spec 007)
+
+**Status: DRAFT — awaiting Creative Director review and approval. No
+chapter implementation proceeds until this document is approved.**
+
+Once approved, this is the single source of truth for every
+supernatural element in the series. Where earlier documents touch the
+same ground, this document is the deeper, governing statement. It is
+entirely backstage: player-facing reveals remain governed by the
+Mystery Ledger's schedule, and nothing here is license to surface lore
+early. Drafted by the Implementation Lead; every mechanism below is a
+proposal built to fit all shipped content and prior specs without
+contradiction, and each section the Creative Director should
+particularly scrutinize is flagged.
+
+## I. Before the Covenant — the Making of the Black Vizier
+
+Long before the Sultanate, another power ruled these lands. Its name
+is deliberately left unset here — naming a fallen empire is a
+worldbuilding decision with Book Two consequences (see Open
+Questions).
+
+Its last great vizier was, by every honest account, the most brilliant
+servant the empire ever had: patient, measured, indispensable. He did
+not set out to become a monster. He set out to be *necessary* — and
+the pacts came the way debt comes, one reasonable bargain at a time.
+A drought ended. A border held. A plague passed over. Each bargain was
+struck with the demonkind on terms that seemed, in the moment,
+obviously worth paying. By the time anyone understood what he had
+become, the distinction between the empire's power and his pacts had
+dissolved — and so, shortly after, did the empire.
+
+He is remembered — where he is remembered at all — as **the Black
+Vizier**. That is a title, not a name. His true name is one of the
+things the pacts took first.
+
+*Design intent: his corruption must mirror Qadir's Book One method —
+never a single dramatic fall, always a sequence of individually
+reasonable steps. The player who later learns this history should
+recognize, uncomfortably, that they watched the same pattern happen to
+themselves across nine chapters.*
+
+## II. The Binding — Why He Was Imprisoned, Not Killed
+
+He could not be killed. The pacts had mortgaged even his death:
+destroying the vessel would have released everything bound through it.
+The demonkind he had chained would have come loose all at once, with
+no chains at all.
+
+So seven ordinary people — not heroes, not royalty; history kept their
+titles and lost their names — did the only thing stronger than a
+bargain: they made a promise. His power was pact-born, built from
+terms and interests and clauses. What held him could not be walls. It
+was a **counter-pact**: seven oaths, freely sworn, each staked on a
+life, woven together into a binding the original texts call **the
+Covenant**.
+
+The Covenant did three things:
+
+1. **It unmade his power** — the demonkind bound to him were sealed
+   away beyond his reach, each seal anchored by one oath.
+2. **It bound him into mortal shape** — alive, ageless in the same
+   lent-time way as his jailers (the prison persists exactly as long
+   as its keepers do, and so does the prisoner), but stripped to a
+   man: no sorcery, no dominion, nothing but a mind.
+3. **It bound his hands** — he cannot act directly against the
+   Covenant's work. He cannot touch an oath-bound Seal. He cannot
+   raise his hand against a Guardian. And — this is proposed as the
+   mythological root of his defining trait — **he cannot speak a
+   lie**. The Covenant was made of true promises; its prisoner is held
+   to truth. Everything he says must be true. He has had centuries to
+   master the art of letting the truth deceive.
+
+*Design intent: Design Spec 004's rule that "everything Qadir says
+remains true — he simply allows others to misunderstand" stops being a
+stylistic choice and becomes a chain he wears. This is flagged for
+Creative Director scrutiny because it retroactively converts a voice
+rule into hard metaphysics — a strong move, but one that binds all
+future Qadir dialogue everywhere in the series.*
+
+Across the centuries since, the bound man has worn many names and
+lived many quiet, exemplary public lives. **"Qadir ibn Salim" is only
+the latest.** No records connect the names, because the man who
+manages the records has always, eventually, been him.
+
+## III. The Seven Seals — What They Actually Are
+
+Each Seal is **an oath made object**: the physical anchor of one of
+the seven promises. They look ordinary — a white stone disc, warm from
+carrying a life — because the object was never the power. The trust
+is. A Seal is to its oath what a wedding ring is to a marriage:
+evidence, not essence, and yet not nothing.
+
+While its oath holds, a Seal is absolute in one narrow way: **it
+cannot be taken.** Not by force, not by theft, not by the Black
+Vizier, not by anyone. It can only be *given* — freely, by its sworn
+keeper, into freely open hands. This is why the Guardians never guard
+the object. There has never been any need. What they guard is the
+decision.
+
+## IV. The Guardians — Why They Live So Long
+
+An oath cannot outlive its keeper. So the Covenant lends its keepers
+time — not stopped, *lent*, the way a lamp is kept burning until
+someone arrives to carry the flame onward. Guardians age, feel every
+year, and can be hurt like anyone; they simply do not run out of time
+until their oath is fulfilled. They are not immortal. They are
+unfinished.
+
+The seven oaths are woven together, and the weave has properties the
+Guardians use without fully understanding:
+
+- Guardians sense movement along it — arrivals, intentions, names.
+  (Basim knowing Amir's name, shipped in Chapter 2, is the weave, not
+  omniscience. His own explanation — "names travel faster than feet,
+  out here, if you know how to listen" — is true, as far as he knows.)
+- Shrines rest half inside it. They are found when their Guardian
+  chooses to be found ("If the Guardian wishes to meet you, you
+  will"), which is why the First Shrine surfaced from the sand only
+  when it did.
+
+**What the Guardians know:** the virtue they keep, the responsibility
+of the Seals, and that the Black Vizier must never possess all seven.
+
+**What the Guardians do not know:** who the Black Vizier is now, that
+he walks free in mortal shape, that the renewal rite has been lost
+(Section V), and therefore that entrusting their Seals — the thing
+each of them has waited centuries and hopes to do — is, without the
+rite, quietly dismantling the prison. They cannot warn Amir about
+Qadir because they have nothing to warn him *with*.
+
+## V. Entrusting — What Actually Happens
+
+When a Guardian freely places their Seal in a successor's hands:
+
+1. **The oath ends — fulfilled, not broken.** This distinction
+   matters; the Covenant does not punish its keepers.
+2. **The lent time ends.** The Guardian becomes ordinary: they resume
+   aging from where they stand and live out a natural remainder.
+   (Proposed: they do *not* die upon entrusting — Design Spec 004's
+   Hope pillar argues for Basim still tending his shrine, mortal and
+   content, and freed Guardians are a Book Two resource.)
+3. **The successor receives the anchor — but not the oath.** The Seal
+   in Amir's satchel is real, and really his, and holds real meaning.
+   But it no longer anchors the prison. It is a lock carried out of
+   its door.
+
+The founders knew succession would someday be necessary, and built for
+it: a **rite of renewal** by which the seven successors, together,
+could swear the Covenant anew. Two things about it are canonically
+true in Book One: it requires all seven Seals and all seven successors
+gathered in one place, and **the knowledge of it has been lost** — not
+dramatically, but the way Qadir does everything: archives flooded by
+generously re-routed rivers, shrines defunded for compassionate
+reasons, the one scholar who knew promoted to a distant post. Centuries
+of it. (The Chapter 2 shrine-funding redirection already shipped in
+the Mystery Ledger is one instance of this program, not an isolated
+move.)
+
+This is the tragic engine of Book One: **the gathering that could save
+everything and the gathering that ends everything are the same
+gathering.** The only difference is whether anyone present knows the
+rite. No one will.
+
+## VI. The Cost of Carrying — the Metaphysical Price
+
+Unbound Seals do two things to their bearer:
+
+1. **They measure.** A Seal continuously holds its bearer against its
+   virtue — not as judgment but as presence, the way carrying a
+   sleeping child changes how you walk. This is the mythological basis
+   for the trials changing Amir permanently, and for the escalating
+   interiority of Chapters 4–8. The weight is formative, never
+   corrupting: the Seals are made of promises, and nothing about them
+   tends toward darkness.
+2. **They are audible.** To demonkind, an unbound Seal is a struck
+   bell that never quite stops ringing. One Seal is a rumor. Three are
+   a trail. Seven gathered in one place are a beacon — which is why
+   the rival faction's inherited doctrine, "the seven must never be
+   gathered," is *correct*, and why the public ceremony Qadir arranges
+   in Chapter 8 is not merely a trap but a summons.
+
+The escalation track in Design Spec 006 (private → hunted → personal →
+civic → identity → existential → total) is the narrative surface of
+these two mechanics.
+
+## VII. What He Actually Wants
+
+**What Qadir wants in Book One (canon-level, required by Spec 002):**
+the seven anchors unbound by entrusting, gathered in one place, in
+public reach. At that moment the Covenant has nothing left holding it;
+the binding fails; his hands are free. He claims the Seals and inverts
+them — a lock is a lock; it does not care what it closes — using the
+anchors that once sealed the demonkind *away from him* to bind the
+demonkind *to him*. Then he walks out. No battle, because he has
+outgrown the need for one and the Covenant's collapse leaves nothing
+to fight him with.
+
+**What the Black Vizier wants beneath that (proposed, series-scale,
+flagged for Creative Director decision):** the pacts that made him
+have creditors, and eight centuries in a cell built of other people's
+promises have taught him exactly what he thinks of being owned. The
+title "Black Vizier" is what the pacts made of him; the man underneath
+wants to owe no one — not the Covenant, and not the demonkind either.
+Book One shows him escaping the first chain. What he intends about the
+second is the seam Book Two opens, and this document deliberately
+defines it no further.
+
+## VIII. The Central Lie and the Central Truth
+
+**The lie the player believes through Book One:** *The Seals are the
+last defense against the darkness — gather them before its servants
+do.* Every good character honestly believes some version of this.
+Hakim believes it as a scholar, the Guardians believe their pieces of
+it, Yasmina believes it, the player is never once lied to by anyone
+except Qadir — and Qadir never lies at all.
+
+**The truth revealed at the end of Book One:** *The Seals were the
+prison.* The race was real, but Amir was the only runner; the finish
+line was the trap. He couldn't gather them — every Seal had to be
+freely given to worthy hands, and his were the worthiest available.
+Qadir didn't steal the Seals from Amir. He waited while everyone
+honest handed them forward, one trust at a time.
+
+The ending hurts precisely because no trust was betrayed except the
+one at the center: the Guardians chose truly, Amir was truly worthy,
+the entrusting was truly earned — and all of it served the prisoner.
+
+## IX. The Rival Faction's Fragment (concept-level, name/identity open)
+
+The rival faction (per Design Spec 006 Post-Review Revision 4)
+inherits a corrupted fragment of the true doctrine: **"the seven must
+never be gathered."** They are right. They do not know why, they do
+not know about the rite of renewal, and they have concluded the safest
+bearer of the Seals is no one. Their opposition to Amir is therefore
+sincere, almost correct, and tragically aimed at the wrong man. Their
+origin — whether they descend from the Covenant's founders, from the
+fallen empire, or from something else — is deliberately open.
+
+## X. Hidden Until Later Books (do not resolve in Book One)
+
+- The Broken Compass — what it is, why it never points north, why it
+  reacts near Covenant matters (already Ledger-flagged Book 2).
+- Amir's father — his contact with the Covenant, his fear of the
+  river (already Ledger-flagged Book 2).
+- Yasmina — what the Guardians recognize in her, what "your road will
+  ask different things" means (deferred to her own Design Spec).
+- The Marid (`$npc.marid`) — nature, allegiance, and role.
+- Whether any record of the rite of renewal survives.
+- The fates and future usefulness of the freed, now-mortal Guardians.
+- The rival faction's origin and what becomes of it after Chapter 9.
+- The pacts' creditors, and what the freed Black Vizier owes them.
+
+## XI. Consistency Rules for All Future Implementation
+
+1. Reveals surface only on the Mystery Ledger's schedule; this
+   document never leaks to the page ahead of it.
+2. Qadir never speaks a falsehood anywhere in the series — audit every
+   line of his dialogue against this.
+3. No Guardian may warn Amir about Qadir, hint at his identity, or
+   sense him through the weave — they don't know, and the weave holds
+   the prisoner *inside* it, invisibly, not as a signal on it.
+4. Seals are never taken by force by anyone, anywhere, until Ch9 — and
+   even then Qadir takes only what entrusting has already unbound.
+5. The Retroactive Foreshadowing Rule applies: when this mythology
+   makes an already-shipped moment newly meaningful, patch with one or
+   two unexplained, emotionally natural sentences — never exposition.
+
+## XII. Open Questions for Creative Director Review
+
+1. The lie-binding (Section II) — canonize Qadir's truthfulness as
+   metaphysics, or keep it as characterization only?
+2. The fallen empire — named now, or left unnamed through Book One?
+3. Freed Guardians live out natural lives (proposed) vs. die upon
+   entrusting — affects Basim's availability as early as Chapter 3.
+4. The rite of renewal — permanently lost, or does a fragment survive
+   somewhere as Book Two's hope? (This document assumes lost *as far
+   as Book One knows*, which keeps both options open.)
+5. The Black Vizier's series-scale want (Section VII) — accept,
+   revise, or defer entirely.
+6. With this mythology in place, the seven virtues can now be derived
+   from the seven founding oaths — should the Implementation Lead
+   propose that derivation as a follow-up for review, or will the
+   Creative Director specify the virtues directly?
+
+Awaiting review. No Chapter 3 implementation until approved.
