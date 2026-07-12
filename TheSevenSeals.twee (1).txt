@@ -1,0 +1,1615 @@
+:: StoryTitle
+The Seven Seals
+
+
+:: StoryData
+{
+  "ifid": "8B3E1A2C-4F7D-4E9A-9C1B-6D2A5F8E7C31",
+  "format": "SugarCube",
+  "format-version": "2.37.3",
+  "start": "Ch1_Opening",
+  "zoom": 1
+}
+
+
+:: DesignNotes {"position":"25,625","size":"100,100"}
+/*==================================================
+              DESIGN NOTES
+==================================================*/
+
+PASSAGE NAMING
+
+StoryInit
+Startup
+
+Ch1_Opening
+Ch1_Bedroom
+Ch1_Breakfast
+Ch1_Street
+Ch1_Market
+
+NPC_Yasmina
+NPC_Qadir
+NPC_Sultan
+
+Combat_[EnemyName][##]
+
+UI_Sidebar
+
+------------------------------------------------
+
+RELATIONSHIP SCALE
+
+-25 Enemy
+0   Stranger
+10  Friendly
+25  Friend
+50  Trusted
+75  Love
+100 Soulmate
+
+------------------------------------------------
+
+PERSONALITY
+
+Honor
+Curiosity
+Discipline
+Faith
+Mercy
+
+------------------------------------------------
+
+WRITING RULES
+
+Every passage should:
+• Advance the plot
+• Reveal character
+• Build the world
+
+Every scene should leave one memorable impression.
+
+No exposition dumps. No purple prose. No generic fantasy dialogue.
+
+Descriptions emphasize smell, sound, texture, and atmosphere before visual spectacle.
+
+Player choices shape personality and relationships first, plot structure second.
+
+The central storyline remains focused — choices open doors, not branches of the main plot.
+
+
+:: StoryInit {"position":"125,625","size":"100,100"}
+/*==================================================
+                THE SEVEN SEALS
+                   StoryInit
+==================================================*/
+
+/*--------------------------------------------------
+GAME
+--------------------------------------------------*/
+<<set $game = {
+    title: "The Seven Seals",
+    version: "Book 1",
+    chapter: 1,
+    scene: 1,
+    day: 1,
+    time: "Dawn",
+    location: "Amir's Home",
+    difficulty: "Normal"
+}>>
+
+/*--------------------------------------------------
+SETTINGS
+--------------------------------------------------*/
+<<set $settings = {
+    debug: false,
+    relationshipPopups: true,
+    codexPopups: true,
+    journalPopups: true,
+    questPopups: true,
+    autosave: true,
+    maxRelationship: 100,
+    maxHealth: 100,
+    maxStamina: 100,
+    startingGold: 15
+}>>
+
+/*--------------------------------------------------
+PLAYER
+--------------------------------------------------*/
+<<set $player = {
+    name: "Amir",
+    level: 1,
+    experience: 0,
+    health: 100,
+    maxHealth: 100,
+    stamina: 100,
+    maxStamina: 100
+}>>
+
+/*--------------------------------------------------
+EQUIPMENT
+--------------------------------------------------*/
+<<set $equipment = {
+    weapon: "Training Sword",
+    offhand: null,
+    armor: "Traveler's Clothes",
+    trinket: "Family Pendant"
+}>>
+
+/*--------------------------------------------------
+CURRENCY
+--------------------------------------------------*/
+<<set $currency = {
+    silver: 15
+}>>
+
+/*--------------------------------------------------
+INVENTORY
+--------------------------------------------------*/
+<<set $inventory = {
+    items: ["Waterskin", "Bread"],
+    keyItems: [],
+    questItems: []
+}>>
+
+/*--------------------------------------------------
+SKILLS
+--------------------------------------------------*/
+<<set $skills = {
+    sword: 0,
+    survival: 0,
+    scholarship: 0,
+    diplomacy: 0,
+    awareness: 0,
+    athletics: 0
+}>>
+
+/*--------------------------------------------------
+PERSONALITY
+--------------------------------------------------*/
+<<set $personality = {
+    honor: 0,
+    curiosity: 0,
+    discipline: 0,
+    faith: 0,
+    mercy: 0
+}>>
+
+/*--------------------------------------------------
+WORLD
+--------------------------------------------------*/
+<<set $world = {
+    festival: true,
+    citySafe: true,
+    ghoulAttack: false,
+    sealsBroken: 0,
+    chapterBossDefeated: false
+}>>
+
+/*--------------------------------------------------
+REPUTATION
+--------------------------------------------------*/
+<<set $reputation = {
+    city: 0
+}>>
+
+/*--------------------------------------------------
+CHOICES
+Stores important decisions. Example: $choices.helpedYasmina
+--------------------------------------------------*/
+<<set $choices = {}>>
+
+/*--------------------------------------------------
+KNOWLEDGE
+Tracks what the PLAYER knows.
+--------------------------------------------------*/
+<<set $knowledge = {
+    qadirTrusted: true,
+    knowsSevenSeals: false,
+    knowsDemons: false,
+    knowsMarid: false,
+    knowsCovenant: false
+}>>
+
+/*--------------------------------------------------
+PARTY
+--------------------------------------------------*/
+<<set $party = []>>
+
+/*--------------------------------------------------
+NPC DATABASE
+Example: $npc.yasmina.relationship
+--------------------------------------------------*/
+<<set $npc = {
+
+    yasmina: {
+        name: "Yasmina",
+        title: "",
+        met: false,
+        relationship: 0
+    },
+
+    qadir: {
+        name: "Qadir ibn Salim",
+        title: "Grand Vizier",
+        met: false,
+        relationship: 0
+    },
+
+    sultan: {
+        name: "Sultan Rashid",
+        title: "Sultan of Qamar",
+        met: false,
+        relationship: 0
+    },
+
+    hakim: {
+        name: "Hakim Nadir",
+        title: "Scholar",
+        met: false,
+        relationship: 0
+    },
+
+    marid: {
+        name: "???",
+        title: "Unknown",
+        met: false,
+        relationship: 0
+    }
+
+}>>
+
+/*--------------------------------------------------
+LOCATION DATABASE
+Example: $places.market.visited
+--------------------------------------------------*/
+<<set $places = {
+
+    home: { name: "Amir's Home", visited: true },
+    zafirah: { name: "Zafirah", visited: true },
+    market: { name: "Grand Marketplace", visited: false },
+    library: { name: "House of Wisdom", visited: false },
+    palace: { name: "The Sultan's Palace", visited: false },
+    harbor: { name: "River Docks", visited: false },
+    mosque: { name: "Great Mosque", visited: false }
+
+}>>
+
+/*--------------------------------------------------
+QUESTS
+--------------------------------------------------*/
+<<set $quest = {
+    main: "Prepare for the Festival of Lanterns",
+    objective: "",
+    active: [],
+    completed: [],
+    failed: []
+}>>
+
+/*--------------------------------------------------
+CODEX
+--------------------------------------------------*/
+<<set $codex = {
+    people: [],
+    places: [],
+    creatures: [],
+    items: [],
+    lore: []
+}>>
+
+/*--------------------------------------------------
+JOURNAL
+--------------------------------------------------*/
+<<set $journal = []>>
+
+/*--------------------------------------------------
+CONDITIONS
+Examples: Poisoned, Blessed, Inspired
+--------------------------------------------------*/
+<<set $conditions = []>>
+
+/*--------------------------------------------------
+COMBAT
+--------------------------------------------------*/
+<<set $combat = {
+    active: false,
+    round: 1,
+    turn: 0,
+    enemies: [],
+    initiative: [],
+    escaped: false,
+    victory: false,
+    defeat: false
+}>>
+
+/*--------------------------------------------------
+BOOK ONE — THE SEVEN SEALS
+--------------------------------------------------*/
+<<set $seals = {
+    total: 0,
+    first: false,
+    second: false,
+    third: false,
+    fourth: false,
+    fifth: false,
+    sixth: false,
+    seventh: false
+}>>
+
+/*--------------------------------------------------
+ENEMY DATABASE
+Enemies are created dynamically.
+--------------------------------------------------*/
+<<set $enemies = {}>>
+
+
+:: Startup {"position":"225,625","size":"100,100"}
+/*==================================================
+                STARTUP WIDGETS
+==================================================*/
+
+/*--------------------------------------------------
+Relationship
+Usage: <<relationship "yasmina" 2>>
+--------------------------------------------------*/
+<<widget "relationship">>
+	<<set $npc[_args[0]].relationship += _args[1]>>
+	<<set $npc[_args[0]].relationship = Math.clamp($npc[_args[0]].relationship, -25, $settings.maxRelationship)>>
+	<<if $settings.relationshipPopups>>
+		<<replace "#sidebar-alert">><</replace>>
+	<</if>>
+<</widget>>
+
+/*--------------------------------------------------
+Personality
+Usage: <<personality "honor" 1>>
+--------------------------------------------------*/
+<<widget "personality">>
+	<<set $personality[_args[0]] += _args[1]>>
+<</widget>>
+
+/*--------------------------------------------------
+Journal
+Usage: <<journal "Met Yasmina.">>
+--------------------------------------------------*/
+<<widget "journal">>
+	<<run $journal.push(_args[0])>>
+<</widget>>
+
+/*--------------------------------------------------
+Codex
+Usage: <<codex "people" "Yasmina">>
+--------------------------------------------------*/
+<<widget "codex">>
+	<<if !$codex[_args[0]].includes(_args[1])>>
+		<<run $codex[_args[0]].push(_args[1])>>
+	<</if>>
+<</widget>>
+
+/*--------------------------------------------------
+Objective
+Usage: <<objective "Visit the marketplace.">>
+--------------------------------------------------*/
+<<widget "objective">>
+	<<set $quest.objective = _args[0]>>
+<</widget>>
+
+/*--------------------------------------------------
+Gold
+--------------------------------------------------*/
+<<widget "gainGold">>
+	<<set $currency.silver += _args[0]>>
+<</widget>>
+
+<<widget "loseGold">>
+	<<set $currency.silver -= _args[0]>>
+	<<if $currency.silver < 0>>
+		<<set $currency.silver = 0>>
+	<</if>>
+<</widget>>
+
+/*--------------------------------------------------
+Health
+--------------------------------------------------*/
+<<widget "damage">>
+	<<set $player.health -= _args[0]>>
+	<<if $player.health < 0>>
+		<<set $player.health = 0>>
+	<</if>>
+<</widget>>
+
+<<widget "heal">>
+	<<set $player.health += _args[0]>>
+	<<if $player.health > $player.maxHealth>>
+		<<set $player.health = $player.maxHealth>>
+	<</if>>
+<</widget>>
+
+
+:: StoryCaption {"position":"125,725","size":"100,100"}
+<div class="sidebar">
+
+<h2>$player.name</h2>
+
+<hr>
+
+<b>Health</b><br>
+$player.health / $player.maxHealth
+
+<br><br>
+
+<b>Stamina</b><br>
+$player.stamina / $player.maxStamina
+
+<br><br>
+
+<b>Silver</b><br>
+$currency.silver
+
+<hr>
+
+<b>Location</b><br>
+$game.location
+
+<br><br>
+
+<b>Time</b><br>
+$game.time
+
+<hr>
+
+<b>Objective</b><br>
+
+$quest.main
+
+<<if $quest.objective isnot "">>
+<br><br>
+<i>$quest.objective</i>
+<</if>>
+
+</div>
+
+
+:: StoryDisplayTitle {"position":"225,725","size":"100,100"}
+$game.title
+:: Ch1_Opening {"position":"325,625","size":"100,100"}
+/*==================================================
+CHAPTER 1 — SCENE 1
+The Festival of Lanterns, dawn
+==================================================*/
+
+<<set $game.time = "Dawn">>
+<<set $game.location = "Amir's Home">>
+
+The call to prayer finds you before the sun does.
+
+It drifts over the rooftops of Zafirah in long, unhurried waves, and for a moment you lie still and let it pass through you the way you have every morning since you were a boy. Somewhere below, your mother is already awake -- you can smell cardamom and scorched sugar, which means she is burning the pastries again, which means she is nervous, which means today is the Festival of Lanterns and half the street will be at your door by midday wanting bread they didn't have to bake themselves.
+
+Your father's pendant is cool against your collarbone. It always is, first thing, before your own warmth reaches it.
+
+Dust hangs gold in the one shaft of light that gets past your shutter. A rooster somewhere is losing an argument with a dog. Zafirah is waking up loud and unbothered, the way it always does, as if it has never once considered that a day could go wrong.
+
+You lie there a moment longer, listening to the city.
+
+<<link "Rise before she has to call you">>
+	<<personality "discipline" 1>>
+	<<set $choices.wokeEarly = true>>
+	<<goto "Ch1_Bedroom">>
+<</link>>
+
+<<link "Linger and listen to the prayer finish">>
+	<<personality "faith" 1>>
+	<<set $choices.wokeEarly = false>>
+	<<goto "Ch1_Bedroom">>
+<</link>>
+
+
+:: Ch1_Bedroom {"position":"425,625","size":"100,100"}
+/*==================================================
+CHAPTER 1 — SCENE 2
+Getting ready
+==================================================*/
+
+<<if $choices.wokeEarly>>
+	You're up before your mother thinks to shout for you, and there's a small, private satisfaction in that -- like winning an argument no one else knew you were having.
+<<else>>
+	The prayer finishes on a long note that seems to hang in the air after the voice has stopped. Only then do you swing your legs off the mat, unhurried, unwilling to let the morning start faster than it wants to.
+<</if>>
+
+The room is small and yours in every way that matters: a shelf of your father's old ledgers you've never had reason to open, a wooden practice sword worn pale at the grip, a cracked clay bowl you use for washing. You splash water on your face. It's already losing its overnight chill.
+
+Your armor for the day is a traveler's coat gone soft at the elbows, and the training sword your uncle gave you the year you turned twelve, insisting -- wrongly, so far -- that a boy who could handle a blade would never be caught without work. You buckle it on anyway. Today there will be crowds, and crowds in Zafirah during festival season have a way of finding the one person not paying attention.
+
+On the shelf, tucked behind the ledgers, sits a small brass compass you found half-buried near the river docks as a child. It's a plain, unremarkable thing -- dented casing, a hairline crack across the glass -- except that the needle has never once pointed north. You used to think it was simply broken. You still do, mostly.
+
+<<link "Take the compass with you" "Ch1_Breakfast">>
+	<<personality "curiosity" 1>>
+	<<set $inventory.keyItems.push("Broken Compass")>>
+	<<set $choices.tookCompass = true>>
+	<<codex "items" "Broken Compass">>
+<</link>>
+
+<<link "Leave it where it is -- today isn't the day for distractions" "Ch1_Breakfast">>
+	<<personality "discipline" 1>>
+	<<set $choices.tookCompass = false>>
+<</link>>
+
+
+:: Ch1_Breakfast {"position":"525,625","size":"100,100"}
+/*==================================================
+CHAPTER 1 — SCENE 3
+Breakfast with Amir's mother
+==================================================*/
+
+<<set $game.location = "Amir's Home">>
+
+Downstairs, the kitchen is a small war zone of flour and good intentions. Your mother, Farah, has flour to her elbows and a smear of it on one cheek she doesn't know about, and three trays of pastries in various states of not-quite-ruined.
+
+"Sit," she says, without turning around, which means she heard you on the stairs before you'd finished the second step. "Eat something that isn't burnt. I have plenty that qualifies."
+
+<<if $choices.wokeEarly>>
+	She glances back at you, surprised despite herself. "You're up early." A small, pleased pause. "Don't get used to my noticing."
+<<else>>
+	"I let the prayer finish before I got up," you offer, before she can accuse you of laziness.
+	"Mm," she says, unconvinced, sliding a plate at you anyway. "The Almighty can wait. My oven cannot."
+<</if>>
+
+You eat. The bread is good; the pastries, true to smell, are not. Farah doesn't sit -- she never does until the last tray is out -- but she talks while she works, the way she always has, filling the kitchen with news of who's fighting with whom over stall space in the market and whether the Vizier's household will actually send lanterns for the poor quarter this year like they promised.
+
+"Yasmina came by yesterday," she adds, too casually, wiping her hands on her apron. "Asked after you. I told her you were busy being useless." A faint smile. "She didn't believe me."
+
+<<if $choices.tookCompass>>
+	Her eyes catch on the compass at your belt and narrow, just slightly. "You still have that thing." Not a question. "Your father hated that river. Never told me why."
+	<<link "Ask her what she means" "Ch1_Street">>
+		<<personality "curiosity" 1>>
+		<<relationship "yasmina" 0>>
+		<<set $knowledge.fatherRiverHint = true>>
+		<<journal "Mother mentioned my father disliked the river. She wouldn't say more.">>
+	<</link>>
+	<<link "Let it go -- there's a festival to get to" "Ch1_Street">>
+		<<personality "discipline" 1>>
+	<</link>>
+<<else>>
+	<<link "Ask about Yasmina" "Ch1_Street">>
+		<<personality "mercy" 1>>
+		<<journal "Mother says Yasmina came looking for me.">>
+	<</link>>
+	<<link "Finish eating and head out -- the day won't wait" "Ch1_Street">>
+		<<personality "discipline" 1>>
+	<</link>>
+<</if>>
+
+
+:: Ch1_Street {"position":"625,625","size":"100,100"}
+/*==================================================
+CHAPTER 1 — SCENE 2
+Leaving Home
+==================================================*/
+
+<<set $game.location = "Zafirah -- Lantern Quarter">>
+
+You step out into a street that has already forgotten it's early.
+
+Paper lanterns hang from every doorframe and window lattice, still unlit, waiting for dusk to give them a reason. Someone has strung a line of them clear across the road, low enough that you have to duck under a dangling tassel of orange silk. The air smells of dust warmed by the coming sun, of frying dough from a stall two doors down, of the sharp green smell of palm fronds being woven into arches for tonight.
+
+<<if $personality.faith gte 1>>
+	The muezzin's call has faded, but you find yourself still walking a little slower than you need to, the way you always do on a morning like this.
+<</if>>
+<<if $choices.tookCompass>>
+	The compass sits heavier in your pocket than it has any right to. Habit, you tell yourself, and keep walking.
+<</if>>
+
+Your neighborhood is small enough that you know most of the doors by the people behind them, and this morning every one of them is open.
+
+<<goto "Ch1_Street_Hub">>
+
+
+:: Ch1_Street_Hub {"position":"725,625","size":"100,100"}
+/*==================================================
+CHAPTER 1 — SCENE 2 (cont.)
+Neighborhood Hub
+==================================================*/
+
+<<set _visitedAll = ($choices.metBilal and $choices.metChildren and $choices.metGuard)>>
+
+<<if !$choices.streetHubSeen>>
+	<<set $choices.streetHubSeen = true>>
+	You're in no real hurry yet. The marketplace will still be there in an hour, and there are worse ways to spend a festival morning than letting the street pull you along at its own pace.
+<<else>>
+	You linger a moment longer before moving on.
+<</if>>
+
+<<if !$choices.metBilal>>
+* <<link "Old Bilal is arguing with a ladder outside his shop" "Ch1_Street_Bilal">><</link>>
+<</if>>
+<<if !$choices.metChildren>>
+* <<link "A pair of children are racing lantern-frames down the gutter" "Ch1_Street_Children">><</link>>
+<</if>>
+<<if !$choices.metGuard>>
+* <<link "A city guard is wrestling a garland onto the gate-post" "Ch1_Street_Guard">><</link>>
+<</if>>
+
+<<if _visitedAll>>
+	You've said your good mornings. The street has nothing left to show you that it hasn't already.
+
+	<<link "Head toward the marketplace" "Ch1_Street_End">><</link>>
+<<else>>
+
+	<<link "Leave the street behind and head toward the marketplace" "Ch1_Street_End">><</link>>
+<</if>>
+
+
+:: Ch1_Street_Bilal {"position":"825,525","size":"100,100"}
+/*--------------------------------------------------
+Minor NPC: Old Bilal, lantern-maker
+--------------------------------------------------*/
+
+<<set $choices.metBilal = true>>
+<<codex "people" "Bilal the Lantern-Maker">>
+
+Old Bilal has been making lanterns in this quarter since before your father was born, and every year he insists this is the last one, and every year he is lying.
+
+Right now he's three rungs up a ladder that has clearly opinions of its own, trying to hang a string of lanterns shaped like pomegranates over his shop door. The ladder disagrees with his balance. His balance is losing.
+
+"Amir!" he calls down, not moving, as if calling your name will somehow steady the ladder. "You have two good hands and nothing better to do. Prove me right."
+
+<<link "Steady the ladder for him" "Ch1_Street_Hub">>
+	<<personality "mercy" 1>>
+	You cross and grip the ladder's legs. Bilal finishes the string of lanterns with the unhurried confidence of a man who was never actually in danger, then climbs down and cuffs your shoulder, hard, in what passes for gratitude.
+
+	"Your father used to do the same," he says, "before he decided ladders were beneath him." He says it lightly. You've learned not to ask what he means when he says things like that.
+<</link>>
+
+<<link "Tell him to come down before he breaks something" "Ch1_Street_Hub">>
+	<<personality "discipline" 1>>
+	"I'm not climbing up there," you say. "Come down and I'll hold it from the ground."
+
+	Bilal grumbles the whole way down about young men and their caution, but he comes down, and the ladder survives the morning, which is more than it deserved.
+<</link>>
+
+
+:: Ch1_Street_Children {"position":"825,625","size":"100,100"}
+/*--------------------------------------------------
+Minor NPC: neighborhood children
+--------------------------------------------------*/
+
+<<set $choices.metChildren = true>>
+
+Two children -- you're fairly sure one belongs to the fishmonger, the other to nobody in particular that anyone's ever confirmed -- are racing broken lantern-frames down the gutter like toy boats, shrieking with a level of investment usually reserved for actual warfare.
+
+"Amir! Amir, judge us!" The fishmonger's boy skids to a stop in front of you, frame in hand. "Whoever's gets to the drain first wins."
+
+<<link "Race them yourself, and win" "Ch1_Street_Hub">>
+	<<personality "discipline" 1>>
+	You crouch, take the smaller frame, and send it skimming down the gutter with the flick of a wrist you're secretly proud of. It beats both of theirs to the drain by a full second.
+
+	The betrayal on their faces is immediate and total. "That's not fair, you're an *adult*," the girl informs you, as though this were cheating.
+<</link>>
+
+<<link "Let the smaller one win" "Ch1_Street_Hub">>
+	<<personality "mercy" 1>>
+	You judge the race with great solemnity and declare the smaller of the two the winner, on the extremely scientific grounds that her frame "clearly had better aerodynamics." She does not question this. She simply accepts her victory as her due and runs off to inform everyone she knows.
+<</link>>
+
+
+:: Ch1_Street_Guard {"position":"825,725","size":"100,100"}
+/*--------------------------------------------------
+Minor NPC: city guard
+--------------------------------------------------*/
+
+<<set $choices.metGuard = true>>
+
+A guard in the Sultan's colors is losing a quiet, dignified battle with a garland of marigolds that refuses to sit straight on the gate-post. He's young -- younger than the post he's guarding, probably -- and trying very hard to look like a man who chose this posting rather than one who was assigned it.
+
+He notices you watching and straightens, garland still crooked.
+
+<<link "Greet him properly, as one would a soldier on duty" "Ch1_Street_Hub">>
+	<<personality "honor" 1>>
+	You incline your head the way your uncle taught you -- respect offered without servility. The guard blinks, visibly unused to it, then returns the gesture with more formality than the moment strictly requires. "Peace be upon you," he says, a little too crisply, and you leave him looking pleased with himself.
+<</link>>
+
+<<link "Point out the garland is crooked" "Ch1_Street_Hub">>
+	<<personality "curiosity" 1>>
+	"It's crooked," you say, by way of greeting.
+
+	He looks up at it, then at you, with the flat expression of a man who has heard this six times already this morning. "I'm aware," he says. "Sultan's orders. Guard the gate. Nothing about the garland."
+
+	You leave him to his war with the marigolds.
+<</link>>
+
+
+:: Ch1_Street_End {"position":"725,725","size":"100,100"}
+/*==================================================
+CHAPTER 1 — SCENE 2 (end)
+Toward the Marketplace
+==================================================*/
+
+<<set $game.location = "Zafirah -- Approaching the Festival Streets">>
+
+The street opens ahead into a wider thoroughfare, and beyond it you can already hear the low, constant hum of Zafirah on festival morning -- hundreds of voices layered into one sound, the way the sea must sound to people who've never seen it.
+
+Whatever today turns out to be, it's waiting for you down there.
+
+<<link "Head into the festival streets" "Ch1_FestivalStreets">>
+	<<journal "Left home on the morning of the Festival of Lanterns.">>
+<</link>>
+
+
+:: Ch1_FestivalStreets {"position":"625,825","size":"100,100"}
+/*==================================================
+CHAPTER 1 — SCENE 3
+Festival Streets
+==================================================*/
+
+<<set $game.location = "Zafirah -- Festival Streets">>
+
+The thoroughfare swallows you into itself.
+
+Zafirah on an ordinary morning is loud. Zafirah on a festival morning is something else entirely -- stalls doubling as they always do, but garlanded now in marigold and jasmine, awnings strung together overhead until the sky itself seems woven out of cloth. Somewhere a drum is being tuned, badly, one beat at a time. The whole city smells of rosewater and hot oil and, underneath it, the mineral hush of the river a few streets over.
+
+You have all morning. Nobody is waiting on you yet.
+
+<<goto "Ch1_FestivalStreets_Hub">>
+
+
+:: Ch1_FestivalStreets_Hub {"position":"725,825","size":"100,100"}
+/*==================================================
+CHAPTER 1 — SCENE 3 (cont.)
+Festival Streets Hub
+==================================================*/
+
+<<if !$choices.streetsHubSeen>>
+	<<set $choices.streetsHubSeen = true>>
+	You let yourself wander rather than walk with purpose.
+<<else>>
+	You take your time a while longer.
+<</if>>
+
+<<if !$choices.sawStoryteller>>
+* <<link "A storyteller has drawn a small crowd near the fountain" "Ch1_FestivalStreets_Storyteller">><</link>>
+<</if>>
+<<if !$choices.sawWeaver>>
+* <<link "Umm Layla's garland stall, bright with festival colors" "Ch1_FestivalStreets_Weaver">><</link>>
+<</if>>
+<<if !$choices.sawMosque>>
+* <<link "The Great Mosque, cool and quiet past the noise" "Ch1_FestivalStreets_Mosque">><</link>>
+<</if>>
+
+<<if $choices.sawStoryteller and $choices.sawWeaver and $choices.sawMosque>>
+	You've seen what the street has to offer this morning. The market is close now, and its noise is starting to outshout everything else.
+
+	<<link "Head toward the Grand Marketplace" "Ch1_Yasmina">><</link>>
+<<else>>
+
+	<<link "Leave the streets behind and head toward the marketplace" "Ch1_Yasmina">><</link>>
+<</if>>
+
+
+:: Ch1_FestivalStreets_Storyteller {"position":"825,775","size":"100,100"}
+/*--------------------------------------------------
+Landmark: The Storyteller
+--------------------------------------------------*/
+
+<<set $choices.sawStoryteller = true>>
+<<codex "lore" "The Tale of the Scattered Treasure">>
+
+An old man sits cross-legged on a threadbare rug, hands moving as much as his voice does, and a dozen children -- and at least as many adults pretending they're only stopping for a moment -- have gathered around him.
+
+"...and so the wise ones looked upon the great treasure," he's saying, "and knew that no single hand, however honest, should ever hold all of it at once. So they broke it into seven pieces, and scattered them to the corners of the world, and charged each piece to a guardian who would test any who came seeking it -- not with steel, but with character."
+
+A boy in front asks, too loudly, whether the treasure was gold. The old man laughs and says treasure is never gold, not really, and refuses to explain what he means.
+
+<<link "Toss a coin into his bowl and move on" "Ch1_FestivalStreets_Hub">>
+	<<personality "faith" 1>>
+	<<loseGold 1>>
+	You drop a small coin among the others already there. The old man doesn't break stride, but he nods at you between sentences, the way performers do when they've clocked a kindness without stopping to thank it properly.
+<</link>>
+
+<<link "Listen to the rest before moving on" "Ch1_FestivalStreets_Hub">>
+	<<personality "curiosity" 1>>
+	You stay long enough to hear how it ends -- badly, for the greedy man in the story who tries to steal a piece rather than earn it. The children cheer at his comeuppance with the total lack of mercy only children have for fictional villains.
+<</link>>
+
+
+:: Ch1_FestivalStreets_Weaver {"position":"825,875","size":"100,100"}
+/*--------------------------------------------------
+Landmark: Umm Layla's stall
+--------------------------------------------------*/
+
+<<set $choices.sawWeaver = true>>
+<<codex "people" "Umm Layla">>
+
+"Amir!" Umm Layla doesn't look up from the garland she's weaving, fingers moving faster than you could ever follow. "Tell your mother her sugar dough is going to lose to mine again this year, and tell her I said it with love."
+
+She's known you since you were small enough to be underfoot in this exact stall. Half the garlands strung across the street this morning came from her hands, and she'll tell you so, unprompted, at length, if you let her.
+
+<<link "Buy a garland for the doorway at home" "Ch1_FestivalStreets_Hub">>
+	<<personality "mercy" 1>>
+	<<loseGold 2>>
+	<<run $inventory.items.push("Marigold Garland")>>
+	She wraps it for you without being asked, the way she's wrapped a hundred others this week, and waves off your thanks like it costs her something to accept it. "Hang it before dusk," she says. "Not after. I don't make them to be forgotten in a bag."
+<</link>>
+
+<<link "Admire her work and keep walking" "Ch1_FestivalStreets_Hub">>
+	<<personality "curiosity" 1>>
+	You tell her, honestly, that this year's are her best yet. She finally looks up, pleased despite herself, and pretends the compliment means nothing to her. It very clearly does.
+<</link>>
+
+
+:: Ch1_FestivalStreets_Mosque {"position":"825,975","size":"100,100"}
+/*--------------------------------------------------
+Landmark: The Great Mosque
+--------------------------------------------------*/
+
+<<set $choices.sawMosque = true>>
+<<codex "places" "Great Mosque">>
+
+Past the archway, the noise of the street drops away almost entirely. The courtyard is stone-cool underfoot, shaded by an old fig tree that has clearly been arguing with the architecture for longer than the architecture has existed. A few doves pick at nothing in particular near the ablution fountain. Someone has already hung lanterns along the inner colonnade, unlit, waiting like everything else in the city is waiting today.
+
+<<if $personality.faith gte 2>>
+	You've come here enough times that the quiet doesn't feel like a pause in your day. It feels like the part of the day that makes the rest of it make sense.
+<<else>>
+	You don't linger long, but even a short pause here feels like it costs you nothing and gives you something back.
+<</if>>
+
+<<link "Sit a while in the quiet" "Ch1_FestivalStreets_Hub">>
+	<<personality "faith" 1>>
+	You sit on the cool stone until your thoughts stop crowding each other, then rise, unhurried, and go.
+<</link>>
+
+<<link "Pay your respects and move on" "Ch1_FestivalStreets_Hub">>
+	<<personality "discipline" 1>>
+	You don't stay long -- there's a whole city out there doing its best to be loud -- but you don't rush the doorway either.
+<</link>>
+
+
+:: Ch1_Yasmina {"position":"625,925","size":"100,100"}
+/*==================================================
+CHAPTER 1 — SCENE 4
+Yasmina
+==================================================*/
+
+<<set $game.location = "Zafirah -- Near the House of Wisdom">>
+
+You cut through the little square outside the House of Wisdom -- not the fastest way to the market, but the quietest, and today quiet is worth the extra distance.
+
+A young woman is sitting on the library steps with a manuscript spread across her knees, so entirely absorbed in it that she hasn't noticed the festival happening around her at all. Ink-stained fingers. A pencil tucked behind one ear that she's clearly forgotten is there. You don't recognize her, but you recognize the posture -- the specific stillness of someone who has forgotten the rest of the world exists.
+
+She mutters something under her breath, traces a symbol in the air above the page with one finger, and--
+
+The corner of the manuscript catches fire. Not dramatically. A small, apologetic little flame, the kind that seems almost embarrassed to be there at all.
+
+"Oh -- no, no, no --" She's patting it out with her bare palm before you've even fully processed what happened, wincing, more annoyed than hurt. A thread of smoke curls up from the singed page.
+
+<<link "Cross over and help her put it out" "Ch1_Yasmina_Help">>
+	<<personality "mercy" 1>>
+<</link>>
+
+<<link "Call out, half-laughing, that her book is on fire" "Ch1_Yasmina_Joke">>
+	<<personality "curiosity" 1>>
+<</link>>
+
+<<link "Keep walking -- it's clearly under control" "Ch1_Yasmina_Ignore">>
+	<<personality "discipline" 1>>
+<</link>>
+
+
+:: Ch1_Yasmina_Help {"position":"725,925","size":"100,100"}
+/*--------------------------------------------------
+Yasmina response: Helped without teasing
+--------------------------------------------------*/
+
+<<set $npc.yasmina.met = true>>
+<<relationship "yasmina" 2>>
+<<codex "people" "Yasmina">>
+<<journal "Met Yasmina outside the House of Wisdom. She'd set her own research on fire.">>
+
+You're across the square before you've decided to be, pressing your sleeve over the last of the smoking corner until it's well and truly out. Up close, the manuscript is old -- older than anything you've handled before -- and covered in a script you don't recognize.
+
+"Thank you." She examines the singed corner with more exasperation than gratitude, like the fire has personally inconvenienced her rather than nearly burned her hand. "That's the third page this week. My father's going to start charging me for the paper."
+
+She looks up at you properly for the first time, sizing you up without any particular subtlety about it.
+
+"You didn't ask what I was doing," she says. "Most people ask what I was doing."
+
+"Should I?"
+
+"No." A faint, genuine smile. "I'm Yasmina. And you have very good reflexes for someone who was just walking past."
+
+<<goto "Ch1_Yasmina_Continue">>
+
+
+:: Ch1_Yasmina_Joke {"position":"625,1025","size":"100,100"}
+/*--------------------------------------------------
+Yasmina response: Joked kindly
+--------------------------------------------------*/
+
+<<set $npc.yasmina.met = true>>
+<<relationship "yasmina" 1>>
+<<codex "people" "Yasmina">>
+<<journal "Met Yasmina outside the House of Wisdom. She'd set her own research on fire.">>
+
+"Your book's on fire," you call out, already crossing toward her, unable to keep the laugh entirely out of your voice.
+
+"I'm aware, thank you." She's patting the last of it out with the flat of her hand, entirely unbothered by your amusement. By the time you reach her the flame's already dead, leaving one blackened corner and a thin thread of smoke. "It does this. Occasionally. It's a *very* minor ward. Mostly."
+
+"Mostly."
+
+"Mostly." She looks up at you, unoffended, faintly amused herself now. "I'm Yasmina. You're allowed to keep laughing, but I'd point out you didn't actually help."
+
+<<goto "Ch1_Yasmina_Continue">>
+
+
+:: Ch1_Yasmina_Ignore {"position":"525,1025","size":"100,100"}
+/*--------------------------------------------------
+Yasmina response: Walked past
+--------------------------------------------------*/
+
+<<set $npc.yasmina.met = true>>
+<<codex "people" "Yasmina">>
+<<journal "Passed a young woman outside the House of Wisdom whose research had briefly caught fire.">>
+
+She has it out before you've even fully stopped walking -- competent, clearly used to this -- and by the time you glance back she's already blowing the last of the smoke off the page, entirely unbothered.
+
+You keep going. It's not your fire to put out, and the market is waiting.
+
+Behind you, you hear her mutter, to no one in particular, "Yes, please, don't trouble yourself."
+
+<<goto "Ch1_Yasmina_Continue">>
+
+
+:: Ch1_Yasmina_Continue {"position":"675,1075","size":"100,100"}
+/*==================================================
+CHAPTER 1 — SCENE 4 (cont.)
+--------------------------------------------------*/
+
+<<if $npc.yasmina.relationship gte 2>>
+	"I should get back to this," Yasmina says, already looking down at the manuscript again, though she says it like it costs her something. "My father will want to know if I've found anything before midday. Hakim Nadir -- the scholar. You might know the name." A pause, and then, almost reluctantly: "It was good to meet you, Amir."
+
+	You didn't tell her your name.
+
+	"Small city," she says, before you can ask, and goes back to her ruined page with the faintest smile still on her face.
+<<elseif $npc.yasmina.relationship gte 1>>
+	"I should get back to this," she says, already looking down at the manuscript again. "My father's expecting results, not smoke stains." She glances up once more. "I'm sure I'll see you around. It's a small city."
+<<else>>
+	She's already absorbed back into the manuscript by the time you're a few steps away, the small fire apparently the most interesting thing that's happened to her all morning -- and, judging by her focus, already forgotten.
+<</if>>
+
+You leave her to it. Ahead, the noise of the Grand Marketplace has grown from a hum into something closer to a roar.
+
+<<link "Head into the marketplace" "Ch1_Market">><</link>>
+
+
+:: Ch1_Market {"position":"725,1075","size":"100,100"}
+/*==================================================
+CHAPTER 1 — SCENE 5
+The Marketplace
+==================================================*/
+
+<<set $game.location = "Grand Marketplace">>
+<<set $places.market.visited = true>>
+
+The Grand Marketplace doesn't so much begin as ambush you.
+
+One step you're in a street; the next, color and noise and smell close over your head like water. Bolts of dyed silk hang from every awning -- saffron, indigo, a red so deep it looks black in shadow. Spice merchants call out prices in voices pitched to carry over a hundred competing voices. Somewhere, badly, someone is still tuning that drum. Underneath everything is the smell of cardamom and hot metal and, faint but constant, the river a few streets beyond.
+
+This is the market you've known your whole life -- not as an idea, but as a hundred small, specific things: the gap in the fifth cobblestone from the fountain that's tripped you since you were six, the exact spot where the fabric merchants' shade cools the air by several degrees, the fig seller who has called you "boy" for as long as she's been alive.
+
+<<goto "Ch1_Market_Hub">>
+
+
+:: Ch1_Market_Hub {"position":"825,1075","size":"100,100"}
+/*==================================================
+CHAPTER 1 — SCENE 5 (cont.)
+Marketplace Hub
+==================================================*/
+
+<<if !$choices.marketHubSeen>>
+	<<set $choices.marketHubSeen = true>>
+	There's no reason to rush. Whatever the festival has planned for tonight, the morning still belongs to ordinary things.
+<<else>>
+	You take another moment before moving on.
+<</if>>
+
+<<if !$choices.sawSpiceMerchant>>
+* <<link "The spice merchant's stall, a small mountain of color" "Ch1_Market_Spices">><</link>>
+<</if>>
+<<if !$choices.sawLanterns>>
+* <<link "A cluster of poor-quarter children admiring donated lanterns" "Ch1_Market_Lanterns">><</link>>
+<</if>>
+<<if !$choices.sawGuardCaptain>>
+* <<link "A guard captain keeping half an eye on the crowd" "Ch1_Market_Guard">><</link>>
+<</if>>
+
+<<if $choices.sawSpiceMerchant and $choices.sawLanterns and $choices.sawGuardCaptain>>
+	You've made your rounds. The market has given you what it has to give this morning.
+
+	<<link "Head toward the festival ceremony" "Ch1_Ceremony">><</link>>
+<<else>>
+
+	<<link "Move on toward the festival ceremony" "Ch1_Ceremony">><</link>>
+<</if>>
+
+
+:: Ch1_Market_Spices {"position":"925,1025","size":"100,100"}
+/*--------------------------------------------------
+Landmark: Spice Merchant
+--------------------------------------------------*/
+
+<<set $choices.sawSpiceMerchant = true>>
+<<codex "places" "Grand Marketplace">>
+
+The fig seller -- who has never once called you by your actual name in your entire life -- waves you over with the particular urgency of someone who wants you to admire something.
+
+"Boy. Smell this." She thrusts a pinch of something dark red under your nose before you can object. "New this season. Caravan from the eastern passes, three weeks late, nearly didn't make it before the roads closed for the season." She says it like gossip, not commerce. "Your mother should buy some before the price finds out how good it is."
+
+<<link "Buy a small pouch for Farah" "Ch1_Market_Hub">>
+	<<personality "mercy" 1>>
+	<<loseGold 3>>
+	She wraps it with theatrical care and refuses to let you pay the price she just quoted, muttering something about family discounts that seem to apply to roughly everyone she likes.
+<</link>>
+
+<<link "Ask where the caravan really came from" "Ch1_Market_Hub">>
+	<<personality "curiosity" 1>>
+	She launches into a story about washed-out passes and a bandit scare near the border that may or may not be exaggerated for effect. You suspect it is. You don't tell her that.
+<</link>>
+
+
+:: Ch1_Market_Lanterns {"position":"925,1075","size":"100,100"}
+/*--------------------------------------------------
+Landmark: Donated Lanterns
+--------------------------------------------------*/
+
+<<set $choices.sawLanterns = true>>
+
+A crowd of children from the poor quarter has gathered around a stall handing out plain paper lanterns, free, no coin required. An older woman is distributing them one at a time, checking each child's face like she's trying to memorize it.
+
+"The Vizier's household again," a passerby says to no one in particular, following your glance. "Third year running. Say what you want about the man, he doesn't forget the poor quarter at festival time."
+
+<<if $knowledge.qadirTrusted>>
+	It matches everything you've ever heard about Qadir ibn Salim -- brilliant, busy, and apparently never too busy to remember people who have nothing to offer him in return.
+<</if>>
+
+A small girl clutching her new lantern nearly walks into you, looks up, decides you're not interesting, and keeps going.
+
+<<link "Continue on" "Ch1_Market_Hub">>
+	<<personality "faith" 1>>
+<</link>>
+
+
+:: Ch1_Market_Guard {"position":"925,1125","size":"100,100"}
+/*--------------------------------------------------
+Landmark: Guard Captain
+--------------------------------------------------*/
+
+<<set $choices.sawGuardCaptain = true>>
+
+A guard captain stands near the fountain, arms crossed, watching the crowd with the particular alertness of someone responsible for it if anything goes wrong. She's older than most of the soldiers you've seen posted around the city, and doesn't share their habit of looking bored.
+
+She notices you noticing her and gives a short, professional nod -- the kind that acknowledges you without inviting conversation.
+
+<<link "Nod back and keep walking" "Ch1_Market_Hub">>
+	<<personality "discipline" 1>>
+	You return the nod. She's already looking past you at the crowd again before you've finished the gesture -- not rude, just thorough.
+<</link>>
+
+<<link "Ask if she's expecting trouble today" "Ch1_Market_Hub">>
+	<<personality "curiosity" 1>>
+	"Festival crowds are trouble enough on their own," she says, not unkindly, eyes still moving over the square. "Pickpockets mostly. Enjoy the day. That's an order, if you need one to relax."
+<</link>>
+
+
+:: Ch1_Ceremony {"position":"625,1175","size":"100,100"}
+/*==================================================
+CHAPTER 1 — SCENE 6
+Festival Ceremony
+==================================================*/
+
+<<set $game.location = "Zafirah -- The Great Square">>
+<<set $game.time = "Dusk">>
+
+By the time you reach the Great Square, the light has turned the color it only turns once a year -- gold going to violet, the sky itself dressed for the occasion. Thousands of unlit lanterns hang overhead in rows, waiting, and the crowd beneath them has the particular hush of a city about to do something it loves doing together.
+
+A dais has been raised at the square's north end. Sultan Rashid stands upon it in ceremonial white, and even from here you can see he looks less like a ruler performing for a crowd and more like a man genuinely glad to be here.
+
+Beside him, a step back and a step to the side, stands a figure in dark green robes who says nothing at all.
+
+<<if !$npc.qadir.met>>
+	You don't know his face yet, but you know the robes, and half the crowd around you is already murmuring the name with the particular reverence people reserve for men they've never had reason to distrust. *Qadir ibn Salim.* Grand Vizier. The man whose household, you now know firsthand, remembers the poor quarter at festival time.
+
+	He doesn't speak. He doesn't need to. The Sultan does the talking, and the Vizier simply watches the crowd with an expression of mild, patient satisfaction -- the look of a man content to let someone else enjoy the credit.
+<</if>>
+
+The Sultan raises both hands, and the square falls silent all at once, the way a held breath does.
+
+"Another year," he says, and his voice carries further than seems possible without effort. "Another festival. Another chance to remember that light is worth more when it's shared."
+
+He lowers his hands. Somewhere, a signal passes down an invisible chain of runners and criers, and the first lantern kindles -- then the next, then a hundred at once, then the whole square blooming gold from the top down like the sky catching fire on purpose.
+
+The crowd's cheer is loud enough that you feel it as much as hear it.
+
+<<link "Watch the lanterns catch, one after another" "Ch1_GhulAttack_Round1">>
+	<<personality "faith" 1>>
+<</link>>
+
+<<link "Scan the crowd instead of the sky" "Ch1_GhulAttack_Round1">>
+	<<personality "discipline" 1>>
+	Old habit. You've never quite trusted a crowd this size to stay this happy without something going wrong -- which is, you'll later think, either very good instinct or very bad luck.
+<</link>>
+
+
+:: Ch1_GhulAttack_Round1 {"position":"725,1175","size":"100,100"}
+/*==================================================
+CHAPTER 1 — SCENE 7
+Ghūl Attack — Round 1: Who do you save first?
+==================================================*/
+
+<<set $combat.active = true>>
+<<set $combat.round = 1>>
+<<set $world.ghoulAttack = true>>
+
+It comes up through the square like the ground itself has torn -- not from the crowd's edge, but from underneath, from a drainage grate nobody thought to guard. Grey-skinned, wrong-jointed, and fast, faster than anything that size should be. The scream that goes up from the crowd isn't festival noise anymore.
+
+You have seconds, not minutes, and three people in the wreckage of the nearest stalls all need you at once:
+
+A spice merchant, pinned beneath a collapsed awning pole, more frightened than hurt but unable to move.
+
+A small child, separated from whoever she came with, frozen directly in the ghūl's path.
+
+A young guardsman, sword already out, but backing away from something that is very clearly winning.
+
+<<link "Go for the child" "Ch1_GhulAttack_Round2">>
+	<<personality "mercy" 1>>
+	<<reputation "city" 1>>
+	<<set $choices.savedFirst = "child">>
+	<<journal "A ghūl tore up through the Great Square during the lantern-lighting. I went for the child first.">>
+	You don't decide so much as move. You scoop her up mid-stride, and by the time you've set her down behind an overturned cart, someone's arms are already reaching for her -- a mother, sobbing, who was clearly nowhere near close enough to have saved her herself.
+<</link>>
+
+<<link "Free the merchant" "Ch1_GhulAttack_Round2">>
+	<<personality "discipline" 1>>
+	<<reputation "city" 1>>
+	<<set $choices.savedFirst = "merchant">>
+	<<journal "A ghūl tore up through the Great Square during the lantern-lighting. I freed the merchant first.">>
+	You get a shoulder under the pole and heave, and the merchant drags himself free a half-second before you'd have had to drop it. "Go," he wheezes, already crawling clear. "Go, go, I'm fine, *go--*"
+<</link>>
+
+<<link "Get to the guardsman" "Ch1_GhulAttack_Round2">>
+	<<personality "honor" 1>>
+	<<reputation "city" 1>>
+	<<set $choices.savedFirst = "guard">>
+	<<journal "A ghūl tore up through the Great Square during the lantern-lighting. I went to help the guardsman.">>
+	He's younger than you expected, and losing badly. You reach him just as his back foot catches on rubble, and you haul him upright by the collar a heartbeat before the ghūl's claws would have found him instead.
+<</link>>
+
+
+:: Ch1_GhulAttack_Round2 {"position":"825,1175","size":"100,100"}
+/*==================================================
+SCENE 7 — Round 2: The ghūl closes in
+==================================================*/
+
+<<set $combat.round = 2>>
+
+<<if $choices.savedFirst is "child">>
+	That leaves the merchant still pinned and the guardsman still losing ground, and the ghūl -- cheated of the one target you took off the board -- pivots toward the nearer of the two.
+<<elseif $choices.savedFirst is "merchant">>
+	That leaves the child still frozen and the guardsman still losing ground, and the ghūl swings toward them both, momentum barely broken.
+<<else>>
+	That leaves the merchant still pinned and the child still frozen, and the ghūl, denied its first choice of prey, doesn't hesitate before choosing a second.
+<</if>>
+
+Up close, it's worse: too many joints, skin like old leather stretched wrong, a smell like a grave that hasn't been properly closed. It doesn't roar. It just keeps coming, silent, purposeful, hungry in a way that has nothing to do with hunger.
+
+<<link "Attack it head-on" "Ch1_GhulAttack_Round3">>
+	<<set $choices.round2Action = "attack">>
+	<<personality "honor" 1>>
+	<<damage 15>>
+	You put yourself between it and the nearest of the two remaining people and drive your blade in hard. It connects -- you feel it connect -- but the thing barely slows, and its answering claw catches your side before you can pull back. It hurts. You stay standing.
+<</link>>
+
+<<link "Shield the nearest person instead of striking" "Ch1_GhulAttack_Round3">>
+	<<set $choices.round2Action = "protect">>
+	<<personality "mercy" 1>>
+	<<reputation "city" 1>>
+	<<damage 10>>
+	<<journal "I chose to shield a stranger from the ghūl rather than strike first.">>
+	You get your body and your blade between the ghūl and the person it wants, and you take the blow meant for them across your guard instead. It's a bad trade in every way except the one that matters.
+<</link>>
+
+<<link "Hold back and watch how it moves" "Ch1_GhulAttack_Round3">>
+	<<set $choices.round2Action = "observe">>
+	<<set $combat.observedFire = true>>
+	<<personality "curiosity" 1>>
+	<<journal "I held back to study the ghūl rather than engage it directly, and noticed it flinch from firelight.">>
+	You don't like the decision even as you make it, but you force yourself to watch instead of swing -- and you see it: every time the creature's wild path carries it near one of the lantern braziers still burning at the square's edge, it flinches. Not fear, exactly. Something closer to pain.
+<</link>>
+
+<<link "Pull back and shout for the guard" "Ch1_GhulAttack_Round3">>
+	<<set $choices.round2Action = "retreat">>
+	<<personality "discipline" 1>>
+	<<set $reputation.city -= 1>>
+	<<journal "I fell back and called for help rather than engaging the ghūl myself. Someone else was hurt because of it.">>
+	You give ground, shouting for the guard, buying distance instead of spending it. It costs something -- you hear, rather than see, someone else in the crowd cry out as the ghūl's attention finds an easier target for a moment -- but you're still standing, and so, you'll find out shortly, is everyone else.
+<</link>>
+
+
+:: Ch1_GhulAttack_Round3 {"position":"925,1175","size":"100,100"}
+/*==================================================
+SCENE 7 — Round 3: The finish
+==================================================*/
+
+<<set $combat.round = 3>>
+
+<<if $combat.observedFire>>
+	You know what to do now. The nearest brazier is close enough to reach in three strides, if you can make the ghūl follow.
+
+	<<link "Drive it toward the lantern braziers" "Ch1_GhulAttack_Victory">>
+		<<personality "curiosity" 1>>
+		<<reputation "city" 1>>
+		You feint wide, drawing its lunge toward the burning brazier rather than away from it. The moment its shoulder brushes the flame it recoils -- a full, violent flinch, the closest thing to a sound it's made all fight -- and in that half-second of confusion you put your blade where the flinch left it undefended. It goes down hard, folding in on itself like something that was never meant to hold a shape for long.
+	<</link>>
+<<else>>
+	There's no clever option left, only the straightforward one. It's flagging -- slower now than it was, whether from the fight or something else -- and you won't get a better opening than this.
+
+	<<link "Finish it" "Ch1_GhulAttack_Victory">>
+		<<personality "honor" 1>>
+		<<damage 20>>
+		You put everything you have left into it, and it's enough, but only just. The blade goes in to the hilt, and the creature collapses, folding in on itself like something that was never meant to hold a shape for long. You're breathing hard. Your side is bleeding freely. You're alive.
+	<</link>>
+<</if>>
+
+
+:: Ch1_GhulAttack_Victory {"position":"1025,1175","size":"100,100"}
+/*==================================================
+SCENE 7 (end) — Aftermath of combat
+==================================================*/
+
+<<set $combat.active = false>>
+<<set $combat.victory = true>>
+
+Where the ghūl fell, there's no body -- only a scatter of grey ash already losing its shape in the evening wind, and a scorched, uneven ring burned into the flagstones beneath it.
+
+Around you, the square is finding its feet again: someone is crying, someone else is laughing in the specific unhinged way people laugh right after they were nearly not laughing ever again, and the lanterns overhead are still burning, undisturbed, as if they hadn't noticed anything had happened at all.
+
+<<if $player.health lte 50>>
+	Your side throbs with every breath. Someone presses a cloth to it before you can object. You'll live. It'll scar.
+<</if>>
+
+<<link "Take stock of the square" "Ch1_Aftermath">><</link>>
+
+
+:: Ch1_Aftermath {"position":"1125,1175","size":"100,100"}
+/*==================================================
+CHAPTER 1 — SCENE 8
+Aftermath
+==================================================*/
+
+<<set $game.location = "Zafirah -- The Great Square">>
+<<set $world.citySafe = true>>
+
+The square survives. That's the thing you keep returning to as the immediate panic settles into something quieter -- torn awnings, a few injuries, nothing that won't heal, nothing that will be remembered as anything worse than the year the festival went wrong. The lanterns are still lit. Someone has already started stacking the broken stall timber into a neat pile, because that is, apparently, simply what people do.
+
+You're still catching your breath when Yasmina finds you, manuscript forgotten, staring at the scorched ring on the flagstones with an expression that has nothing casual left in it.
+
+"Amir." She crouches beside the mark, tracing its edge without touching it. "Look at this."
+
+Burned into the stone, half-obscured by ash, is a symbol -- angular, deliberate, nothing like the scorch pattern a dying creature should leave by accident. A circle broken in seven places.
+
+"That's not damage," she says quietly. "That's *writing.*"
+
+<<if $choices.tookCompass>>
+	Without quite meaning to, your hand goes to your pocket, to the compass that has never once pointed north. You don't say anything. Neither does she -- yet.
+<</if>>
+
+"I don't recognize it," Yasmina admits, straightening. "And I've spent three years reading things most people in this city don't know exist. That should worry you as much as it worries me."
+
+<<link "Ask her what she thinks it means" "Ch1_Investigation">>
+	<<relationship "yasmina" 1>>
+	<<personality "curiosity" 1>>
+<</link>>
+
+<<link "Suggest she's imagining a pattern in ash and soot" "Ch1_Investigation">>
+	<<relationship "yasmina" -1>>
+	"It's ash, Yasmina. Ash doesn't write."
+
+	She gives you a long, unimpressed look. "Neither do ghūls, ordinarily. And yet."
+<</link>>
+
+
+:: Ch1_Investigation {"position":"1225,1175","size":"100,100"}
+/*==================================================
+CHAPTER 1 — SCENE 9
+Investigation Begins
+==================================================*/
+
+<<set $game.location = "House of Wisdom">>
+<<set $game.time = "Night">>
+
+Hakim Nadir is exactly what you expected of a man whose daughter sets her own research on fire out of enthusiasm: sharp-eyed, half-buried in books, and entirely unsurprised to see his daughter dragging a bruised young man into his study well past a reasonable hour.
+
+<<set $npc.hakim.met = true>>
+<<codex "people" "Hakim Nadir">>
+
+He studies the sketch Yasmina hurriedly copied from the flagstone for a long moment before he says anything at all.
+
+"A broken circle. Seven divisions." He sets it down like it might still be hot. "I've seen this mark exactly once before, in a manuscript so old the binding had turned to dust. It was described as the ward-sign of a *guardian* -- one of several, if the text is to be believed, that once stood watch over something the old scholars refused to name directly."
+
+"Refused, or couldn't?" Yasmina asks.
+
+"With scholars, those are rarely different things." Hakim looks up at Amir properly for the first time. "Whatever tore that symbol into the stone tonight was not simply a wild creature that wandered into a festival, young man. Something disturbed it. Or someone."
+
+<<objective "Investigate the Shrine of the First Guardian">>
+<<set $knowledge.knowsSevenSeals = false>>
+<<journal "Hakim Nadir believes the symbol marks a forgotten guardian. He wants to research further before we act.">>
+
+"I need time with this properly," Hakim says, already reaching for a shelf of texts that look like they'd crumble under a careless hand. "Come back tomorrow. Both of you." A pause, and something almost like reluctant approval crosses his face as his eyes move between you and his daughter. "And Amir -- whatever this turns out to be, I suspect the festival is the last quiet night this city has for a while."
+
+Outside, the lanterns are still burning over a city that doesn't yet know how much has changed.
+
+<!-- End of Chapter 1 -->
+
+
+:: Ch2_HakimStudy {"position":"1225,1275","size":"100,100"}
+/*==================================================
+CHAPTER 2 — SCENE 1
+Hakim's Study
+==================================================*/
+
+<<set $game.chapter = 2>>
+<<set $game.scene = 1>>
+<<set $game.day = 2>>
+<<set $game.time = "Morning">>
+<<set $game.location = "House of Wisdom">>
+
+Hakim hasn't slept. You can tell by the state of the study, which was merely cluttered last night and has since achieved something closer to archaeological. Yasmina steps over a stack of unbound pages without looking down, clearly used to navigating her father's study by memory rather than sight.
+
+"I found it," Hakim says, without preamble, without looking up. "Or -- a fragment of it. Enough." He taps a brittle page covered in a script even you can tell is very old. "This mark belongs to a tradition of guardian-wards. Ancient. Pre-dating the Sultanate by centuries, possibly longer. Each ward marked a place where something was being *kept.*"
+
+"Kept how? Kept what?" Yasmina leans over his shoulder.
+
+"I think --" she catches herself, "-- I think the text calls it a relic. But the word could mean almost anything. My father would say the same."
+
+Hakim doesn't correct her. That, more than anything, tells you how uncertain even he is.
+
+"There's a shrine," he says instead. "Beyond the northern caravan routes, in the hill country. If this ward-sign is genuine -- and I believe it is -- that shrine may hold answers neither of us can find in a book." He finally looks up at you. "I won't pretend this is safe, Amir. But I don't think it's optional, either. Something disturbed whatever that guardian was keeping. It didn't disturb itself."
+
+<<link "Agree because someone has to answer for what happened in the square" "Ch2_HakimStudy_Continue">>
+	<<personality "honor" 1>>
+	<<set $choices.whyInvestigate = "honor">>
+<</link>>
+
+<<link "Agree because you need to know what that symbol means" "Ch2_HakimStudy_Continue">>
+	<<personality "curiosity" 1>>
+	<<set $choices.whyInvestigate = "curiosity">>
+<</link>>
+
+<<link "Agree because if it happens again, more people get hurt" "Ch2_HakimStudy_Continue">>
+	<<personality "mercy" 1>>
+	<<set $choices.whyInvestigate = "mercy">>
+<</link>>
+
+
+:: Ch2_HakimStudy_Continue {"position":"1325,1275","size":"100,100"}
+/*--------------------------------------------------
+Scene 1 (cont.) — Yasmina joins
+--------------------------------------------------*/
+
+<<if $choices.whyInvestigate is "honor">>
+	"Good," Hakim says simply, as if that settles something he'd privately been unsure of.
+<<elseif $choices.whyInvestigate is "curiosity">>
+	Hakim's mouth twitches -- not quite a smile. "That's usually how it starts for me too."
+<<else>>
+	Hakim nods slowly. "Then we understand each other."
+<</if>>
+
+Yasmina straightens, and there's a particular set to her shoulders that you're beginning to recognize as *decided.*
+
+"I'm going with him."
+
+Hakim's head comes up sharply. "Yasmina --"
+
+"You can't read half of what we might find out there, and neither can he." She says it plainly, not unkindly, the way you state a fact rather than win an argument. "I can. That's not a request, Father. It's a reason."
+
+The silence that follows is long enough that you start to wonder if you should say something. You don't get the chance.
+
+"You'll take the sealed satchel," Hakim says finally, quiet, resigned in the specific way of a man who has lost this exact argument before and knows better than to pretend otherwise this time. "And you'll listen to him when it matters." A glance at you. "And you'll listen to *her* when it matters more."
+
+<<run $party.push("yasmina")>>
+<<journal "Yasmina is coming with me to the shrine. Her father agreed, reluctantly.">>
+
+<<link "Head home to prepare" "Ch2_Departure">><</link>>
+
+
+:: Ch2_Departure {"position":"1225,1375","size":"100,100"}
+/*==================================================
+CHAPTER 2 — SCENE 2
+Departure
+==================================================*/
+
+<<set $game.scene = 2>>
+<<set $game.location = "Amir's Home">>
+
+The city outside looks almost ordinary in daylight -- awnings re-strung, ash swept from the square, a few too many people finding reasons to walk past the scorched flagstones without quite looking at them. Zafirah is doing what Zafirah always does after anything: continuing, loudly, as if that itself were an answer to what happened.
+
+Farah doesn't cry when you tell her. You'd almost rather she did. Instead she goes very quiet, then very practical, packing a satchel with more bread than one person could reasonably eat in a week.
+
+"Your father used to say the road takes longer than you plan and shorter than you fear." She ties the satchel closed with more force than it requires. "I never knew what he meant by that. I still don't. Take it anyway."
+
+<<if $choices.tookCompass>>
+	Her eyes flick, just once, to your pocket. She doesn't say anything about it. You don't offer anything either.
+<</if>>
+
+<<link "Embrace her before you go" "Ch2_Departure_Continue">>
+	<<personality "mercy" 1>>
+	You hold on a moment longer than either of you is used to. Neither of you comments on it.
+<</link>>
+
+<<link "Promise her you'll be careful" "Ch2_Departure_Continue">>
+	<<personality "discipline" 1>>
+	"I know that face," she says. "It's the one your father made right before he was about to be reckless. Prove me wrong."
+<</link>>
+
+
+:: Ch2_Departure_Continue {"position":"1325,1375","size":"100,100"}
+/*--------------------------------------------------
+Scene 2 (cont.) — Leaving the city
+--------------------------------------------------*/
+
+<<set $inventory.items.push("Traveling Rations")>>
+<<journal "Said goodbye to my mother. Left Zafirah with Yasmina to find the Shrine of the First Guardian.">>
+
+The northern gate is busier than usual -- festival traffic still clearing out, caravan masters shouting manifests over each other, a general sense of a city exhaling after holding its breath too long. Yasmina is waiting for you near the gate with a satchel nearly as large as she is and an expression that suggests she has already read three-quarters of whatever's in it.
+
+"Ready?" she asks, in the tone of someone who has already decided the answer doesn't matter.
+
+<<link "Yes" "Ch2_Caravan">><</link>>
+
+
+:: Ch2_Caravan {"position":"1225,1475","size":"100,100"}
+/*==================================================
+CHAPTER 2 — SCENE 3
+The Caravan
+==================================================*/
+
+<<set $game.scene = 3>>
+<<set $game.location = "The Northern Road">>
+<<set $game.day = 3>>
+
+The caravan is larger than you expected -- a dozen wagons, twice that many camels, pilgrims and merchants and at least one family who seem to be moving their entire household somewhere for reasons nobody's asked about yet. The caravan master, a broad woman named Sabiha with sun-cracked hands and a voice built for shouting over wind, checks your names against a manifest without much interest and waves you toward the rear wagons.
+
+"Northern route's diverted a few days out," she adds, almost as an afterthought, already turning to the next name on her list. "Bridge trouble past Wadi Nur. Some official recommended the longer pass through the hill road instead -- safer this time of year, apparently, and the paperwork was already stamped by the time it reached me, so." She shrugs. "Longer, but safer. No complaints from me."
+
+<<if $choices.tookCompass>>
+	In your pocket, for just a moment, the compass feels colder than the morning air accounts for. You don't mention it. You're not sure what you'd say.
+<</if>>
+
+The wagons roll out at a pace that feels, after the last two days, almost insultingly calm.
+
+<<goto "Ch2_Caravan_Hub">>
+
+
+:: Ch2_Caravan_Hub {"position":"1325,1475","size":"100,100"}
+/*==================================================
+CHAPTER 2 — SCENE 3 (cont.)
+Caravan Hub
+==================================================*/
+
+<<if !$choices.caravanHubSeen>>
+	<<set $choices.caravanHubSeen = true>>
+	Days on the road settle into their own rhythm quickly. There's time, now, in a way there wasn't in Zafirah.
+<<else>>
+	The road rolls on beneath you, unhurried.
+<</if>>
+
+<<if !$choices.metSabiha>>
+* <<link "Talk with Sabiha as she walks the caravan's length" "Ch2_Caravan_Sabiha">><</link>>
+<</if>>
+<<if !$choices.metPilgrim>>
+* <<link "An old pilgrim traveling alone shares your fire one evening" "Ch2_Caravan_Pilgrim">><</link>>
+<</if>>
+<<if !$choices.talkedYasmina>>
+* <<link "Yasmina has been quiet, reading, most of the journey" "Ch2_Caravan_Yasmina">><</link>>
+<</if>>
+
+<<if $choices.metSabiha and $choices.metPilgrim and $choices.talkedYasmina>>
+	Ahead, the hill road climbs out of the flatlands, and the caravan's easy pace starts, gradually, to change.
+
+	<<link "Continue toward the hills" "Ch2_Caravan_End">><</link>>
+<<else>>
+
+	<<link "Let the days pass and continue toward the hills" "Ch2_Caravan_End">><</link>>
+<</if>>
+
+
+:: Ch2_Caravan_Sabiha {"position":"1425,1425","size":"100,100"}
+/*--------------------------------------------------
+Caravan: Sabiha, the caravan master
+--------------------------------------------------*/
+
+<<set $choices.metSabiha = true>>
+<<codex "people" "Sabiha">>
+
+"Twenty-two years on these roads," Sabiha tells you, unprompted, swinging up onto the lead wagon's bench beside you like she's done it a thousand times, because she has. "You learn to read a caravan the way a sailor reads weather. Who's going to cause trouble. Who's going to need help before they ask for it. Who's running from something."
+
+She looks at you sideways, not unkindly.
+
+"You're not running from anything. You're walking toward something. Different look entirely." She doesn't ask what. You get the sense she's learned not to.
+
+<<link "Ask about caravan life" "Ch2_Caravan_Hub">>
+	<<personality "curiosity" 1>>
+	She talks, easily and at length, about hospitality-law older than the Sultanate -- that any traveler who shares your fire is owed protection until dawn, no exceptions, no questions. "Break that," she says, "and no caravan in the north will carry you again. Some laws don't need soldiers to enforce them."
+<</link>>
+
+<<link "Ask if she trusts the diverted route" "Ch2_Caravan_Hub">>
+	<<personality "discipline" 1>>
+	She shrugs, easy and unbothered. "Paperwork's paperwork. Bridges wash out every flood season, and someone in the palace always finds a safer road to stamp in its place. Long as we make good time, I don't ask which clerk did the stamping."
+<</link>>
+
+
+:: Ch2_Caravan_Pilgrim {"position":"1425,1475","size":"100,100"}
+/*--------------------------------------------------
+Caravan: The old pilgrim
+--------------------------------------------------*/
+
+<<set $choices.metPilgrim = true>>
+
+He doesn't offer his name, and you don't ask -- pilgrims on the northern road rarely do, Sabiha told you, as if the walking itself is meant to matter more than the person doing it. He shares dried dates from a pouch that looks nearly empty and refuses to hear a word about you not taking your share.
+
+"Where I'm walking, it doesn't matter if I arrive with anything," he says, when you ask. "Only that I arrive changed." He smiles at your expression. "You'll understand that better by the time your own road ends. Or you won't. Both are common enough."
+
+<<link "Ask what changed him" "Ch2_Caravan_Hub">>
+	<<personality "faith" 1>>
+	He's quiet long enough that you think he won't answer. "Grief," he says eventually. "Then, much later, gratitude for having survived it. In that order. Never the other way, no matter what the storytellers promise you."
+<</link>>
+
+<<link "Offer him more of your own supplies" "Ch2_Caravan_Hub">>
+	<<personality "mercy" 1>>
+	<<loseGold 2>>
+	He accepts with a small bow of the head, no false modesty about it. "Hospitality repaid is hospitality understood," he says, which you suspect is a proverb, though you've never heard it before.
+<</link>>
+
+
+:: Ch2_Caravan_Yasmina {"position":"1425,1525","size":"100,100"}
+/*--------------------------------------------------
+Caravan: Yasmina, on the road
+--------------------------------------------------*/
+
+<<set $choices.talkedYasmina = true>>
+
+You find her cross-legged atop a supply crate, the sealed satchel open across her lap, frowning at a page like it's personally wronged her.
+
+"I think this passage describes a trial," she says, without looking up, the way people do when they've been alone with their own thoughts long enough to forget anyone might not already be following them. "Or a warning. Possibly both. The grammar's archaic enough that I'm working from context more than certainty."
+
+"You don't know?"
+
+"I know *fragments.*" She says it without embarrassment, closing the page carefully. "My father spent thirty years on texts like this and still calls himself a student. I'd rather tell you 'I think' and be right twice as often as tell you 'I know' and be wrong once where it costs someone something."
+
+<<link "Tell her that's more honest than most scholars manage" "Ch2_Caravan_Hub">>
+	<<personality "honor" 1>>
+	<<relationship "yasmina" 2>>
+	Something in her expression eases, just slightly -- the look of someone braced for a dismissal that didn't come. "Most people want certainty," she says. "I've never been able to give it to them honestly. I'm glad you didn't ask me to start now."
+<</link>>
+
+<<link "Ask her to read some of it aloud, uncertain or not" "Ch2_Caravan_Hub">>
+	<<personality "curiosity" 1>>
+	<<relationship "yasmina" 1>>
+	She does, slowly, translating half a line at a time, second-guessing herself twice and correcting once. It's slow going. You don't mind. Neither, you suspect, does she.
+<</link>>
+
+
+:: Ch2_Caravan_End {"position":"1325,1575","size":"100,100"}
+/*==================================================
+CHAPTER 2 — SCENE 3 (end)
+Into the Hills
+==================================================*/
+
+<<set $game.location = "The Hill Road">>
+
+The flatlands give way to stone and scrub, and the caravan's pace slows to match the climbing ground. Sabiha calls back that your party's turn-off is close now -- the shrine road properly begins where the caravan route ends, a day's walk further than any wagon will comfortably go.
+
+Somewhere behind you, already receding, is every part of your life that made sense without needing an explanation.
+
+<<link "Leave the caravan and continue on foot" "Ch2_Desert">>
+	<<journal "Left the caravan at the hill road. The shrine is a day's walk from here.">>
+<</link>>
