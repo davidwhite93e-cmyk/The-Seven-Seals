@@ -60,3 +60,20 @@
   hidden-until-later-books list, and consistency rules for all future
   implementation. Marked DRAFT with twelve sections and six flagged
   open questions -- no chapter implementation until approved.
+- Design Spec 007 approved with modifications, all folded into its
+  text so it reads as clean canon: counter-pact, entrusting
+  ("responsibility, not power; the burden is inherited, not the
+  Seal"), Rite of Renewal, and Seals-measure ("revealing him, not
+  changing him") approved; "audible to demonkind" modified to
+  Covenant-disturbance sensed as storm-pressure; the lie-binding
+  metaphysics rejected and replaced with Qadir's One Rule (a
+  voluntary, absolute refusal to speak deliberate falsehood); freed
+  Guardians canonically return to natural mortality ("not dying --
+  finally allowed to live again").
+- Drafted Design Spec 008 (The Seven Founding Oaths) at the Creative
+  Director's request: full texts of the seven Oaths and the Closing,
+  the founders-are-the-Guardians proposed reading, sigil lore
+  unifying the shipped unbroken-circle Seal symbol with the shipped
+  broken-circle ward-sign, folk echoes already present in shipped
+  Chapters 1-2, and on-page usage rules. Marked DRAFT with five open
+  questions. All chapter implementation suspended until approved.

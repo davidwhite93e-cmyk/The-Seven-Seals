@@ -10,9 +10,11 @@ Spec 004 (Book One Production Philosophy, v1.0), Design Spec 005 (The
 Guardian Bible, Part I — Foundational Design, v1.0), Design Spec 006
 (Book One Story Architecture, v1.0 — **approved in principle** by the
 Creative Director with revisions recorded in its Post-Review Revisions
-block; provisional elements remain non-canon), and Design Spec 007
-(The Mythology Bible, v1.0 draft — **pending review and approval**; no
-chapter implementation until approved).
+block; provisional elements remain non-canon), Design Spec 007 (The
+Mythology Bible, v1.0 — **approved with modifications**, all folded
+into its text), and Design Spec 008 (The Seven Founding Oaths, v1.0
+draft — **pending review and approval**; all chapter implementation
+suspended until approved).
 
 ## Book One Goal
 
@@ -844,26 +846,33 @@ throughline:
 
 - **Yasmina's personal history** (needed before Chapter 5
   implementation).
-- **The Mythology Bible** (Design Spec 007, drafted below — needed
-  before Chapter 3 implementation and before virtues 2–7 can be
-  finalized).
+- **The Seven Founding Oaths** (Design Spec 008, drafted below — all
+  chapter implementation is suspended until it is approved; virtues
+  2–7 and the Guardians' final characterization derive from it).
 
 ---
 
 # The Mythology Bible (Design Spec 007)
 
-**Status: DRAFT — awaiting Creative Director review and approval. No
-chapter implementation proceeds until this document is approved.**
+**Status: APPROVED by the Creative Director, with modifications — all
+folded into the text below, which now reads as clean canon.**
 
-Once approved, this is the single source of truth for every
-supernatural element in the series. Where earlier documents touch the
-same ground, this document is the deeper, governing statement. It is
-entirely backstage: player-facing reveals remain governed by the
-Mystery Ledger's schedule, and nothing here is license to surface lore
-early. Drafted by the Implementation Lead; every mechanism below is a
-proposal built to fit all shipped content and prior specs without
-contradiction, and each section the Creative Director should
-particularly scrutinize is flagged.
+Review outcomes: counter-pact — approved. Entrusting — approved
+(responsibility transfers, never power; the burden is inherited, not
+the Seal). Rite of Renewal — approved. Seals measure their bearers —
+approved (they reveal Amir, they do not change him). Seals "audible"
+to demonkind — modified (infernal beings sense disturbances in the
+Covenant, like pressure before a storm — never literal sound).
+Lie-binding metaphysics — rejected; replaced with Qadir's voluntary
+absolute rule (Section II). Freed Guardians return to ordinary
+mortality — approved. Virtues — deliberately unfinalized, to emerge
+from the Seven Founding Oaths (Design Spec 008).
+
+This is the single source of truth for every supernatural element in
+the series. Where earlier documents touch the same ground, this
+document is the deeper, governing statement. It is entirely backstage:
+player-facing reveals remain governed by the Mystery Ledger's
+schedule, and nothing here is license to surface lore early.
 
 ## I. Before the Covenant — the Making of the Black Vizier
 
@@ -917,18 +926,17 @@ The Covenant did three things:
    man: no sorcery, no dominion, nothing but a mind.
 3. **It bound his hands** — he cannot act directly against the
    Covenant's work. He cannot touch an oath-bound Seal. He cannot
-   raise his hand against a Guardian. And — this is proposed as the
-   mythological root of his defining trait — **he cannot speak a
-   lie**. The Covenant was made of true promises; its prisoner is held
-   to truth. Everything he says must be true. He has had centuries to
-   master the art of letting the truth deceive.
+   raise his hand against a Guardian.
 
-*Design intent: Design Spec 004's rule that "everything Qadir says
-remains true — he simply allows others to misunderstand" stops being a
-stylistic choice and becomes a chain he wears. This is flagged for
-Creative Director scrutiny because it retroactively converts a voice
-rule into hard metaphysics — a strong move, but one that binds all
-future Qadir dialogue everywhere in the series.*
+**Qadir's One Rule (canon — characterization, not metaphysics).** The
+Creative Director rejected making truthfulness a supernatural law; it
+is something better. Qadir has *voluntarily* adopted one absolute
+rule: he never speaks a deliberate falsehood. He omits. He redirects.
+He frames. He answers different questions than the one asked. He
+allows others to reach incorrect conclusions. But every factual
+statement he makes is true. His honesty is a choice, made and kept for
+centuries — which is considerably more frightening than a chain. All
+future Qadir dialogue, in every book, is audited against this rule.
 
 Across the centuries since, the bound man has worn many names and
 lived many quiet, exemplary public lives. **"Qadir ibn Salim" is only
@@ -983,15 +991,22 @@ Qadir because they have nothing to warn him *with*.
 
 ## V. Entrusting — What Actually Happens
 
+Canonical language, to be kept consistent throughout the series: **the
+Guardians never transfer power. They transfer responsibility. The Seal
+is not inherited. The burden is.**
+
 When a Guardian freely places their Seal in a successor's hands:
 
 1. **The oath ends — fulfilled, not broken.** This distinction
    matters; the Covenant does not punish its keepers.
-2. **The lent time ends.** The Guardian becomes ordinary: they resume
-   aging from where they stand and live out a natural remainder.
-   (Proposed: they do *not* die upon entrusting — Design Spec 004's
-   Hope pillar argues for Basim still tending his shrine, mortal and
-   content, and freed Guardians are a Book Two resource.)
+2. **The lent time ends.** (Canon, per Creative Director review.) The
+   Guardian becomes ordinary: they resume aging from where they stand
+   and live out whatever natural life remains to them — a month or a
+   decade, as their body decides. They do not die of entrusting.
+   Canonical framing, per Design Spec 004's Hope pillar: **the
+   Guardians are not dying. They are finally allowed to live again.**
+   Basim is now mortal, aging naturally, and presumably still tending
+   his shrine; freed Guardians are a Book Two resource.
 3. **The successor receives the anchor — but not the oath.** The Seal
    in Amir's satchel is real, and really his, and holds real meaning.
    But it no longer anchors the prison. It is a lock carried out of
@@ -1019,15 +1034,21 @@ rite. No one will.
 Unbound Seals do two things to their bearer:
 
 1. **They measure.** A Seal continuously holds its bearer against its
-   virtue — not as judgment but as presence, the way carrying a
-   sleeping child changes how you walk. This is the mythological basis
-   for the trials changing Amir permanently, and for the escalating
-   interiority of Chapters 4–8. The weight is formative, never
-   corrupting: the Seals are made of promises, and nothing about them
-   tends toward darkness.
-2. **They are audible.** To demonkind, an unbound Seal is a struck
-   bell that never quite stops ringing. One Seal is a rumor. Three are
-   a trail. Seven gathered in one place are a beacon — which is why
+   oath — not as judgment but as presence, the way carrying a sleeping
+   child changes how you walk. This is the mythological basis for the
+   trials changing Amir permanently, and for the escalating
+   interiority of Chapters 4–8. Canonical distinction, per the
+   Creative Director: **the Seals are not changing Amir. They are
+   revealing him.** The weight is formative, never corrupting: the
+   Seals are made of promises, and nothing about them tends toward
+   darkness.
+2. **They disturb.** (Modified from "audible" per Creative Director
+   review.) Infernal beings do not hear the Seals; they sense
+   *disturbances in the Covenant* — a change in pressure, the way the
+   air turns before a storm. An entrusted Seal moving through the
+   world is weather to them. One Seal is a shift too small to name.
+   Three are a front building somewhere beyond the horizon. Seven
+   gathered in one place are the storm itself, arrived — which is why
    the rival faction's inherited doctrine, "the seven must never be
    gathered," is *correct*, and why the public ceremony Qadir arranges
    in Chapter 8 is not merely a trap but a summons.
@@ -1118,21 +1139,252 @@ fallen empire, or from something else — is deliberately open.
    makes an already-shipped moment newly meaningful, patch with one or
    two unexplained, emotionally natural sentences — never exposition.
 
-## XII. Open Questions for Creative Director Review
+## XII. Remaining Open Questions
 
-1. The lie-binding (Section II) — canonize Qadir's truthfulness as
-   metaphysics, or keep it as characterization only?
-2. The fallen empire — named now, or left unnamed through Book One?
-3. Freed Guardians live out natural lives (proposed) vs. die upon
-   entrusting — affects Basim's availability as early as Chapter 3.
-4. The rite of renewal — permanently lost, or does a fragment survive
+Resolved by the Creative Director's review: the lie-binding (rejected
+— replaced by Qadir's One Rule, Section II); freed Guardians (approved
+— natural mortality, Section V); the virtues (to emerge from the Seven
+Founding Oaths — Design Spec 008, commissioned).
+
+Still open:
+
+1. The fallen empire — named now, or left unnamed through Book One?
+2. The rite of renewal — permanently lost, or does a fragment survive
    somewhere as Book Two's hope? (This document assumes lost *as far
    as Book One knows*, which keeps both options open.)
-5. The Black Vizier's series-scale want (Section VII) — accept,
+3. The Black Vizier's series-scale want (Section VII) — accept,
    revise, or defer entirely.
-6. With this mythology in place, the seven virtues can now be derived
-   from the seven founding oaths — should the Implementation Lead
-   propose that derivation as a follow-up for review, or will the
-   Creative Director specify the virtues directly?
 
-Awaiting review. No Chapter 3 implementation until approved.
+---
+
+# The Seven Founding Oaths (Design Spec 008)
+
+**Status: DRAFT — awaiting Creative Director review and approval. All
+chapter implementation remains suspended until this document is
+approved.**
+
+The deepest layer of the mythology. Everything above it hangs from
+this document: **the Oaths create the Guardians. The Guardians embody
+the Oaths. The Seals preserve the Oaths. The trials reveal the Oaths.**
+And ultimately Amir himself — what the trials find in him, chapter by
+chapter, is his unknowing capacity to have sworn each one.
+
+The oath texts below are the deliverable. Everything else in this
+spec exists to serve them. Per the Creative Director's instruction,
+these should read like promises capable of holding back darkness for
+centuries — quoted by generations that no longer remember what they
+are quoting. They are presented for review, not as settled scripture:
+the texts deserve iteration, and revision of any line is expected and
+welcome.
+
+## How the Covenant Was Spoken
+
+Once, in seven voices, at the binding of the Black Vizier. Not a
+ceremony — there was no one left to perform one for. Seven ordinary
+people stood in a circle around a man who could not be killed, and
+each in turn said what they were prepared to stake, and the saying
+held.
+
+They were not chosen. They were simply the ones who stayed.
+
+The original tongue is lost; what the mythology preserves is the sense
+of it, worn smooth by translation the way Basim's staff is worn smooth
+by his grip. **Proposed reading (flagged for approval): the seven who
+swore are the seven who keep.** The current Guardians are not
+successors of the founders — they *are* the founders, still keeping
+the promises they made, on time lent to them for exactly that purpose.
+This reading follows Design Spec 005 ("centuries of waiting," "the
+title of Guardian became inseparable from the individual") and makes
+every farewell in the series the end of an eight-hundred-year
+sentence. Basim did not inherit the First Oath. He said it.
+
+## The Oaths
+
+### The First Oath
+*(kept at the desert shrine — the Seal of Resolve; canon-anchored by
+shipped Chapter 2)*
+
+> When my reasons fail, I will keep walking.
+> When my hope fails, I will keep walking.
+> Let my heart arrive before my feet;
+> I will follow it the rest of the way.
+
+What it holds: the refusal that cannot be bargained with. The Black
+Vizier's power was made of terms — and there are no terms to offer
+someone who has already agreed to lose everything and continue.
+
+Already on the page: Basim's farewell touchstone — "the heart always
+reaches its destination before the feet" — is his own oath, worn down
+to a saying. He has been quoting himself for centuries, and no one
+alive knows it.
+
+### The Second Oath
+*(kept at the abandoned fortress)*
+
+> I will not wait until I am unafraid.
+> I will stand between the harm and the harmed,
+> and my fear will stand with me,
+> and we will not move.
+
+What it holds: the shield that does not require courage to exist
+before it works. The oath does not banish fear — it enlists it. The
+trial built on it should never reward suppressing fear, only acting
+honestly while afraid.
+
+### The Third Oath
+*(kept at the thriving orchard)*
+
+> What I loved in the light,
+> I will not leave in the dark.
+> I will be found where I said I would be.
+
+What it holds: presence. The orchard grows because someone has kept
+showing up for eight hundred years. "I will be found where I said I
+would be" is proposed as the single most-quoted line in the series —
+short enough for a parent to say at a doorway, heavy enough for a
+deathbed.
+
+### The Fourth Oath
+*(kept at the library)*
+
+> I will see before I judge,
+> and weigh before I speak,
+> and if the scales fall against me,
+> I will not touch them.
+
+What it holds: honest measure. The last two lines are the teeth: a
+judge who accepts a verdict that ruins them. The trial built on it
+should make the fair reading of evidence personally costly.
+
+### The Fifth Oath
+*(kept at the observatory)*
+
+> I will not dress my wishes as knowledge.
+> I will say "I do not know"
+> in the hearing of those who wish I did,
+> and I will keep looking.
+
+What it holds: truth as a discipline rather than a possession.
+
+Already on the page, unexplained: Yasmina's caravan-scene credo —
+"I'd rather tell you 'I think' and be right twice as often than tell
+you 'I know' and be wrong once where it costs someone something" — is
+the Fifth Oath in a living girl's mouth, unprompted, untaught. This is
+proposed as part of what the Guardians recognize in her. Per standing
+canon, no Guardian explains it and neither do we.
+
+### The Sixth Oath
+*(kept at the lighthouse)*
+
+> I will pay what the keeping costs
+> when no one sees the paying.
+> Let the light be remembered
+> and the keeper forgotten.
+
+What it holds: the sacrifice that does not curdle into resentment
+because it never asked for witnesses. A lighthouse keeper's whole
+theology in four lines.
+
+### The Seventh Oath
+*(kept at the monastery in the cliffs)*
+
+> I will not open every door my key fits.
+> Some things I will carry without looking inside;
+> some questions I will leave
+> for hands quieter than mine.
+
+What it holds: restraint — the wisdom that knows the difference
+between what can be done and what should be. Note the resonance with
+the entire book: Amir will spend nine chapters carrying locks without
+looking inside. The Seventh Oath is the one the whole story secretly
+runs on.
+
+### The Closing
+*(spoken together, once, at the end)*
+
+> Seven we swore it, and one we became.
+> Let it hold while we hold.
+> Let it end only in better hands.
+
+"Let it hold while we hold" is the tragedy stated in advance: the
+Covenant's strength and its expiration are the same clause. And "let
+it end only in better hands" is Chapter 9 in eight words — it *did*
+end in better hands. Amir's hands were exactly as good as the founders
+prayed for. That is precisely how Qadir wins. Nothing in the Covenant
+failed; it was fulfilled to the letter, and the letter was the trap.
+
+## The Sigil Lore
+
+Already shipped and now unified: each individual Seal bears **a single
+unbroken circle** (the Seal of Resolve, Chapter 2) — one oath, whole
+in itself. The Covenant entire is drawn as **a circle broken in seven
+places** — seven arcs, seven oaths, closing one ring (the ward-sign
+burned into the flagstones in Chapter 1, and Hakim's "a broken circle,
+seven divisions"). The full ring appearing where something dies or
+leaks through is the signature of the binding under strain.
+
+## Folk Echoes (already shipped — the Oaths hiding in plain sight)
+
+The Oaths survive in the culture as degraded quotation, which shipped
+Chapters 1–2 already contain — unplanned then, canon now:
+
+- The Ch1 storyteller's tale: a treasure broken into seven pieces,
+  each charged to a guardian who tests seekers "not with steel, but
+  with character" — the Covenant, remembered as entertainment.
+- Sabiha's hospitality law ("any traveler who shares your fire is owed
+  protection until dawn... some laws don't need soldiers to enforce
+  them") — descendant custom of the Second and Third Oaths.
+- The pilgrim's proverb, "Hospitality repaid is hospitality
+  understood."
+- Basim's farewell saying (First Oath, self-quoted).
+- Yasmina's caravan credo (Fifth Oath, unknowing).
+
+Future chapters should continue this pattern: the Oaths should be
+audible in proverbs, lullabies, market sayings, and prayers long
+before any character learns what they are quoting.
+
+## On-Page Usage Rules
+
+1. **Fragments before wholes.** Through most of Book One the Oaths
+   surface only as echoes and worn sayings. The full text of an
+   individual Oath may appear at most once per book.
+2. **Each Guardian may speak or closely paraphrase their own Oath
+   exactly once — at their farewell.** This *is* the Design Spec 005
+   touchstone-line requirement, now unified with the mythology:
+   Basim's farewell already conforms retroactively.
+3. **The Closing is never spoken aloud in Book One.** Reserve it. (An
+   open question below proposes the one dark exception.)
+4. Never annotate an echo. When Yasmina speaks like the Fifth Oath, no
+   character notices on the page, per the Retroactive Foreshadowing
+   Rule: the truth is visible before it is understood.
+
+## What the Oaths Are Not
+
+Not commandments — no one is punished by them. Not magic words — 
+reciting an Oath does nothing; keeping it does everything. Not virtues
+from a list — the shorthand names people later gave them ("Resolve"
+is the only shipped example) are folk labels, and the remaining six
+labels are left for the Creative Director to derive from these texts,
+or to request as a follow-up proposal.
+
+## Open Questions for Creative Director Review
+
+1. **The oath texts themselves** — each line is offered for revision;
+   these should be iterated until they feel inevitable.
+2. **"The seven who swore are the seven who keep"** — confirm or
+   reject the founders-are-the-Guardians reading. (If rejected, the
+   rite of renewal history needs a successor-generation account.)
+3. **The rite and the sole successor** — the rite of renewal
+   contemplates seven successors; Book One delivers every Seal to one.
+   Whether that asymmetry is Qadir's deepest manipulation of all, a
+   Book Two door, or both, is deliberately left undecided here.
+4. **The Closing in Chapter 9** — proposal, flagged: Qadir, holding
+   all seven Seals at the moment of his freedom, might speak the
+   Closing's second line — "let it hold while we hold" — as a quiet
+   epitaph for the Covenant. He was there when it was first spoken. It
+   would be the only time in Book One the player hears any part of the
+   Closing, and it would be true. Accept, revise, or reject.
+5. **Folk labels for Oaths 2–7** — derived by the Creative Director
+   directly, or proposed by the Implementation Lead as a follow-up?
+
+Awaiting review. All chapter implementation suspended until approved.
