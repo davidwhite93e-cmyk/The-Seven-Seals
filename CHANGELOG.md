@@ -84,3 +84,22 @@
   now CANON. The oath-text tightening pass and rulings on the
   Closing-in-Ch9, folk labels, and the sole-successor asymmetry await
   the remainder of the review.
+- Received the complete Design Spec 008 review and folded all rulings
+  in: executed the brevity/timelessness pass on all seven Oaths,
+  rewrote the Closing ("Seven made one promise. / Let it hold while we
+  hold. / Let it end in better hands."), logged three NEW CANON
+  sections (the Oaths cannot be destroyed; every Trial ends with
+  silence; the Seals are ordinary -- the Oaths are the treasure, with
+  its guiding principle), replaced the rejected Closing-in-Ch9 beat
+  with Qadir's impossible-familiarity beat in the Chapter 9
+  architecture, added the second-playthrough rule for
+  farewells-as-worn-Oaths, and recorded the Creative Director's
+  inheritance-of-responsibility theme as "The Heart of the Series."
+- Drafted Design Spec 009 (Character Bible) at the Creative Director's
+  request: arc-level entries (core wound, desire, fear, flaw,
+  strength, Book One arc, mutual change with Amir, end-of-book
+  secrets, non-implementable Book Two trajectory) for Amir, Yasmina,
+  Qadir, Sultan Rashid, Hakim Nadir, Farah, and Basim. Yasmina's
+  biographical specifics and all father/river content stay behind
+  their standing deferrals. Marked DRAFT with four open questions;
+  implementation resumes from Chapter 3 upon approval.

@@ -12,9 +12,11 @@ Guardian Bible, Part I — Foundational Design, v1.0), Design Spec 006
 Creative Director with revisions recorded in its Post-Review Revisions
 block; provisional elements remain non-canon), Design Spec 007 (The
 Mythology Bible, v1.0 — **approved with modifications**, all folded
-into its text), and Design Spec 008 (The Seven Founding Oaths, v1.0 —
-**under review**: partial ruling received and logged, remainder of the
-truncated review awaited; all chapter implementation suspended).
+into its text), Design Spec 008 (The Seven Founding Oaths, v1.0 —
+**approved with revisions**, all folded into its text), and Design
+Spec 009 (Character Bible, v1.0 draft — **pending review and
+approval**; chapter implementation resumes from Chapter 3 once it is
+approved).
 
 ## Book One Goal
 
@@ -27,6 +29,15 @@ obstacle preventing Qadir's freedom. When every Seal is gathered,
 Qadir takes them, breaks his prison, binds the demons to himself, and
 escapes. Book One ends there — the player believes they lost. Book
 Two's central conflict is not to be revealed in Book One.
+
+## The Heart of the Series (Creative Director note — canonical)
+
+The Seven Seals is no longer a story about recovering magical
+artifacts. It is about **inheritance — not of blood, but of
+responsibility**. Every generation chooses whether the promises of the
+previous generation continue. The Seals are only the physical reminder
+of those promises. That is the story players should remember long
+after they forget the mechanics.
 
 ## Chapter Structure
 
@@ -813,6 +824,12 @@ throughline:
   his own imprisonment, binds the demons (the Marid among them, per
   the existing `$npc.marid` entry) to himself as his own power, and
   escapes. No final battle, per spec.
+- **Impossible familiarity (canon, per the Spec 008 review):** during
+  the ceremony and reveal, Qadir quietly recognizes the Covenant's
+  ritual shape without ever claiming ownership of it — small,
+  unremarked competences no living person should have. He never
+  speaks the Closing (explicitly rejected). The design target is the
+  post-book realization: "How could he have known that?"
 - **Black Vizier presence:** Total — this is his chapter.
 - **Ending hook:** Book One ends immediately after the escape. Amir
   has nothing left but the Guardians' words, Yasmina beside him, and a
@@ -1159,11 +1176,11 @@ Still open:
 
 # The Seven Founding Oaths (Design Spec 008)
 
-**Status: UNDER REVIEW — partial Creative Director ruling received;
-the review transmission was cut off mid-sentence and the remainder is
-awaited. All chapter implementation remains suspended.**
+**Status: APPROVED by the Creative Director, with revisions — all
+folded into the text below. The oath texts reflect the required
+brevity/timelessness pass; earlier drafts live in git history.**
 
-## Received Rulings (canon as of the partial review)
+## Review Rulings (complete — canon)
 
 1. **Core philosophy — APPROVED.** The Seven Oaths are now the oldest
    surviving words in the setting. Everything else descended from
@@ -1173,30 +1190,36 @@ awaited. All chapter implementation remains suspended.**
    Guardian embodies one promise, and every Trial asks one question:
    *"Will you freely make this promise yourself?"* The player is never
    asked to recite an Oath — they prove it through action.
-3. **Language — APPROVED WITH REVISION.** The ideas stand; the wording
-   must become even more timeless. Imagine them recited a thousand
-   years after first spoken: inevitable, simple, memorable. Children
-   should be able to remember them; old people should still discover
-   new meaning in them. Prefer one unforgettable sentence over four
-   beautiful ones — brevity creates permanence. *(Revision pass on the
-   oath texts below is pending the complete review, in case the
-   truncated remainder contains per-oath notes.)*
+3. **Language — APPROVED WITH REVISION (executed below).** Timeless,
+   inevitable, simple, memorable. Children should be able to remember
+   them; old people should still discover new meaning in them. One
+   unforgettable sentence over four beautiful ones — brevity creates
+   permanence.
 4. **The Founders ARE the First Guardians — CANON.** Basim did not
    inherit the First Oath; he spoke it, chose it, helped bind the
    Covenant. Every Guardian still living is one of the original Seven,
    waiting centuries for successors worthy enough to release them.
    Players are unknowingly speaking with living history.
-5. **Farewells as worn Oaths — APPROVED.** Basim's farewell being the
-   First Oath worn smooth is now the intentional pattern: each
-   Guardian's most memorable line should eventually be recognizable as
-   their own Oath transformed by a lifetime of experience. *(The
-   ruling's final sentence — "The player should only realize this on
-   a…" — arrived truncated; its completion is awaited before this rule
-   is treated as fully specified.)*
-
-Rulings NOT yet received (truncated): the Closing-in-Chapter-9
-proposal, folk labels for Oaths 2–7, the rite/sole-successor
-asymmetry, and any remaining review items.
+5. **Farewells as worn Oaths — APPROVED.** Each Guardian's most
+   memorable line should eventually be recognizable as their own Oath
+   transformed by a lifetime of experience — and the player should
+   only realize this on a second playthrough.
+6. **Yasmina echoing the Fifth Oath — APPROVED.** Leave it completely
+   unexplained. No one ever comments on it. Book One does not answer
+   why.
+7. **The Closing — MODIFIED (executed below).** Retain the meaning;
+   rewrite until it feels carved into stone. It should become the
+   single most recognizable quotation in the entire series.
+8. **Qadir speaking the Closing in Ch9 — REJECTED.** Instead: Qadir
+   quietly recognizes the ritual without claiming ownership of it —
+   impossible familiarity with the Covenant, noticed only in
+   hindsight. The post-book question "How could he have known that?"
+   is more powerful than any direct reveal. (Folded into the Chapter 9
+   architecture in Design Spec 006.)
+9. **NEW CANON — The Oaths cannot be destroyed.** (Section below.)
+10. **NEW CANON — Every Trial ends with silence.** (Section below.)
+11. **NEW CANON — The Seals are intentionally ordinary; the Oaths are
+    the true treasure.** (Section below, with the guiding principle.)
 
 The deepest layer of the mythology. Everything above it hangs from
 this document: **the Oaths create the Guardians. The Guardians embody
@@ -1242,8 +1265,7 @@ shipped Chapter 2)*
 
 > When my reasons fail, I will keep walking.
 > When my hope fails, I will keep walking.
-> Let my heart arrive before my feet;
-> I will follow it the rest of the way.
+> My heart will arrive before my feet.
 
 What it holds: the refusal that cannot be bargained with. The Black
 Vizier's power was made of terms — and there are no terms to offer
@@ -1257,10 +1279,9 @@ alive knows it.
 ### The Second Oath
 *(kept at the abandoned fortress)*
 
-> I will not wait until I am unafraid.
-> I will stand between the harm and the harmed,
-> and my fear will stand with me,
-> and we will not move.
+> I will stand between the harm and the harmed.
+> My fear will stand with me.
+> We will not move.
 
 What it holds: the shield that does not require courage to exist
 before it works. The oath does not banish fear — it enlists it. The
@@ -1276,17 +1297,15 @@ honestly while afraid.
 
 What it holds: presence. The orchard grows because someone has kept
 showing up for eight hundred years. "I will be found where I said I
-would be" is proposed as the single most-quoted line in the series —
-short enough for a parent to say at a doorway, heavy enough for a
-deathbed.
+would be" is short enough for a parent to say at a doorway, heavy
+enough for a deathbed. (The series' single most recognizable
+quotation is reserved, by ruling, for the Closing.)
 
 ### The Fourth Oath
 *(kept at the library)*
 
-> I will see before I judge,
-> and weigh before I speak,
-> and if the scales fall against me,
-> I will not touch them.
+> I will see before I judge.
+> If the scales fall against me, I will not touch them.
 
 What it holds: honest measure. The last two lines are the teeth: a
 judge who accepts a verdict that ruins them. The trial built on it
@@ -1296,9 +1315,7 @@ should make the fair reading of evidence personally costly.
 *(kept at the observatory)*
 
 > I will not dress my wishes as knowledge.
-> I will say "I do not know"
-> in the hearing of those who wish I did,
-> and I will keep looking.
+> I will say "I do not know," and I will keep looking.
 
 What it holds: truth as a discipline rather than a possession.
 
@@ -1312,10 +1329,8 @@ canon, no Guardian explains it and neither do we.
 ### The Sixth Oath
 *(kept at the lighthouse)*
 
-> I will pay what the keeping costs
-> when no one sees the paying.
-> Let the light be remembered
-> and the keeper forgotten.
+> I will pay what the keeping costs, though no one sees the paying.
+> Let the light be remembered and the keeper forgotten.
 
 What it holds: the sacrifice that does not curdle into resentment
 because it never asked for witnesses. A lighthouse keeper's whole
@@ -1325,9 +1340,7 @@ theology in four lines.
 *(kept at the monastery in the cliffs)*
 
 > I will not open every door my key fits.
-> Some things I will carry without looking inside;
-> some questions I will leave
-> for hands quieter than mine.
+> Some things I will carry and never look inside.
 
 What it holds: restraint — the wisdom that knows the difference
 between what can be done and what should be. Note the resonance with
@@ -1338,16 +1351,21 @@ runs on.
 ### The Closing
 *(spoken together, once, at the end)*
 
-> Seven we swore it, and one we became.
+> Seven made one promise.
 > Let it hold while we hold.
-> Let it end only in better hands.
+> Let it end in better hands.
+
+Rewritten per the review toward something carved into stone: three
+short lines, no ornament. This is intended to become the
+single most recognizable quotation in the entire series; further
+iteration remains welcome until it feels inevitable.
 
 "Let it hold while we hold" is the tragedy stated in advance: the
 Covenant's strength and its expiration are the same clause. And "let
-it end only in better hands" is Chapter 9 in eight words — it *did*
-end in better hands. Amir's hands were exactly as good as the founders
-prayed for. That is precisely how Qadir wins. Nothing in the Covenant
-failed; it was fulfilled to the letter, and the letter was the trap.
+it end in better hands" is Chapter 9 in six words — it *did* end in
+better hands. Amir's hands were exactly as good as the founders prayed
+for. That is precisely how Qadir wins. Nothing in the Covenant failed;
+it was fulfilled to the letter, and the letter was the trap.
 
 ## The Sigil Lore
 
@@ -1387,9 +1405,14 @@ before any character learns what they are quoting.
 2. **Each Guardian may speak or closely paraphrase their own Oath
    exactly once — at their farewell.** This *is* the Design Spec 005
    touchstone-line requirement, now unified with the mythology:
-   Basim's farewell already conforms retroactively.
-3. **The Closing is never spoken aloud in Book One.** Reserve it. (An
-   open question below proposes the one dark exception.)
+   Basim's farewell already conforms retroactively. Per ruling, the
+   player should only realize the farewell-is-the-Oath pattern on a
+   second playthrough — never signal it.
+3. **The Closing is never spoken aloud in Book One. No exceptions.**
+   (The Qadir-speaks-it proposal was rejected.) In Chapter 9, Qadir
+   instead quietly recognizes the ritual without claiming ownership —
+   impossible familiarity, legible only in hindsight, so the finished
+   player asks: "How could he have known that?"
 4. Never annotate an echo. When Yasmina speaks like the Fifth Oath, no
    character notices on the page, per the Retroactive Foreshadowing
    Rule: the truth is visible before it is understood.
@@ -1403,29 +1426,345 @@ is the only shipped example) are folk labels, and the remaining six
 labels are left for the Creative Director to derive from these texts,
 or to request as a follow-up proposal.
 
+## The Oaths Cannot Be Destroyed (canon)
+
+Even if every written copy vanished, every Guardian remembered them.
+Now Amir remembers them. Ideas survive — that is why the Covenant
+survives, and it is one of the central themes of the series: darkness
+can destroy walls; it cannot erase freely chosen promises.
+
+## Every Trial Ends with Silence (canon)
+
+Not applause. Not magical spectacle. Not dramatic music. Silence. The
+Guardian waits. The player reflects. Only then is the Seal entrusted —
+reflection is part of the Trial. This extends Design Spec 005's trial
+rules and binds every future Guardian scene. (The shipped Chapter 2
+trial already conforms: Amir stands alone in the empty chamber "long
+enough that it stops feeling like a delay and starts feeling like an
+answer" before Basim speaks or the Seal appears.)
+
+## The Seals Are Ordinary; the Oaths Are the Treasure (canon)
+
+The Seals are intentionally ordinary objects. The Oaths are the true
+treasure. Guiding principle for every remaining chapter, verbatim from
+the Creative Director:
+
+> "The important thing was never collecting the Seals. It was becoming
+> the kind of person the Seals would be entrusted to."
+
+Shipped Chapter 1 already whispers this: the storyteller by the
+fountain, asked whether the scattered treasure was gold, laughs and
+says treasure is never gold — not really — and refuses to explain what
+he means.
+
+## Remaining Open Questions
+
+Resolved by the complete review: the oath texts (revision pass
+executed above); founders-are-the-Guardians (canon); the
+Closing-in-Ch9 proposal (rejected — replaced by the
+impossible-familiarity beat, folded into Design Spec 006's Chapter 9).
+
+Still open:
+
+1. **The rite and the sole successor** — the rite of renewal
+   contemplates seven successors; Book One delivers every Seal to one.
+   Whether that asymmetry is Qadir's deepest manipulation of all, a
+   Book Two door, or both, is deliberately left undecided here.
+2. **Folk labels for Oaths 2–7** — derived by the Creative Director
+   directly, or proposed by the Implementation Lead as a follow-up?
+   (Blocks finalizing the placeholder virtues in Design Spec 006's
+   Seal table.)
+3. **The Closing's final wording** — the rewrite above is offered
+   toward "carved into stone"; iterate until inevitable.
+
+---
+
+# Character Bible (Design Spec 009)
+
+**Status: DRAFT — awaiting Creative Director review and approval.
+Once approved, implementation proceeds continuously from Chapter 3
+onward.**
+
+Arcs, not biographies, per the commission. Constraints honored
+throughout: Yasmina's entries are arc-level only — her biographical
+specifics remain deferred to her own future spec (Design Spec 006,
+Post-Review Revision 5). Farah's and the father-related entries stay
+inside the Mystery Ledger's Book 2 reveal flags. Every **Book Two
+trajectory is non-implementable** — one paragraph, never to be used,
+hinted at, or foreshadowed by implementation without a future spec.
+
+## Amir
+
+- **Core wound:** He grew up inside an unanswered question — a father
+  no one would explain, a pendant no one would discuss, a river his
+  mother won't name. Home was full of love and empty of answers.
+- **Core desire:** To matter to something larger than the street he
+  grew up on — and, beneath that, to finally understand where he
+  comes from.
+- **Greatest fear:** At the start: that he is ordinary. By the end:
+  that the people who believe in him will pay for having done so.
+  (Chapter 9 makes both fears come true in one stroke.)
+- **Fatal flaw:** He believes trust, once earned, is settled — that
+  worthiness proven is worthiness permanent. He audits enemies, never
+  friends. Qadir's entire plan is built on exactly this.
+- **Greatest strength:** He keeps walking (the First Oath lives in
+  him before he ever hears it). His care for ordinary people is
+  genuine, not performed — the trials keep finding it real.
+- **Relationship arc across Book One:** From a baker's son with a
+  training sword to the sole bearer of seven promises — moving through
+  each Guardian's admiration, Yasmina's partnership, the court's
+  regard, and Qadir's counterfeit mentorship.
+- **How he changes because of others:** Each Guardian leaves one
+  permanent mark (per the Seal rhythm); Yasmina teaches him honest
+  uncertainty; Farah's steadiness becomes the floor under his Resolve;
+  Qadir teaches him — at the very end — that goodness without
+  discernment is a door left open.
+- **How others change because of him:** See each entry below; the
+  common thread is that Amir makes people braver about what they
+  already believed.
+- **What he still hides at the end of Book One:** The compass and what
+  it does near Covenant matters (told no one; Yasmina has only seen
+  fragments). His growing, unspoken certainty that his father is
+  somewhere inside this story. And — after Chapter 9 — his private
+  belief that the betrayal was somehow his fault.
+- **Book Two trajectory (non-implementable):** From collector to
+  keeper. The rite contemplates seven successors; there is one of him.
+  Book Two's Amir must decide whether the Covenant is re-sworn,
+  re-founded, or replaced — and what his father's road has to do with
+  his own.
+
+## Yasmina
+*(arc-level only; biographical specifics deferred by standing ruling)*
+
+- **Core wound:** She has spent her life being almost-believed —
+  brilliant in a world that finds her brilliance charming rather than
+  load-bearing. Her father is the only one who ever weighed her
+  conclusions instead of her age.
+- **Core desire:** To truly know — and to be trusted with the knowing
+  when it matters, not after.
+- **Greatest fear:** That the first time she is wrong will be the time
+  it costs someone she loves (her caravan credo is this fear spoken
+  aloud — and, unknown to all, the Fifth Oath).
+- **Fatal flaw:** Self-sufficiency. She would rather carry a doubt
+  alone than hand anyone an unverified fear — which means the moment
+  she begins suspecting something is wrong, her instinct is silence
+  until proof. (This flaw should cost the party visibly at least once
+  before Chapter 9.)
+- **Greatest strength:** Intellectual honesty as a way of life. She is
+  the only major character who never once deceives herself on the
+  page.
+- **Relationship arc across Book One:** Companion → equal partner
+  (Ch2, canonized by the trial) → co-protagonist. The Guardians keep
+  marking her, unexplained. First serious disagreement with Amir in
+  Ch5; the bond becomes load-bearing in Ch7; her reaction anchors the
+  player's in Ch9.
+- **How she changes because of Amir:** She learns to act on "I think"
+  — to move before certainty when someone needs it, because she has
+  watched Amir do it and live.
+- **How Amir changes because of her:** He learns that saying "I do not
+  know" out loud is strength; her discipline of doubt becomes the only
+  tool he has left after Chapter 9.
+- **What she still hides at the end of Book One:** What Basim told her
+  ("your road will ask different things") and every Guardian moment
+  like it since — she has been collecting them, privately, and has
+  not told Amir. Whatever she has begun to suspect they mean.
+- **Book Two trajectory (non-implementable):** Her own road begins
+  asking. The deferred history spec defines what the Guardians
+  recognized; Book Two makes her a protagonist of her own journey
+  rather than a partner in Amir's.
+
+## Qadir ibn Salim
+
+- **Core wound:** He was once genuinely the greatest servant his
+  empire ever had — and everything he built was consumed by what he
+  paid to build it, including his own name. Eight centuries of
+  imprisonment in politeness followed.
+- **Core desire:** To owe no one. Freedom from the Covenant first;
+  beyond that (non-implementable, per the Mythology Bible's flagged
+  seam) freedom from the pacts' creditors too.
+- **Greatest fear:** Being owned again — any cage, anyone's terms,
+  ever.
+- **Fatal flaw:** He cannot conceive of freely given trust as anything
+  but leverage. Promises, to him, are terms; love is a clause. He can
+  predict everything people do for advantage and almost nothing they
+  do for a promise's own sake. (Book One never punishes this flaw.
+  That is the point. Later books exist because of it.)
+- **Greatest strength:** Patience measured in centuries, and his One
+  Rule — the discipline of never speaking a deliberate falsehood,
+  kept voluntarily for eight hundred years.
+- **Relationship arc across Book One:** Static on the surface — the
+  trusted Vizier — while the mentor-shaped trap closes by degrees:
+  benefactor (Ch1), quiet enabler (Ch3), protector (Ch4), the court's
+  indispensable center (Ch6), and finally the man everyone is glad is
+  standing beside the Sultan at the ceremony (Ch9).
+- **How he changes because of Amir:** Barely — and the barely matters.
+  Amir keeps passing trials in ways Qadir's model of humanity says
+  should not happen. He files each anomaly away rather than learning
+  from it. (Seed, never sprouted in Book One.)
+- **How Amir changes because of him:** Chapter 9. The wound that ends
+  the book and forges whoever Amir becomes next.
+- **What he still hides at the end of Book One:** Nearly everything —
+  the creditors, his next intention, and whatever he knows of Amir's
+  father (deliberately unresolved, per standing open question).
+- **Book Two trajectory (non-implementable):** The second chain. He
+  escaped the Covenant; the pacts remain. Deliberately undefined
+  further, per the Mythology Bible's open question.
+
+## Sultan Rashid
+
+- **Core wound:** He inherited a throne he privately suspects belongs
+  to a better man, and has spent his reign compensating with sincerity
+  what he fears he lacks in brilliance.
+- **Core desire:** To be a good ruler in the eyes of ordinary people —
+  the festival, the lanterns for the poor quarter, light shared.
+- **Greatest fear:** Failing the city through his own inadequacy —
+  which is precisely the fear Qadir tends, waters, and directs.
+- **Fatal flaw:** He delegates his judgment. Knowing Qadir is the
+  most capable man in the room, he has quietly stopped weighing
+  Qadir's counsel — the one mind in the Sultanate that never gets
+  audited.
+- **Greatest strength:** Genuine humility and real love for his
+  people. There is no vanity to flatter, which is why Qadir works
+  through his fears instead.
+- **Relationship arc across Book One:** Benevolent background (Ch1) →
+  increasingly Qadir-dependent under crisis (Ch6) → proud patron of
+  Amir's success (Ch8) → the man who unknowingly hosts the end of the
+  world's oldest protection (Ch9), betrayed in front of his own city.
+- **How he changes because of Amir:** Late in Book One he begins to
+  see in Amir the kind of counsel he wishes he had — someone who tells
+  him true things without managing him.
+- **How Amir changes because of him:** Rashid is Amir's mirror and
+  warning: goodness without discernment is exploitable. Amir does not
+  understand the lesson until Chapter 9 makes it autobiography.
+- **What he still hides at the end of Book One:** His shame — and a
+  growing private list of decisions (shrine funds among them) that he
+  signed because Qadir made them easy, and now cannot stop re-reading.
+- **Book Two trajectory (non-implementable):** Rebuilding a betrayed
+  Sultanate, and deciding what a throne owes the truth.
+
+## Hakim Nadir
+
+- **Core wound:** He found threads of the Covenant decades ago — and
+  let a respectable career talk him into calling them myth. The ghūl
+  in the square proved him right thirty years too late.
+- **Core desire:** The truth — and his daughter safe. Book One slowly
+  turns these into the same desire pulling in opposite directions.
+- **Greatest fear:** That his research is the thing that gets Yasmina
+  killed.
+- **Fatal flaw:** Caution disguised as method. He hedges, verifies,
+  waits for one more source — and the delay keeps costing exactly the
+  time the story cannot spare.
+- **Greatest strength:** Intellectual integrity. He taught Yasmina the
+  Fifth Oath's way of thinking without ever knowing what he was
+  teaching — the Covenant survived partly in a scholar's habits.
+- **Relationship arc across Book One:** Gatekeeper (Ch1) → reluctant
+  quartermaster of the quest (Ch2) → the fixed point the expanding
+  journey keeps returning to — maps, fragments, leads — while each
+  return costs him another goodbye to his daughter.
+- **How he changes because of Amir:** He learns to trust Amir with
+  Yasmina — the hardest peer review of his life — and, through Amir's
+  example, to publish his convictions before they are fully proven.
+- **How Amir changes because of him:** Hakim is the first adult who
+  answers Amir's questions instead of deflecting them — a
+  father-shaped figure whose honesty makes the silence around Amir's
+  real father newly loud.
+- **What he still hides at the end of Book One:** *(Proposal, flagged
+  for Creative Director decision.)* A fragment he has not shared —
+  something found while researching the Guardians that he is still
+  verifying, contents unspecified here. If accepted, this is a hook
+  whose payload the Creative Director defines later; if rejected,
+  Hakim hides only his fear.
+- **Book Two trajectory (non-implementable):** The scholar of the
+  aftermath — whether any record of the rite survives is a question
+  shaped exactly like him.
+
+## Farah
+
+- **Core wound:** She lost her husband to something he never explained
+  — and was left with a son, a bakery, and questions she decided,
+  deliberately, to stop asking. (All specifics remain behind the
+  Mystery Ledger's Book 2 flags.)
+- **Core desire:** To keep Amir safe — and in her experience, safe
+  and *ordinary* are the same word.
+- **Greatest fear:** That the thing that took her husband has finally
+  come back for her son. She has never said this aloud, and will not.
+- **Fatal flaw:** Silence as protection. She believes not naming a
+  danger starves it — so she deflects ("Your father hated that river.
+  Never told me why."), and every deflection leaves Amir less prepared
+  than the truth would have.
+- **Greatest strength:** Practical love. She packs bread instead of
+  weeping; her farewell blessing is logistics. Steadiness is her
+  native language, and Amir inherited it as Resolve.
+- **Relationship arc across Book One:** The home Amir leaves (Ch2) →
+  the reason word-from-home matters in the middle chapters → one of
+  the few people in Zafirah whose world Chapter 9 does not upend,
+  because she never trusted the palace to begin with.
+- **How she changes because of Amir:** She converts protection into
+  blessing — learns to let him go without pretending it costs
+  nothing.
+- **How Amir changes because of her:** Her steadiness is the floor
+  under everything the trials find in him. The First Oath, when he
+  finally hears it, sounds like his mother.
+- **What she still hides at the end of Book One:** What she actually
+  knows or suspects about the river, the pendant, and why her husband
+  feared what he feared — contents reserved to the Book 2 reveal
+  schedule, not to be specified or hinted beyond the Ch1 deflection
+  already shipped.
+- **Book Two trajectory (non-implementable):** When the father
+  mysteries surface, Farah stops being background and becomes a
+  primary source — and has to answer for the silence.
+
+## Sheikh Basim
+
+- **Core wound:** Eight hundred years of outliving everyone he loved —
+  the unlisted price of the First Oath. He never calls it a wound. It
+  is one.
+- **Core desire:** Fulfilled in Chapter 2 — worthy hands. What
+  remains is smaller and human: to see a little of how the story ends
+  before his natural time does.
+- **Greatest fear:** It ended the day he handed over the Seal. For
+  centuries it was choosing wrongly after so long waiting. What is
+  left is fear *for* Amir, not of anything for himself — a man whose
+  own fear has finally retired.
+- **Fatal flaw:** Patience complete enough to border on passivity. He
+  waited at his shrine while the world forgot the Covenant — keeping
+  his oath perfectly and letting everything around it erode. (He
+  would say the flaw and the oath were the same thing. He might be
+  right. That tension is worth keeping.)
+- **Greatest strength:** Resolve embodied — and the peace of a man
+  with nothing left to prove, which is what makes players trust him
+  instantly (per the Guardian Bible's design contrast with Qadir).
+- **Relationship arc across Book One:** The first meeting (Ch2) — and
+  therefore the template every later Guardian is measured against.
+  Now mortal, aging naturally, tending a shrine that no longer needs
+  guarding.
+- **How he changes because of Amir:** Released. Not dying — finally
+  allowed to live again (canonical framing).
+- **How Amir changes because of him:** First proof that strength has
+  little to do with force. His worn-smooth saying becomes Amir's
+  touchstone in every later dark moment, exactly as Design Spec 005's
+  farewell rule intends.
+- **What he still hides at the end of Book One:** Only what he said to
+  Yasmina — and he does not know Qadir's identity, so he cannot hide
+  it (consistency rule: no Guardian knows). He hides nothing with
+  intent; he simply answers only what is asked.
+- **Book Two trajectory (non-implementable):** A mortal witness of
+  the founding — the only firsthand account of the binding that is
+  also running out of natural time. Priceless, and perishable.
+
 ## Open Questions for Creative Director Review
 
-1. **The oath texts themselves** — RULING RECEIVED: approved with
-   revision. A tightening pass toward greater brevity and timelessness
-   is owed ("one unforgettable sentence over four beautiful ones"),
-   held pending the complete review in case the truncated remainder
-   contains per-oath notes.
-2. **"The seven who swore are the seven who keep"** — RESOLVED: CANON,
-   per Creative Director ruling.
-3. **The rite and the sole successor** — still open; no ruling
-   received. The rite of renewal contemplates seven successors; Book
-   One delivers every Seal to one. Whether that asymmetry is Qadir's
-   deepest manipulation of all, a Book Two door, or both, is
-   deliberately left undecided here.
-4. **The Closing in Chapter 9** — still open; no ruling received.
-   Proposal stands: Qadir, holding all seven Seals at the moment of
-   his freedom, might speak the Closing's second line — "let it hold
-   while we hold" — as a quiet epitaph for the Covenant. He was there
-   when it was first spoken. It would be the only time in Book One the
-   player hears any part of the Closing, and it would be true.
-5. **Folk labels for Oaths 2–7** — still open; no ruling received.
-   Derived by the Creative Director directly, or proposed by the
-   Implementation Lead as a follow-up?
+1. **Hakim's withheld fragment** — accept as a hook (payload yours to
+   define later), or reject so Hakim hides only his fear?
+2. **Amir's fatal flaw** — "trust once earned is settled" is proposed
+   as the flaw Qadir exploits; confirm, or redirect before Chapter 3
+   dialogue begins encoding it.
+3. **Yasmina's flaw costing the party** — the draft proposes her
+   proof-before-warning instinct should visibly cost something once
+   before Ch9 (so her Ch9 self-recrimination has a referent). Confirm
+   placement (Ch5 or Ch6 seem natural) or reject.
+4. **Qadir's "anomaly file"** — his flaw never punished in Book One,
+   only seeded; confirm this stays entirely subtextual.
 
-The remainder of the truncated review is awaited. All chapter
-implementation remains suspended.
+Awaiting review. Chapter implementation resumes from Chapter 3 upon
+approval, per the Creative Director's production gate.
