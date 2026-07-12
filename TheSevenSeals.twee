@@ -320,7 +320,8 @@ COMBAT
     initiative: [],
     escaped: false,
     victory: false,
-    defeat: false
+    defeat: false,
+    observedFire: false
 }>>
 
 /*--------------------------------------------------
@@ -359,6 +360,14 @@ Usage: <<relationship "yasmina" 2>>
 	<<if $settings.relationshipPopups>>
 		<<replace "#sidebar-alert">><</replace>>
 	<</if>>
+<</widget>>
+
+/*--------------------------------------------------
+Reputation
+Usage: <<reputation "city" 1>>
+--------------------------------------------------*/
+<<widget "reputation">>
+	<<set $reputation[_args[0]] += _args[1]>>
 <</widget>>
 
 /*--------------------------------------------------
@@ -759,6 +768,8 @@ CHAPTER 1 — SCENE 3 (cont.)
 Festival Streets Hub
 ==================================================*/
 
+<<set _visitedAll = ($choices.sawStoryteller and $choices.sawWeaver and $choices.sawMosque)>>
+
 <<if !$choices.streetsHubSeen>>
 	<<set $choices.streetsHubSeen = true>>
 	You let yourself wander rather than walk with purpose.
@@ -776,7 +787,7 @@ Festival Streets Hub
 * <<link "The Great Mosque, cool and quiet past the noise" "Ch1_FestivalStreets_Mosque">><</link>>
 <</if>>
 
-<<if $choices.sawStoryteller and $choices.sawWeaver and $choices.sawMosque>>
+<<if _visitedAll>>
 	You've seen what the street has to offer this morning. The market is close now, and its noise is starting to outshout everything else.
 
 	<<link "Head toward the Grand Marketplace" "Ch1_Yasmina">><</link>>
@@ -1005,6 +1016,8 @@ CHAPTER 1 — SCENE 5 (cont.)
 Marketplace Hub
 ==================================================*/
 
+<<set _visitedAll = ($choices.sawSpiceMerchant and $choices.sawLanterns and $choices.sawGuardCaptain)>>
+
 <<if !$choices.marketHubSeen>>
 	<<set $choices.marketHubSeen = true>>
 	There's no reason to rush. Whatever the festival has planned for tonight, the morning still belongs to ordinary things.
@@ -1022,7 +1035,7 @@ Marketplace Hub
 * <<link "A guard captain keeping half an eye on the crowd" "Ch1_Market_Guard">><</link>>
 <</if>>
 
-<<if $choices.sawSpiceMerchant and $choices.sawLanterns and $choices.sawGuardCaptain>>
+<<if _visitedAll>>
 	You've made your rounds. The market has given you what it has to give this morning.
 
 	<<link "Head toward the festival ceremony" "Ch1_Ceremony">><</link>>
@@ -1116,6 +1129,7 @@ A dais has been raised at the square's north end. Sultan Rashid stands upon it i
 Beside him, a step back and a step to the side, stands a figure in dark green robes who says nothing at all.
 
 <<if !$npc.qadir.met>>
+	<<set $npc.qadir.met = true>>
 	You don't know his face yet, but you know the robes, and half the crowd around you is already murmuring the name with the particular reverence people reserve for men they've never had reason to distrust. *Qadir ibn Salim.* Grand Vizier. The man whose household, you now know firsthand, remembers the poor quarter at festival time.
 
 	He doesn't speak. He doesn't need to. The Sultan does the talking, and the Vizier simply watches the crowd with an expression of mild, patient satisfaction -- the look of a man content to let someone else enjoy the credit.
@@ -1346,6 +1360,12 @@ He studies the sketch Yasmina hurriedly copied from the flagstone for a long mom
 "I need time with this properly," Hakim says, already reaching for a shelf of texts that look like they'd crumble under a careless hand. "Come back tomorrow. Both of you." A pause, and something almost like reluctant approval crosses his face as his eyes move between you and his daughter. "And Amir -- whatever this turns out to be, I suspect the festival is the last quiet night this city has for a while."
 
 Outside, the lanterns are still burning over a city that doesn't yet know how much has changed.
+
+You don't sleep well. You don't expect to.
+
+<<link "Return to Hakim's study the next morning" "Ch2_HakimStudy">>
+	<<journal "Returned to the House of Wisdom the morning after the festival, as Hakim asked.">>
+<</link>>
 
 <!-- End of Chapter 1 -->
 
