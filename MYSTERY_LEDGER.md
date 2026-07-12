@@ -69,3 +69,10 @@ dialogue text ahead of their scripted reveal.
   Second Guardian to entrust the Seal sooner than he otherwise would
   have. Qadir commanded no one. Reveal: Ch9. Status: Active
   (concealed).
+- **The Forgotten Maintenance** (Ch5) — Years earlier, funding meant
+  for ancient infrastructure (the Covenant-era qanat beneath Three
+  Springs among it) was redirected toward more immediate political
+  concerns — a decision that seemed wise, necessary, compassionate.
+  Qadir never touched the orchard; he understood which forgotten
+  places would eventually fail and let time do the work. His hands
+  stay clean. Reveal: Ch9. Status: Active (concealed).

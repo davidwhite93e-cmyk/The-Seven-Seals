@@ -112,6 +112,16 @@
   one tone patch to the Chapter 1 ending (determination and
   anticipation, not dread). Annotated Spec 006's Ch3/Ch4 sections
   where the overviews supersede them.
+- Implemented Chapter 5 (The Orchard of Forgotten Springs) per its
+  Story Overview: 15 new passages -- the green valley and its failing
+  springs, the happy middle where Yasmina earns *muhandisa* on her own
+  name, the broken circle beneath the qanat, the stay-vs-leave
+  temptation, the protector-not-hunter night encounter, twelve days of
+  mending, "You stayed," and the Third Seal entrusted like a seed
+  packet. Added `$npc.amina` (provisional) and `$places.orchardValley`;
+  recorded Qadir's forgotten-maintenance concealed move in
+  `MYSTERY_LEDGER.md`. Implementation now blocked at the edge of
+  authoritative story direction, awaiting the Chapter 6 Story Overview.
 - Implemented Chapter 4 (The Fortress That Watches the Wind) per its
   Story Overview: 17 new passages -- demanding mountain travel, the
   hours-behind rival signs (never revealed), Tariq the mason-Guardian

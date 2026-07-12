@@ -270,6 +270,13 @@ Example: $npc.yasmina.relationship
         title: "The Second Guardian",
         met: false,
         relationship: 0
+    },
+
+    amina: {
+        name: "Amina",
+        title: "The Old Gardener",
+        met: false,
+        relationship: 0
     }
 
 }>>
@@ -289,7 +296,8 @@ Example: $places.market.visited
     mosque: { name: "Great Mosque", visited: false },
     shrine: { name: "Shrine of the First Guardian", visited: false },
     sunkenLibrary: { name: "The Sunken Library", visited: false },
-    windFortress: { name: "The Fortress That Watches the Wind", visited: false }
+    windFortress: { name: "The Fortress That Watches the Wind", visited: false },
+    orchardValley: { name: "Three Springs Valley", visited: false }
 
 }>>
 
@@ -3580,4 +3588,505 @@ Stone by stone.
 <<objective "Return to Zafirah with the Second Seal">>
 <<journal "We looked back once from the switchback. He was already at the wall again. Some responsibilities are worth carrying even when they can never be completed. I understand that now. I think I'm starting to carry one.">>
 
+<<link "Take the southern way home, where the water is" "Ch5_Valley">><</link>>
+
 <!-- End of Chapter 4 -->
+
+
+:: Ch5_Valley {"position":"1825,4575","size":"100,100"}
+/*==================================================
+CHAPTER 5 — SCENE 1
+The Orchard of Forgotten Springs
+==================================================*/
+
+<<set $game.chapter = 5>>
+<<set $game.scene = 1>>
+<<set $game.day = 22>>
+<<set $game.time = "Afternoon">>
+<<set $game.location = "Three Springs Valley">>
+<<set $trial.active = false>>
+<<set $trial.progress = 0>>
+
+You hear it before you see it, and at first neither of you trusts your ears.
+
+Water. Running water -- not the sullen seep of a well, but water moving because it wants to, laughing its way downhill over stones. Three weeks of desert and mountain have taught your whole body what dryness is, and the sound reaches some animal part of you before the understanding does.
+
+Then the trail turns, and the valley opens below you like a held breath released.
+
+Green. Green from wall to wall of it -- fig and apricot and pomegranate in ordered ranks, date palms along the watercourses, the silver shiver of olive leaves on the slopes. Birds. Actual birdsong, in such quantity it sounds ostentatious. And threaded through the green, catching the late sun, the bright stitching of channels carrying water to everything that wants it, which is everything.
+
+Somewhere down there, children are laughing about something. It carries all the way up.
+
+Yasmina stands beside you with sand in every seam of her clothing, three weeks of hard road behind her, and says, with feeling:
+
+"I would like to be *down there* now, please."
+
+<<set $places.orchardValley.visited = true>>
+<<codex "places" "Three Springs Valley">>
+<<journal "The southern road home dropped us into a valley no map made us expect -- an ancient orchard fed by natural springs, green as a promise kept. After the mountains, it looks like paradise's poor honest cousin. We're staying the night. Obviously.">>
+
+<<link "Go down into the green" "Ch5_Village">><</link>>
+
+
+:: Ch5_Village {"position":"1925,4575","size":"100,100"}
+/*==================================================
+CHAPTER 5 — SCENE 2
+Three Springs
+==================================================*/
+
+<<set $game.scene = 2>>
+<<set $game.time = "Evening">>
+
+The village is called Three Springs, and nobody laughs anymore, you will learn, at the fact that only two still run.
+
+But that comes later. First comes this: children reaching you before the first houses do, an escort of eight-year-olds conducting you in like visiting dignitaries or captured bandits, opinion divided. A woman -- Umm Salma, a widow with a garden and a spare room and apparently jurisdiction -- taking one look at your road-wear and declaring you her guests in a tone that closes the matter. Bread appearing. Then oil, then olives, then apricots, then a stew that was clearly meant to feed a smaller number of people and does anyway, the way it always does in houses like this.
+
+They have little. They share everything. Nobody asks who you are beyond your names.
+
+It takes you most of the evening to notice what's missing, and when you do, you almost laugh: nobody here has heard of you. No ghūl stories. No festival. No young man carrying a relic worth a province. The world's noise simply hasn't climbed this far up the valley, and for the first time since the lanterns burned, you are just Amir, some traveler, eat more, you're too thin.
+
+Yasmina watches you realize it. "Your face," she says quietly, delighted. "You look like a man who just put down a pack he forgot he was carrying."
+
+Across the court, in the last of the light, an old woman is pruning a fig tree while five children orbit her, arguing about whose turn it is to hold the basket. She works like the tree is the only tree in the world. You notice her, the way you'd notice a still point in moving water. Then the stew comes back around, and you forget her.
+
+<<set $npc.amina.met = true>>
+<<codex "people" "The Old Gardener of Three Springs">>
+
+<<link "Sleep in a real bed, in a green place" "Ch5_Trouble">><</link>>
+
+
+:: Ch5_Trouble {"position":"1825,4675","size":"100,100"}
+/*==================================================
+CHAPTER 5 — SCENE 3
+What the valley prays about
+==================================================*/
+
+<<set $game.scene = 3>>
+<<set $game.day = 23>>
+<<set $game.time = "Morning">>
+
+You mean to leave in the morning. The morning has other plans.
+
+It starts with what you see on the walk down-valley: a whole section of orchard going brown at the edges, leaves curling wrong for the season. Then the dry fountain in the lower village, its basin swept clean and kept clean, the way you'd keep a grave. Then the men at the head-channel, taking turns lowering a lamp down a stone shaft and coming up grim.
+
+Umm Salma tells it plainly over breakfast, because you asked, and because here they answer what's asked.
+
+"The east spring died last year. Now the middle one is failing -- half-flow since the thaw, and falling. The old channels run under the whole orchard, down where our grandfathers' grandfathers cut them, and something down there is broken." She refills your cup like the world isn't ending, because hers is, and hospitality outranks grief. "The trees can live one dry year. Not two. And the little ones --" she nods at the window, at the sound of children somewhere being loud "-- have never seen the valley anything but green. We don't say it in front of them."
+
+Nobody asks you for anything. Nobody so much as looks at your sword. It's not a sword problem.
+
+Yasmina has gone very still across the table, and you know the stillness by now: it's the one from the library, from the map room. She's already down in those channels in her head.
+
+<<link "Offer to help -- say it before you can talk yourself onward" "Ch5_Life_Hub">>
+	<<set $trial.progress += 1>>
+	<<personality "mercy" 1>>
+	<<journal "Three Springs is dying -- one spring dead, the second failing, the orchard browning at its edges. Nobody asked us for anything. I offered anyway. Yasmina had her sleeves rolled up before I finished the sentence.">>
+	"We'll help," you say. "If you'll have us. She knows old waterworks better than anyone alive who didn't dig them."
+
+	Umm Salma looks at you both for a long moment -- not doubting; measuring, the way you measure an unexpected gift. "The valley will feed you," she says at last, which is a yes, and also a covenant, though you don't know that word's weight yet.
+<</link>>
+
+<<link "Ask Yasmina first -- this is her call as much as yours" "Ch5_Life_Hub">>
+	<<set $trial.progress += 1>>
+	<<personality "discipline" 1>>
+	<<relationship "yasmina" 2>>
+	You catch her eye across the table: *well?*
+
+	"Obviously," she says, already rolling up her sleeves. "It's a qanat system -- gravity-fed, pre-Sultanate, and whoever cut it was better at this than anyone living. If we walk away from a failing thousand-year waterwork, I will think about nothing else for the rest of my life, and I will make it *your* problem."
+
+	"We'll help," you tell Umm Salma, unnecessarily. She's already setting two more places at the table like she knew before you did.
+<</link>>
+
+
+:: Ch5_Life_Hub {"position":"1825,4775","size":"100,100"}
+/*==================================================
+CHAPTER 5 — SCENE 4
+Days in the green
+==================================================*/
+
+<<set _visitedAll = ($choices.ch5SawIrrigation and $choices.ch5SawAmina and $choices.ch5SawEvening and $choices.ch5SawWalk)>>
+<<set $game.time = "Midday">>
+
+<<if !$choices.ch5HubSeen>>
+	<<set $choices.ch5HubSeen = true>>
+	<<set $game.day = 25>>
+	The days in the valley take on a shape, and the shape, you notice with something like guilt, is *happiness*. Mornings in the channels or the orchard. Meals that arrive like weather. Work that aches in honest places.
+<<else>>
+	The valley's days go on, full and green.
+<</if>>
+
+<<if !$choices.ch5SawIrrigation>>
+* <<link "Follow Yasmina into the old waterworks" "Ch5_Hub_Irrigation">><</link>>
+<</if>>
+<<if !$choices.ch5SawAmina>>
+* <<link "The old gardener has asked for a strong back among her figs" "Ch5_Hub_Amina">><</link>>
+<</if>>
+<<if !$choices.ch5SawEvening>>
+* <<link "An evening of music in the threshing court" "Ch5_Hub_Evening">><</link>>
+<</if>>
+<<if !$choices.ch5SawWalk>>
+* <<link "Walk the orchard rows at dusk, for no reason at all" "Ch5_Hub_Walk">><</link>>
+<</if>>
+
+<<if _visitedAll>>
+	The survey of the channels is done. Yasmina knows where the break is. It's time to go down.
+<</if>>
+
+<<link "Go down into the aqueduct with Yasmina" "Ch5_Aqueduct">><</link>>
+
+
+:: Ch5_Hub_Irrigation {"position":"1925,4725","size":"100,100"}
+/*--------------------------------------------------
+Valley days: Yasmina and the waterworks
+--------------------------------------------------*/
+
+<<set $choices.ch5SawIrrigation = true>>
+<<relationship "yasmina" 1>>
+<<codex "lore" "The Qanat of Three Springs">>
+
+Within two days, Yasmina owns the waterworks.
+
+Not officially. Officially she's the traveler girl who asked to see the channel-map that turned out not to exist, so she made one -- walking every foot of the system with a knotted string and a boy named Faris who knows where all the shaft-mouths hide, sketching as she went. By the third day the channel-men are calling her *muhandisa* -- engineer -- half as a joke. By the fourth day it isn't a joke; they're waiting for her at the head-channel in the mornings.
+
+"Whoever cut this was a master," she tells you, chalk on her hands, glowing in a way that has nothing to do with the heat. "The fall is *one finger's width in forty paces* -- for a thousand years, Amir -- any steeper and the water tears the channel apart, any flatter and it silts. They did it in the dark. With lamps and string."
+
+Nobody here knows about the ghūl, or the Seals, or the young man from the stories. They only know the girl who reads water. She has never once mentioned you.
+
+You have never admired her more, and you say nothing, and you suspect your face says it anyway.
+
+<<link "Back to the valley's days" "Ch5_Life_Hub">>
+	<<personality "curiosity" 1>>
+<</link>>
+
+
+:: Ch5_Hub_Amina {"position":"1925,4775","size":"100,100"}
+/*--------------------------------------------------
+Valley days: the old gardener
+--------------------------------------------------*/
+
+<<set $choices.ch5SawAmina = true>>
+<<relationship "amina" 2>>
+
+The old gardener's name is Amina, and she has opinions about how you carry a ladder.
+
+You spend an afternoon among her figs, doing the tall work while she directs from below with a pruning knife she handles like a calligrapher's pen. The children drift through in shifts, reporting to her -- a dead bird found and buried, a dispute over a swing, the goat's new opinion of the miller. She adjudicates everything without stopping work. They orbit her the way the channels orbit the springs.
+
+"You prune where it costs the tree least and helps it most," she says, guiding your hand to the joint. "Not where the cutting is easiest. Any fool can cut where it's easy." She watches you make the cut. "Hm. Not any fool, then."
+
+She asks you things, in passing, the way old women do: where your mother thinks you are. Whether you finish what you start. What you'll do when the road stops being an adventure and starts being a *length*. Easy questions. You answer without noticing you're answering.
+
+"You keep looking down-valley," she observes at the end, packing her knife away. "Somewhere to be?"
+
+"Eventually."
+
+"Mm." She hands you an apricot, verdict unreadable. "Eventually is a long way off yet. Eat that. It's a good year for them. There aren't always good years."
+
+<<link "Back to the valley's days" "Ch5_Life_Hub">>
+	<<personality "faith" 1>>
+<</link>>
+
+
+:: Ch5_Hub_Evening {"position":"1925,4825","size":"100,100"}
+/*--------------------------------------------------
+Valley days: music in the threshing court
+--------------------------------------------------*/
+
+<<set $choices.ch5SawEvening = true>>
+<<relationship "yasmina" 2>>
+
+Somebody's cousin has a drum, and somebody else has an oud missing a string that nobody misses, and after dinner the threshing court fills with the whole valley in the particular way of places where the evening's entertainment is each other.
+
+There is dancing. You are dragged into it by three children and acquit yourself with more courage than skill. There is a song everyone knows except you, with a chorus that comes around like a wheel, and by the fourth pass you know it too and it will be stuck in your head for a week.
+
+And there is Yasmina, across the fire, clapping the rhythm, flour on her sleeve from helping with the bread, laughing at your dancing with her head thrown all the way back --
+
+-- and you realize you're staring, and you make yourself stop, and it doesn't entirely take.
+
+She smiles more here than anywhere you've ever seen her. More than the library. More, even, than the scriptorium. Some part of you files this away with the things you know and don't say: *this is what she looks like when nothing is wrong.*
+
+You say nothing. You clap the rhythm. The wheel of the chorus comes around again.
+
+<<link "Back to the valley's days" "Ch5_Life_Hub">><</link>>
+
+
+:: Ch5_Hub_Walk {"position":"1925,4875","size":"100,100"}
+/*--------------------------------------------------
+Valley days: the walk about nothing
+--------------------------------------------------*/
+
+<<set $choices.ch5SawWalk = true>>
+
+At dusk the orchard rows fill with gold light and falling water-sound, and you walk them together for no reason either of you states.
+
+The conversation has nothing in it. That's what you'll remember about it -- nothing: her grandmother's theory of apricots, the library cat she fed in secret for two years, your uncle's disastrous single attempt at beekeeping, which of you would survive longer as a goat (her, she argues, on temperament). No symbols. No seals. No one behind you or ahead. Just talk, wandering like the path does, going nowhere on purpose.
+
+<<link "Tell her about your father's ledgers -- the shelf you never open" "Ch5_Life_Hub">>
+	<<personality "faith" 1>>
+	<<relationship "yasmina" 2>>
+	You've never told anyone. You tell her: the shelf of his ledgers you've kept and never once read, because reading them ends the possibility that they contain something, and you were never ready to spend that.
+
+	She's quiet a while. "When you're ready," she says finally, "I'll sit with you while you read them. Reading things is the one thing I'm actually brave about."
+
+	Neither of you says anything else the rest of the row. It isn't necessary.
+<</link>>
+
+<<link "Keep it light -- the goat debate deserves a verdict" "Ch5_Life_Hub">>
+	<<personality "curiosity" 1>>
+	<<relationship "yasmina" 1>>
+	The goat debate escalates through three more orchard rows, acquires formal rules of evidence, and ends in a draw that satisfies no one. "Rematch in Zafirah," she declares. "My father judges."
+
+	"Your father would rule for you."
+
+	"*Obviously.* That's what judges are for."
+<</link>>
+
+
+:: Ch5_Aqueduct {"position":"1825,4875","size":"100,100"}
+/*==================================================
+CHAPTER 5 — SCENE 5
+Down where the water knows
+==================================================*/
+
+<<set $game.scene = 5>>
+<<set $game.day = 27>>
+<<set $game.time = "Midday">>
+
+The qanat swallows lamplight the way deep places do -- politely, and completely.
+
+You go down the third shaft-mouth with Yasmina, Faris paying out the guide-rope above, and walk bent-backed through a thousand years of other people's genius: the channel running straight and true in the dark, its walls smoothed by ten centuries of water that knew exactly where it was going.
+
+The break, when you reach it, is a wrongness you feel in your teeth. A whole section of ceiling down, fill and rubble choking the channel, the water backed up behind it into a black, patient pool that seeps where it should run.
+
+"There." Yasmina's lamp is up, her voice gone strange. "Amir. Look at the wall."
+
+The collapse has torn the mineral crust of centuries off the old stonework -- and underneath, cut into the original stone by the hands that built this place, the lamplight finds a mark you know like your own name now.
+
+A circle, broken in seven places.
+
+"This was theirs," she says softly. "The channels. The springs. The whole valley -- it's not *near* an old place, Amir. It's *built on one.* Someone made these waters run a thousand years ago, and someone --" her lamp moves over the collapse, the fill, the choke of it "-- let them stop."
+
+<<journal "Found the break in the qanat -- a collapsed gallery choking the channel. Beneath the mineral crust, cut into the original stonework: the broken circle. The valley is built on a Covenant place. The springs didn't fail. They were failed.">>
+
+<<link "Climb out and plan the repair" "Ch5_News">><</link>>
+
+
+:: Ch5_News {"position":"1925,4875","size":"100,100"}
+/*==================================================
+CHAPTER 5 — SCENE 5 (cont.)
+Every day here is a day lost
+==================================================*/
+
+<<set $game.time = "Evening">>
+
+The repair is possible. That's the miracle and the problem: Yasmina's survey says the collapse can be cleared and the gallery shored -- with the whole village's hands, in *weeks*. Not days. Weeks of mud and rope and moved stone.
+
+The same evening, a carter comes up the valley road with salt and news, and the news finds you the way news does now. A company of gray-clad strangers on the north road, asking learned questions at the caravanserais. Asking about *old places*.
+
+The arithmetic does itself in your gut. Every day in this valley is a day someone else spends on the road ahead of you -- toward the next Guardian, the next Seal, the race you are already always losing by hours. No one would blame you for leaving. The village survived a thousand years without you. Basim himself would probably say the road --
+
+-- actually, you realize, you have no idea what Basim would say. You only know what would be *easier*.
+
+<<link "Stay. Say it out loud, so it's real" "Ch5_Creatures">>
+	<<set $choices.ch5Wavered = false>>
+	<<set $trial.progress += 1>>
+	<<personality "honor" 1>>
+	"We stay," you say to Yasmina, that night, before the doubt can find better arguments. "Until the water runs. All of it, whatever it takes. The race can have the days. It can't have this."
+
+	She studies you a moment -- something in it you can't quite name, like a scholar confirming a source. "Good," she says simply. "I'd have stayed anyway. It's better with you."
+<</link>>
+
+<<link "Decide to leave in three days -- do what you can, then go" "Ch5_Creatures">>
+	<<set $choices.ch5Wavered = true>>
+	<<set $trial.progress += 1>>
+	<<personality "discipline" 1>>
+	"Three days," you tell Yasmina that night. "We organize the work, teach them what you know, and then we have to go. We're losing the race, and if the next Guardian falls to whoever's ahead of us, this valley's spring won't matter."
+
+	She doesn't argue. That's how you know she disagrees -- Yasmina argues with everything except what disappoints her.
+
+	The valley, as it turns out, will have its own opinion before the three days are up.
+<</link>>
+
+
+:: Ch5_Creatures {"position":"1825,4975","size":"100,100"}
+/*==================================================
+CHAPTER 5 — SCENE 6
+What thirst drives upward
+==================================================*/
+
+<<set $game.scene = 6>>
+<<set $game.day = 28>>
+<<set $game.time = "Night">>
+<<set $combat.active = true>>
+<<set $combat.round = 1>>
+
+The screaming starts in the lower village, an hour past midnight, and it's the goats first and then the people.
+
+They come up out of the dead spring's dry shafts -- pale things, dog-sized, blind-eyed from the deep dark, moving in flinching runs and freezing at every light. Six of them. Seven. They're in the lower gardens, in the goat-pens, quick and wrong and *starving* -- and even in the first shock of it you can see they're not hunting. They're fleeing. Something in the deep galleries has been failing for a year, and whatever these are, the dark stopped feeding them, and thirst has driven them up into a village full of soft light and warm animals and children.
+
+Yasmina arrives at your shoulder with a lamp in each hand, hair full of sleep, mind already fully awake: "They're *bolting from* the shafts, not defending them -- look, they flinch from the torches -- Amir, they're refugees. Hungry, blind, terrified refugees. With claws."
+
+The village is awake and fraying. Somebody has to shape the night, fast, and everyone -- you notice, with no time to notice it properly -- is looking at you.
+
+<<link "Torch-lines -- ring the houses in light and herd them" "Ch5_Creatures2">>
+	<<set $choices.ch5NightPlan = "torches">>
+	<<personality "curiosity" 1>>
+	Light is the one language they clearly speak. You string the young men out in a torch-line, house to house, walling the village in flame-light -- and the pale things shy off it like water off hot stone, funneled away from the homes, back toward the dry ravine.
+<</link>>
+
+<<link "Barricade the shaft-mouths -- cut off the way they came" "Ch5_Creatures2">>
+	<<set $choices.ch5NightPlan = "barricade">>
+	<<personality "discipline" 1>>
+	The shafts are doors, and doors can be shut. You take the strongest men to the dead spring's mouths with cart-beds and roof-beams and grain-sacks of earth, sealing each one as you reach it -- shutting the road behind the ones already out, and in the faces of any still coming.
+<</link>>
+
+<<link "Evacuate first -- children and elders up to the threshing court" "Ch5_Creatures2">>
+	<<set $choices.ch5NightPlan = "evacuate">>
+	<<personality "mercy" 1>>
+	People first, everything else second. You clear the lower houses room by room -- children carried sleep-heavy, elders escorted grumbling -- up to the walled threshing court, while Yasmina organizes the arrivals with a headcount and a voice that permits no panic.
+<</link>>
+
+
+:: Ch5_Creatures2 {"position":"1925,4975","size":"100,100"}
+/*==================================================
+SCENE 6 (cont.) — the narrow hour
+==================================================*/
+
+<<set $combat.round = 2>>
+
+The night narrows to the ravine path -- the one line the pale things keep trying, the one gap in the shape you've built, where the dry watercourse runs down between the last two houses. It's a passage one man wide.
+
+You hold it.
+
+Not with slaughter -- with presence: torch in one hand, blade flat in the other, giving ground by inches when they rush and taking it back when they flinch, turning them, again and again, away from the houses and down toward the open dark below the village. They're so light when they strike your guard. Starved-light. It would be easy to kill them, and it would mean nothing, and you find you can't want it.
+
+Behind you, the village holds its shape: Yasmina's lamp moving along the torch-line like a signal-fire with opinions; Umm Salma guarding the threshing court steps armed with a mattock and an expression that has stopped better men than these; Faris running messages like the fate of nations rides on each one, which tonight it does.
+
+By the greying edge of dawn, it's over. The pale things are gone down-ravine into whatever deep way remains to them. The goats are outraged but whole. One man has a gashed forearm; one child slept through the entire thing and will never forgive her brothers for not waking her.
+
+<<set $combat.active = false>>
+<<set $combat.victory = true>>
+<<journal "Things came up out of the dead spring in the night -- blind, starving, driven from the failing deep. We didn't slaughter them; we shaped the night with torch-lines and barricades and held the ravine path until they turned. Everyone lives. Even, mostly, them. They were refugees of the same failure we came to mend.">>
+
+<<if $choices.ch5Wavered>>
+	In the grey light, filthy and shaking out a cramp, you find Yasmina looking at you, and you say it before she can: "We stay. Until the water runs."
+
+	"I know," she says. Nothing else. Nothing else is needed.
+	<<set $trial.progress += 1>>
+<<else>>
+	In the grey light, filthy, Yasmina bumps her shoulder against yours -- as much embrace as either of you has energy for. "'The race can have the days,'" she quotes back at you, "'it can't have this.' You do occasionally say a thing worth writing down."
+<</if>>
+
+<<link "Sleep till noon, then start the real work" "Ch5_Repair">><</link>>
+
+
+:: Ch5_Repair {"position":"1825,5075","size":"100,100"}
+/*==================================================
+CHAPTER 5 — SCENE 7
+The mending
+==================================================*/
+
+<<set $game.scene = 7>>
+<<set $game.day = 33>>
+<<set $game.time = "Afternoon">>
+
+The work takes twelve days, and the valley gives it everything it has.
+
+Yasmina engineers it: the shoring frames, the rubble-relay up the shafts, the temporary flume that keeps the middle spring's half-flow serving the orchard while the gallery is cleared. The channel-men execute it like she was born here. You do what you're for -- the low, heavy, breath-stealing work at the face of the collapse, in the dark, day after day, mud to the waist, passing stone back along a human chain that sings to keep its rhythm and teaches you all the verses.
+
+Amina comes down the third shaft once, to see the broken-circle mark for herself. She looks at it a long time, one hand resting on the old stonework the way you'd rest a hand on a sleeping animal. She says nothing at all. You're too tired to wonder about it properly, and later you will remember that, and understand it.
+
+On the twelfth day, at the collapse's clearing, the black patient pool goes through the opened gallery with a sound like the valley swallowing -- and then, far above and away, faint down the shafts, you hear it: the middle spring finding its full voice again. And under it, deeper, older, a sound the village hasn't heard in a year.
+
+The east spring. The *dead* one. Talking again.
+
+They hear it above ground too. You climb out of the shaft-mouth into a village going out of its mind -- children shrieking down the rows to watch the dry fountain's basin fill, grown men weeping openly at a channel-head, Umm Salma standing in the spray of the lower sluice with her arms wide, drenched, laughing at the sky.
+
+<<journal "Twelve days of mud, rope, stone, and Yasmina's engineering. The gallery cleared today. The middle spring runs full -- and the east spring, the dead one, is talking again. The whole valley is drunk on the sound of water. I have never been prouder of anything, and I didn't fight anyone for it.">>
+
+<<link "That evening, at the head-spring" "Ch5_Reveal">><</link>>
+
+
+:: Ch5_Reveal {"position":"1825,5175","size":"100,100"}
+/*==================================================
+CHAPTER 5 — SCENE 8
+"You stayed."
+==================================================*/
+
+<<set $game.scene = 8>>
+<<set $game.time = "Dusk">>
+
+You climb to the head-spring at dusk, alone, to hear the water without a celebration around it -- and she's there, of course. The old gardener, on the flat stone by the source, feet tucked under her, exactly as if you'd agreed to meet.
+
+You know before you know. That's the strange part. You sit down beside her in the water-sound, and somewhere in the sitting, every piece finds its place without being forced: the children who obey her like weather. The trees that lean her way. The afternoon of easy questions that were not easy questions. A valley built on Covenant stone, green for a thousand years, tended for a thousand years, by the one person nobody ever thinks to wonder about --
+
+-- and Basim's voice, from a shrine ago: *They find you. Or they let themselves be found, when the finding matters.*
+
+It isn't a surprise. It's an arrival. Like the water reaching the dry fountain: the shape was always there, waiting to be filled.
+
+Neither of you speaks for a long time. The spring talks for you both. The trial, you understand now, has been over for some days -- you simply hadn't been told, because there was never anything to tell. There was only a village, and its need, and whether you would still be here after the excitement was gone and the work was only work.
+
+"You stayed," Amina says.
+
+That's all. It's enough. It might be the largest thing anyone has ever said to you.
+
+"I'm sorry it took so long," you say. "The repair. All of it. We nearly --"
+
+She laughs -- a real laugh, head back, the children's-favorite laugh, entirely unmystical. "*Sorry.* Listen to it." The water, running. "I had begun to wonder if you would ever stop trying to leave. That was the only question there was, you know. Everything else was mud and good rope."
+
+She takes it from the folds of her garden-stained clothes as though it were a seed packet or a pruning stone: a disc worn smooth as river-stone, a single unbroken circle on its face, warm as earth in the sun.
+
+She puts it in your hands. She doesn't let go for a moment -- her hands around yours, around it, garden-rough, kind -- and then she does.
+
+<<set $seals.third = true>>
+<<set $seals.total += 1>>
+<<run $inventory.keyItems.push("The Third Seal")>>
+<<codex "items" "The Third Seal">>
+<<relationship "amina" 3>>
+<<personality "mercy" 1>>
+<<journal "The old gardener is the Third Guardian. Of course she is. She has been tending a Covenant place for a thousand years and a village for as long, and nobody ever wondered, because she let them not wonder. 'You stayed,' she said, and gave me the Third Seal like a seed packet. The villagers will never know. Life will simply continue. Exactly as she wants it.">>
+
+"The village --" you start.
+
+"-- will never know," she says, comfortable as bedrock. "They'll know an old woman died someday, whenever I get around to it, and that the springs run, and that two travelers helped once, in the year the water came back. That's the correct amount of story for a place like this. Don't you dare improve it."
+
+<<link "Sit with her until the stars come out" "Ch5_Departure">>
+	<<personality "faith" 1>>
+	<<set $trial.progress += 1>>
+	You stay by the spring until the stars come out, the two of you, mostly silent. It's the easiest hour you've spent since the lanterns burned.
+
+	"I was found where I said I would be," she says at the end, rising, brushing off her knees like any gardener at any dusk. "Sixty generations of springs, and I never once missed an appointment. Now go and be the same, wherever it is you've said." She pats your cheek, once, like Farah does. "And prune your road the way I taught you. Where it costs least and helps most. Not where it's easiest."
+<</link>>
+
+
+:: Ch5_Departure {"position":"1825,5275","size":"100,100"}
+/*==================================================
+CHAPTER 5 — SCENE 9
+"I hope we remember places like this."
+==================================================*/
+
+<<set $game.scene = 9>>
+<<set $game.day = 34>>
+<<set $game.time = "Dawn">>
+
+You leave at sunrise, because if you wait for a goodbye the valley will keep you another week for the feast of it.
+
+It doesn't work, of course. The children are up -- children are always up -- and they escort you down the valley road the way they escorted you in, a procession of small dignitaries waving lantern-frames and shouting last-minute intelligence about the road, the goat, the world. Umm Salma loads you with more food than two people can carry, using the exact tone that closed the matter on the first night. The channel-men each shake Yasmina's hand at the last sluice-gate, formally, one by one, *muhandisa* to the end.
+
+And behind it all, the valley: green from wall to wall, loud with water, both fountains running in the morning light. Somewhere up among the fig terraces, small at this distance, an old woman is pruning, and does not look up, and doesn't need to.
+
+At the head of the pass you both stop -- neither of you suggests it -- and look back, the whole green length of it laid out below, birdsong rising with the light.
+
+Then the road, and the long quiet that the road is for. Neither of you speaks for most of the morning. It's the fullest silence you've ever carried.
+
+Finally, at the crest where the valley slips out of sight and the dry country takes the world back, Yasmina says, quietly, not really to you:
+
+"I hope we remember places like this."
+
+"I don't think I could forget."
+
+She looks at you a moment -- something in it that has changed, some ledger updated, some conclusion reached and shelved where she keeps the things she's sure of -- and nods, and faces the road.
+
+<<objective "Return to Zafirah with three Seals">>
+<<journal "Left Three Springs at sunrise -- children waving, both fountains running, an old gardener among her figs not looking up. Yasmina: 'I hope we remember places like this.' I told her the truth: I don't think I could forget. This is what all of it is for. Places like this. I understand the whole road better now.">>
+
+<!-- End of Chapter 5 -->

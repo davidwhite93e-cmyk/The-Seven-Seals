@@ -2,6 +2,19 @@
 
 Record each completed scene package.
 
+## 2026-07-12 — Chapter 5 (Chapter 5 Story Overview)
+
+The Orchard of Forgotten Springs: the green valley -> Three Springs
+hospitality (nobody knows the hero) -> the failing springs -> the
+happy middle (waterworks, figs, music, the walk about nothing) -> the
+broken circle beneath the qanat -> the stay-vs-leave temptation ->
+the night of displaced creatures (protector combat, no slaughter) ->
+twelve days of mending -> "You stayed." -> the Third Seal -> sunrise
+departure. 15 new passages. New state: `$npc.amina`,
+`$places.orchardValley`, Third Seal flags/item, ch5 choice flags.
+Emotional heart of Book One; ends without a forward link pending the
+Chapter 6 Story Overview.
+
 ## 2026-07-12 — Chapter 4 (Chapter 4 Story Overview)
 
 The Fortress That Watches the Wind: broken-cliff travel and the rope

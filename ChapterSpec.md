@@ -1,70 +1,75 @@
-# Chapter 4 — The Fortress That Watches the Wind
+# Chapter 5 — The Orchard of Forgotten Springs
 
-Status: **Complete**, implemented against the Chapter 4 Story Overview
-(authoritative). The overview superseded parts of the Spec 006 sketch:
-on-page enemies are hired desert raiders (not the rival faction, which
-stays unseen), and there is no intermediary relay.
+Status: **Complete**, implemented against the Chapter 5 Story Overview
+(authoritative — the emotional heart of Book One).
 
 ## Scenes
 
-1. The road runs out (`Ch4_Road`, `Ch4_Camp`) — broken cliffs, the
-   rope bridge (three-approach choice), cold camp, the
-   comfortable-silence beat.
-2. Hours behind (`Ch4_Signs`) — fresh rope, boot prints, a
-   professionally cold fire; Amir's frustration (with a
-   read-the-signs listening option). Rival never shown.
-3. Arrival (`Ch4_Fortress`) — built to endure; prayer banners at
-   impossible heights; lonely, not haunted.
-4. The man at the wall (`Ch4_Wall`, `Ch4_Wall_Work`) — Tariq
-   (provisional name), mason's cadence; asks for help before names;
-   the trial begins unannounced (`$trial.progress` tracks
-   responsibility choices invisibly). His unexplained Yasmina beat
-   (handing her the next stone).
-5. Inside (`Ch4_Hub` + carvings / training yard / watchtower
-   optionals) — the Standing People; "Fear stands in the line too"
-   (Second-Oath folk echo, unremarked); the visitors who "asked
-   nothing."
-6. Shelter (`Ch4_Travelers`, `Ch4_Travelers_Work`) — guide, herder
-   Khalid, daughter Noor, two pilgrims; storm coming; Yasmina becomes
-   the fortress's quartermaster on her own merits.
-7. The raiders (`Ch4_Raiders` → two combat rounds → `Ch4_Raiders_End`)
-   — desperate hired men from the drought country; parley option;
-   uncomfortable victory; Salt-beard's "He didn't say they were kept."
-8. The storm (`Ch4_Storm`, `Ch4_Storm_Rescue`) — the collapse, "You
-   already know what matters," Salt-beard going in ahead of Amir for
-   his own boy, Yasmina calling the collapse patterns from the
-   doorway. Everyone lives.
-9. After (`Ch4_Storm_After`) — the raiders leave changed; the
-   handshake.
-10. The Seal (`Ch4_Seal`, `Ch4_Farewell`) — the canonical
-    trial-ends-in-silence beat at the wall; "Courage is rarely loud";
-    entrusting with no ceremony; Tariq's unexplained parting line to
-    Yasmina; the lingering image (stone by stone).
+1. The valley (`Ch5_Valley`, `Ch5_Village`) — water heard before
+   seen; Three Springs ("only two still run"); hospitality; nobody
+   here has heard of the hero — Amir puts down a pack he forgot he was
+   carrying. Amina seeded casually as "the old gardener."
+2. The trouble (`Ch5_Trouble`) — the dead east spring, the failing
+   middle one, the fear nobody says in front of the children. Nobody
+   asks for help; Amir offers (first trial beat, untelegraphed).
+3. Days in the green (`Ch5_Life_Hub` + four optionals) — the happy
+   middle: Yasmina owns the waterworks and earns *muhandisa* on her
+   own name; an afternoon among Amina's figs (the trial disguised as
+   easy questions); music in the threshing court (Yasmina's
+   throat-back laugh; Amir notices, says nothing); the walk about
+   nothing (optional father's-ledgers confidence — deepest
+   relationship beat in the game so far, still behind the Book 2
+   flags).
+4. The aqueduct (`Ch5_Aqueduct`) — the collapse; the broken circle
+   under the mineral crust; the valley is *built on* a Covenant place.
+5. The temptation (`Ch5_News`) — gray strangers on the north road;
+   every day here is a day lost; stay-vs-leave choice (choosing
+   "leave in three days" is honored, then overtaken by events —
+   failure teaches, per canon; both paths converge on staying).
+6. The night encounter (`Ch5_Creatures` ×2) — blind, starving things
+   driven up from the failing deep; protector combat: torch-lines /
+   barricades / evacuation, then holding the ravine path by presence
+   rather than slaughter. Everyone lives, including (mostly) them.
+7. The mending (`Ch5_Repair`) — twelve days of mud and rope; the dead
+   spring talks again; the valley goes joyfully out of its mind.
+   Amina's silent visit to the mark (unremarked; legible on reread).
+8. The reveal (`Ch5_Reveal`) — arrival, not surprise; the silence at
+   the head-spring (canonical trial-ends-in-silence); "You stayed.";
+   "I had begun to wonder if you would ever stop trying to leave.";
+   the Third Seal entrusted like a seed packet; her worn-Oath
+   farewell ("I was found where I said I would be... now go and be
+   the same") and the pruning line.
+9. Departure (`Ch5_Departure`) — sunrise, children, both fountains
+   running, the gardener not looking up; the long full silence;
+   "I hope we remember places like this." / "I don't think I could
+   forget."
 
 ## New/expanded state
 
-- `$npc.tariq` (provisional name), `$places.windFortress`.
-- `$seals.second = true`, `$seals.total = 2`; key item "The Second
-  Seal"; codex entries.
-- `$trial` reused as the invisible responsibility tracker; `$combat`
-  reused for the two-round raider fight.
-- New `$choices` flags: `ch4HubSeen`, `sawCarvings/TrainingYard/
-  Watchtower`, `ch4Parley`, `ch4FightFirst`, `ch4FightEnd`.
+- `$npc.amina` (provisional name, per standing ruling),
+  `$places.orchardValley` ("Three Springs Valley" — name coined here,
+  easy to change).
+- `$seals.third = true`, `$seals.total = 3`; key item "The Third Seal"
+  (virtue label withheld pending the folk-label ruling, same policy as
+  Seal 2).
+- New `$choices` flags: `ch5HubSeen`, `ch5SawIrrigation/Amina/Evening/
+  Walk`, `ch5Wavered`, `ch5NightPlan`.
+- `$trial` reused invisibly; `$combat` reused for the night encounter.
 
-## Flagged creative gaps (filled per the Reset, easy to revise)
+## Flagged creative gaps (filled per the Reset)
 
-- **"Tariq"** — provisional Guardian name per standing ruling; a
-  rename is a find/replace plus the NPC entry.
-- **"The Second Seal"** — deliberately NOT given a virtue label
-  in-game, since virtues 2–7 are placeholders pending the folk-label
-  ruling; the key item can be renamed (e.g. "Seal of Courage") when
-  the Creative Director rules.
-- **Salt-beard and the boy raider** — uncast minor characters; the
-  overview's "one risks his own life to save another" beat is
-  fulfilled by Salt-beard. He offers a drought-country door that a
-  future chapter could pay off or ignore.
+- Village/valley name ("Three Springs"), host (Umm Salma), and the boy
+  Faris — coined minor characters, no NPC-database entries (matches
+  the Bilal/Umm Layla pattern).
+- The pale creatures are deliberately unnamed and un-codexed as
+  monsters — they read as displaced animals, not a bestiary entry,
+  matching the protector framing.
+- Amina's farewell speaks her own Oath once, worn ("found where I
+  said I would be"), per Spec 008's usage rule 2.
 
 ## Next
 
-Chapter 5 — The Orchard of Forgotten Springs (Story Overview received
-and logged in `GAME_BIBLE.md`; implementation next).
+**Blocked at the edge of authoritative story direction** — awaiting
+the Chapter 6 Story Overview. (Spec 006's Ch6 architecture exists but
+every chapter so far has been superseded in part by its overview, so
+implementing Ch6 from architecture alone would risk redoing it.)
