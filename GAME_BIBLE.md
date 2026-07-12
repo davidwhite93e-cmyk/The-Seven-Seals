@@ -5,8 +5,9 @@ Specification from the Creative Director. Internal reference only —
 nothing in this file should be exposed to the player through codex,
 journal, or dialogue text ahead of its scripted reveal.
 
-Sources: Design Spec 002 (Book One Production Roadmap, v1.0) and
-Design Spec 004 (Book One Production Philosophy, v1.0).
+Sources: Design Spec 002 (Book One Production Roadmap, v1.0), Design
+Spec 004 (Book One Production Philosophy, v1.0), and Design Spec 005
+(The Guardian Bible, Part I — Foundational Design, v1.0).
 
 ## Book One Goal
 
@@ -219,3 +220,133 @@ scaffolding.
 
 "If this chapter were removed, would Book One lose an important piece
 of Amir's emotional journey?" If no, redesign rather than expand.
+
+## Retroactive Foreshadowing Rule
+
+Project-wide storytelling rule, not a one-off: whenever later canon
+reveals that an already-shipped scene *should* have contained
+foreshadowing, prefer adding a single subtle, emotionally natural
+detail over exposition or dialogue. One or two sentences at most — a
+hesitation, a lingering touch, a breath held a moment too long, a
+flash of weight or years the character doesn't otherwise show. The
+POV character notices but cannot explain it, does not ask about it,
+and the other character does not comment on it either. On a first read
+it should pass as ordinary human behavior; only in hindsight does it
+read as the truth arriving early. (Precedent: Basim's farewell in
+`Ch2_ChapterEnd`, after the Guardian Bible established that entrusting
+a Seal ends a Guardian's unnatural longevity.)
+
+Governing principle: **the truth is almost always visible before it is
+understood.**
+
+---
+
+# The Guardian Bible, Part I — Foundational Design (Design Spec 005)
+
+Canonical design language for all seven Guardians. Supersedes prior
+brainstorming on the topic.
+
+## Core Distinction
+
+Guardians protect the *decision to entrust* the Seal, not the Seal
+itself. The Seal has little value in the wrong hands — its power
+comes from the trust between Guardian and successor. Every Guardian
+understands this.
+
+## The Ancient Order (backstage lore — reveal gradually, never dump)
+
+Seven men and women were entrusted with the Seals after the
+imprisonment of the Black Vizier, long before the Sultanate existed.
+They founded no kingdom, raised no army, built no religion — only
+quiet stewardship. Most people believe them myths; most rulers believe
+them long dead; scholars disagree on whether they existed at all. All
+are wrong.
+
+Each Seal preserves its Guardian's life until a worthy successor is
+found — they are not immortal, they are waiting. **The moment a
+Guardian entrusts their Seal, their unnatural longevity ends and they
+become ordinary again.** This is why every Guardian quietly hopes Amir
+is worthy: he isn't merely taking a burden, he's releasing them from
+one. No Guardian knows the full story — each understands only the
+virtue they protect, the Seals' responsibility, and that the Black
+Vizier must never possess all seven. None of them know Qadir has
+already escaped his prison in every meaningful way but the physical
+one, which is why none of them warn Amir about him.
+
+## Common Traits
+
+Calm, patient, observant, emotionally mature. Never arrogant, never
+eager to prove themselves, never impressed by violence. Centuries of
+waiting means nothing Amir says surprises them.
+
+## How They Speak
+
+Direct answers. Never manipulate Amir, never test him through
+deception, never speak in riddles just to sound wise — if they won't
+answer something, they say why. Players should trust every Guardian
+immediately; this is a deliberate contrast with Qadir. The honest
+people appear mysterious. The dishonest man appears trustworthy.
+
+## Relationship with Amir
+
+No Guardian immediately believes Amir worthy, and none dismiss him
+either — each approaches with quiet curiosity. By trial's end, each
+should genuinely admire him for a different reason: not because he's
+exceptional, but because he chooses virtue despite uncertainty.
+
+## Relationship with Yasmina
+
+Every Guardian recognizes her as extraordinary and none explain why.
+Each has a unique interaction with her that Amir doesn't fully
+understand — subtle Book Two foreshadowing. Never explain these in
+Book One.
+
+## Visual Language
+
+Simple clothing, no jewelry beyond personal keepsakes, no ceremonial
+armor, no elaborate magical effects. Shrines are places of peace, not
+power. Seals should read as almost disappointingly ordinary — players
+should realize the *people* are remarkable, not the objects.
+
+## Shrine Design
+
+Every shrine reflects its Guardian, not its virtue in the abstract
+(Basim's is quiet and humble because *he* values simplicity — not
+because "Resolve" abstractly implies humility). Future shrines:
+library, abandoned fortress, thriving orchard, lighthouse,
+observatory, cliffside monastery. Environment communicates personality
+before dialogue starts.
+
+## Trial Design
+
+The player always understands the physical objective; the true test
+is moral or emotional, and should only be recognized as such after the
+trial ends. Combat may appear but should never be the point. Failure
+should almost never be a game over — it teaches. Players retry because
+they understand themselves better, not because they memorized a
+puzzle. **Avoid repeating trial structures between Guardians** — the
+tunnel-endurance format used for Basim (Continue / Pause / Turn Back)
+should not be reused verbatim for the Second Guardian.
+
+## The Farewell
+
+Every Guardian gets a memorable final conversation — never a plain
+"good luck." Each farewell leaves Amir with one sentence that becomes
+a recurring touchstone in later chapters. (Basim's: "The heart always
+reaches its destination before the feet.")
+
+## Implementation Standards
+
+Introduce each Guardian through environment before dialogue. Give each
+a distinct speech rhythm and vocabulary. Avoid repeated trial
+structures. Reinforce philosophy through gameplay, not exposition.
+Codex the Guardian immediately on meeting them. Journal each completed
+trial in terms of Amir's personal growth, not just plot progression.
+
+## Acceptance Criteria
+
+By Book One's end, players should recall each Guardian by name,
+personality, and philosophy without confusing them. If two Guardians
+could be swapped between chapters without noticeably changing the
+story, the design has failed and must be revised before implementation
+continues.

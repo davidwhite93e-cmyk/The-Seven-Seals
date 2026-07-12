@@ -2263,8 +2263,13 @@ Basim walks you as far as the old stone marker and no further.
 
 "You don't, generally. They find you. Or they let themselves be found, when the finding matters." A pause, and something almost fond crosses his weathered face. "Your scholar father may have better luck than either of us at guessing which."
 
+He rests a hand briefly on your shoulder -- the first time he's touched you since you arrived -- and for just a moment, before he draws it back, something in his weight shifts into you like he needed the steadying more than you did. It passes. Neither of you mentions it.
+
+"Whatever comes next," he says, "remember this, if nothing else. The heart always reaches its destination before the feet. Strength fails a man eventually. So does cleverness, if he leans on it too hard. Resolve is the only one of the three that doesn't."
+
+<<codex "lore" "Basim's Saying: 'The heart always reaches its destination before the feet.'">>
 <<objective "Return to Zafirah and consult Hakim Nadir">>
-<<journal "Left the First Shrine with the Seal of Resolve. Basim says six more Guardians remain, each with their own history -- and their own reasons for choosing to be found.">>
+<<journal "Left the First Shrine with the Seal of Resolve. Basim's parting words: 'The heart always reaches its destination before the feet.'">>
 
 <<link "Begin the journey home" "Ch2_ReturnHome">><</link>>
 
