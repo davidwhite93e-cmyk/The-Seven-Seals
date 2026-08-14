@@ -277,6 +277,20 @@ Example: $npc.yasmina.relationship
         title: "The Old Gardener",
         met: false,
         relationship: 0
+    },
+
+    magistrate: {
+        name: "The Magistrate",
+        title: "Judge of the Old Quarter",
+        met: false,
+        relationship: 0
+    },
+
+    djinn: {
+        name: "the Djinn",
+        title: "???",
+        met: false,
+        relationship: 0
     }
 
 }>>
@@ -297,7 +311,8 @@ Example: $places.market.visited
     shrine: { name: "Shrine of the First Guardian", visited: false },
     sunkenLibrary: { name: "The Sunken Library", visited: false },
     windFortress: { name: "The Fortress That Watches the Wind", visited: false },
-    orchardValley: { name: "Three Springs Valley", visited: false }
+    orchardValley: { name: "Three Springs Valley", visited: false },
+    mirrorCity: { name: "Maraya, the City of Mirrors", visited: false }
 
 }>>
 
@@ -4089,4 +4104,575 @@ She looks at you a moment -- something in it that has changed, some ledger updat
 <<objective "Return to Zafirah with three Seals">>
 <<journal "Left Three Springs at sunrise -- children waving, both fountains running, an old gardener among her figs not looking up. Yasmina: 'I hope we remember places like this.' I told her the truth: I don't think I could forget. This is what all of it is for. Places like this. I understand the whole road better now.">>
 
+<<link "Take the trade road west, toward the City of Mirrors" "Ch6_Arrival">><</link>>
+
 <!-- End of Chapter 5 -->
+
+
+:: Ch6_Arrival {"position":"1825,5375","size":"100,100"}
+/*==================================================
+CHAPTER 6 — SCENE 1
+The City of Mirrors
+==================================================*/
+
+<<set $game.chapter = 6>>
+<<set $game.scene = 1>>
+<<set $game.day = 38>>
+<<set $game.time = "Afternoon">>
+<<set $game.location = "Maraya, the City of Mirrors">>
+<<set $places.mirrorCity.visited = true>>
+<<codex "places" "Maraya, the City of Mirrors">>
+
+The trade road home runs through Maraya, and Maraya does not care who you are, which after Three Springs feels like being slapped with a wet ledger.
+
+They call it the City of Mirrors for the polished brass its workshops have shipped down every road in the Sultanate for four hundred years -- and, if you listen to the caravan men, for something else: *Maraya shows every visitor exactly what he came expecting to see, and keeps the rest.* It's one of Qamar's oldest cities and wears it the way old money wears everything: high walls, narrow politics, a dozen quarters that each consider themselves the real Maraya, and a public mood you could shave with.
+
+It is nothing like Zafirah. Zafirah is loud the way a family is loud. Maraya is quiet the way a card game is quiet.
+
+"Two nights," you say, meaning it. "Supplies, a courier to your father, real beds. Then home."
+
+"Two nights," Yasmina agrees, in the voice of a woman who has heard optimism before and knows where it leads.
+
+At the inn, the talk around the common-room fire dies when strangers sit down, and restarts smaller. Every conversation you overhear seems to be happening twice -- once out loud, once underneath. Nobody here trusts anybody, and it doesn't read as festival-season caution. It reads like a habit the whole city picked up recently, and nobody wants to say why.
+
+<<journal "Reached Maraya, the City of Mirrors -- old, rich, suspicious, politically wound tight. Two nights for supplies and a courier home. The whole city talks like it's being overheard.">>
+
+<<goto "Ch6_Strain">>
+
+
+:: Ch6_Strain {"position":"1925,5375","size":"100,100"}
+/*==================================================
+CHAPTER 6 — SCENE 1 (cont.)
+Six weeks of road, arriving all at once
+==================================================*/
+
+It starts, absurdly, over paper.
+
+"You cannot send your father *eleven pages,*" you say, watching her cover the inn table with drafts. "The courier charges by weight. We need that coin for --"
+
+"For what, more rope? He has been alone with three of the biggest discoveries in Covenant scholarship for six weeks, working from my *notes* --"
+
+"Which is why a summary --"
+
+"You don't summarize *evidence*, Amir." Her voice doesn't rise. It flattens, which is worse. "You summarize stories. This stopped being a story around the time things started climbing out of springs."
+
+It isn't a real argument. That's the strange part -- you can see it isn't, even from inside it. It's six weeks of road and rope and fear arriving all at once at a small table, wearing the disguise of a disagreement about postage. She's not angry at you. You're not angry at her. You are both, simply, *tired* -- tired in the way that has stopped being about sleep -- and neither of you has anyone else to be tired *at*.
+
+<<link "Give ground -- pay for the eleven pages" "Ch6_Disappearances">>
+	<<set $choices.ch6Strain = "yielded">>
+	<<personality "mercy" 1>>
+	<<relationship "yasmina" 1>>
+	You pay for the eleven pages. She catches your eye as the courier's clerk seals the packet -- a truce, wry at the edges. "I'd have cut it to nine," she admits quietly. "If you'd pushed."
+
+	"I know," you say. Neither of you apologizes. Neither of you needs to. But the table feels smaller than it did, and you both notice, and file it away.
+<</link>>
+
+<<link "Hold the line -- coin is coin, and the road home is long" "Ch6_Disappearances">>
+	<<set $choices.ch6Strain = "held">>
+	<<personality "discipline" 1>>
+	<<relationship "yasmina" -1>>
+	"Nine pages," you say. "Pick your best nine."
+
+	She picks them -- efficiently, silently, in the particular silence that is itself a communication. The letter goes out at nine pages and the coin stays in the purse, and you spend the evening aware that being right and being kind occupied different chairs tonight, and you chose your chair.
+<</link>>
+
+
+:: Ch6_Disappearances {"position":"1825,5475","size":"100,100"}
+/*==================================================
+CHAPTER 6 — SCENE 2
+The empty houses
+==================================================*/
+
+<<set $game.scene = 2>>
+<<set $game.day = 39>>
+<<set $game.time = "Morning">>
+
+You hear about the disappearances the way you hear about everything in Maraya: sideways.
+
+The innkeeper's boy, sweeping near your table, says the baker on Coppersmith Row won't take evening orders anymore -- not since the Halabi family went. *Went* is the word the whole city has agreed on. Not fled, not taken, not killed. Went.
+
+By the second telling and the third, the shape comes clear, and it's wrong in a way you can't leave alone. Respected households -- old ones, the kind with a grandmother's grandmother in them -- have been going empty. No ransom demands. No bodies. No witnesses. Doors found unlocked, meals half-cooked on cold stoves, and the houses just... vacant, like the families stepped out to see a wedding procession and forgot to exist.
+
+Seven households in two years. Three in the last four months.
+
+"The magistrates blame the Night Ledger," the innkeeper says, when you ask outright -- a criminal brotherhood, smuggling and debts, every city has one. He says it the way men repeat an official explanation they've privately weighed and found too light. "The Old Quarter's judge doesn't blame anyone. He just keeps asking questions nobody else asks." A grudging respect, there. "Fairest man in Maraya, that one. My grandfather said the same, which is odd, now I say it out loud."
+
+Yasmina has gone still over her breakfast. "Amir. Ask him which families."
+
+The innkeeper counts them off on his fingers. She writes the names down, and her face, as the list grows, is the face from the library stacks -- the one that sees the pattern before the evidence finishes arriving.
+
+"Old families," she says quietly, when he's gone. "*Old* old. The kind that keep things."
+
+<<journal "Households have been vanishing in Maraya -- old, respected families, gone without ransom or bodies, doors unlocked, meals half-cooked. The city blames a criminal brotherhood and doesn't believe itself. Yasmina wrote down the names and went very quiet.">>
+
+<<goto "Ch6_Hub">>
+
+
+:: Ch6_Hub {"position":"1925,5475","size":"100,100"}
+/*==================================================
+CHAPTER 6 — SCENE 3
+Asking the questions nobody asks
+==================================================*/
+
+<<set _visitedAll = ($choices.ch6SawHouse and $choices.ch6SawRegistry and $choices.ch6SawNeighbors and $choices.ch6SawCourt)>>
+
+<<if !$choices.ch6HubSeen>>
+	<<set $choices.ch6HubSeen = true>>
+	Two nights becomes a question mark. Neither of you says so out loud; you just start asking questions, and Maraya -- suspicious, layered Maraya -- begins answering them twice, once out loud, once underneath.
+<<else>>
+	The city watches you work. You can feel it doing arithmetic.
+<</if>>
+
+<<if !$choices.ch6SawHouse>>
+* <<link "The Halabi house stands empty -- and unlocked" "Ch6_Hub_House">><</link>>
+<</if>>
+<<if !$choices.ch6SawRegistry>>
+* <<link "The city registry, where records of the old families live" "Ch6_Hub_Registry">><</link>>
+<</if>>
+<<if !$choices.ch6SawNeighbors>>
+* <<link "The neighbors on Coppersmith Row, who saw nothing, at length" "Ch6_Hub_Neighbors">><</link>>
+<</if>>
+<<if !$choices.ch6SawCourt>>
+* <<link "The Old Quarter's court, where the fair judge sits" "Ch6_Hub_Court">><</link>>
+<</if>>
+
+<<if _visitedAll>>
+	Yasmina spreads her notes across the inn table that night, and the pattern stands up out of them like something surfacing.
+
+	<<link "Let her lay it out" "Ch6_Breakthrough">><</link>>
+<<else>>
+
+	<<link "Compare notes with Yasmina at the inn" "Ch6_Breakthrough">><</link>>
+<</if>>
+
+
+:: Ch6_Hub_House {"position":"2025,5425","size":"100,100"}
+/*--------------------------------------------------
+Investigation: the Halabi house
+--------------------------------------------------*/
+
+<<set $choices.ch6SawHouse = true>>
+
+The Halabi house is not ransacked. That's the first wrongness: thieves make mess, and this is the opposite of mess. It's *edited*.
+
+The furniture stands where furniture stands. The kitchen holds a meal three months old, gone to dust and husk on cold plates. But the study shelves have gaps in them like missing teeth -- not emptied, *selected* -- and on the wall, pale rectangles where framed things hung for so long the plaster remembers them. Family records. Genealogies. The paper that proves who a household has been.
+
+Yasmina finds the worst of it in the children's room: an embroidery sampler, half-finished, the kind daughters stitch their family tree onto. Someone has unpicked the names. Not cut them out -- *unpicked* them, thread by thread, leaving the tree standing empty on the linen with little puckered scars where four generations used to hang.
+
+She stands there holding it for a long time.
+
+"They didn't come for the family," she says finally. "They came for the *memory* of the family. The people were just... in the way of the paper."
+
+<<codex "lore" "The Unpicked Sampler">>
+<<journal "The Halabi house wasn't robbed -- it was edited. Books selected, records taken, framed genealogies gone, and a child's sampler with the family names unpicked thread by thread. Someone is erasing who these families were.">>
+
+<<link "Back to the investigation" "Ch6_Hub">>
+	<<personality "curiosity" 1>>
+<</link>>
+
+
+:: Ch6_Hub_Registry {"position":"2025,5475","size":"100,100"}
+/*--------------------------------------------------
+Investigation: the city registry
+--------------------------------------------------*/
+
+<<set $choices.ch6SawRegistry = true>>
+
+The registry clerk is helpful in the way of a man who has decided that being helpful to everyone equally is the safest available politics. Yes, the old families' records are here. Yes, you may consult them -- the Sultanate's records are the Sultanate's glory, there was a royal commission about it and everything, some years back; half these volumes were catalogued and copied at the palace's own expense. Finest archival work in a generation.
+
+The volumes are beautiful. Uniform. Freshly bound within the decade, every one stamped with the commission's neat cartouche.
+
+And the ones Yasmina asks for -- the Halabis, the Rashidis of Coppersmith Row, the other names on her list -- are missing.
+
+Not *absent*. Missing in the way that leaves evidence: gaps in the shelf-order, catalogue entries inked over with clerical corrections, a loan-register whose relevant page has been removed so cleanly it takes her three passes to prove a page is gone at all.
+
+"They were catalogued," she says slowly, turning the loan-register toward you, "by the commission. Copied, indexed, *organized* -- somebody did beautiful, honest work here. And then somebody used the index." Her finger rests on the inked-over lines. "You couldn't erase these families until someone had first made a *list* of everything that remembered them. The commission made the list."
+
+The clerk, when you glance up, has found urgent business at the far end of the hall.
+
+<<codex "lore" "The Commission's Cartouche">>
+<<journal "The registry's records of the vanished families are gone -- cleanly, clerically, using the royal records commission's own beautiful index. First someone made a list of everything that remembered them. Then someone used the list.">>
+
+<<link "Back to the investigation" "Ch6_Hub">>
+	<<personality "discipline" 1>>
+<</link>>
+
+
+:: Ch6_Hub_Neighbors {"position":"2025,5525","size":"100,100"}
+/*--------------------------------------------------
+Investigation: the neighbors
+--------------------------------------------------*/
+
+<<set $choices.ch6SawNeighbors = true>>
+
+Coppersmith Row saw nothing, and will tell you so at enormous length.
+
+The coppersmith himself saw nothing, but mentions the cart. The cart that came for the Halabis' *donated books* -- a charitable collection, the man said, for a scholars' endowment; had a paper with a seal on it and everything. The widow at the corner saw nothing, but the cart came *twice* -- once a month before the family went, once after. The apprentice boy saw nothing, except that the second cart's men wore workmen's clothes that had never done work -- "boots too good," he says, with the flat certainty of a boy who owns bad boots.
+
+Three people, three nothings, and the nothings disagree.
+
+"Before *and* after," Yasmina repeats, walking back. "A month before. Amir -- they surveyed the house before the family vanished. Somebody walked through that study with a list and marked what to take. The disappearance wasn't the crime. It was the *second visit.*"
+
+<<journal "The neighbors saw nothing -- at length, and their nothings disagree. A 'charity book cart' visited the Halabi house a month BEFORE the family vanished, and again after. The first visit was a survey. The disappearance was the second visit.">>
+
+<<link "Back to the investigation" "Ch6_Hub">>
+	<<personality "curiosity" 1>>
+<</link>>
+
+
+:: Ch6_Hub_Court {"position":"2025,5575","size":"100,100"}
+/*--------------------------------------------------
+Investigation: the Old Quarter's court
+--------------------------------------------------*/
+
+<<set $choices.ch6SawCourt = true>>
+<<set $npc.magistrate.met = true>>
+<<codex "people" "The Magistrate of the Old Quarter">>
+
+The Old Quarter's court is a courtyard with a fig tree in it, and the magistrate holds it the way the tree holds its shade -- without visible effort, for everyone at once.
+
+He's an unremarkable man to look at: middle years going gray, plain robe, ink-stained cuffs, a face made mostly of attention. You watch him hear a dispute between two carters over a broken axle, and it's nothing -- small stakes, small men, an ordinary Tuesday -- except that he asks four quiet questions, and by the fourth, the case has turned inside out: the "victim" overloaded the cart he'd already agreed to share, and both men leave neither happy nor wronged, which they seem to find weirdly satisfying.
+
+"He does that," murmurs a woman beside you, seeing you watch. "My mother brought her marriage portion dispute to him. So did *her* mother." She pauses, hearing it, the way the innkeeper heard it. "Different judge, obviously. Same bench."
+
+Obviously.
+
+The magistrate looks up once, between cases, and finds you in the crowd -- not startled, not curious. The way a man checks a ledger entry he already expected to see. Then the next case is called, and he returns to it entire.
+
+<<journal "Watched the Old Quarter's magistrate work -- four quiet questions and a case turns inside out. Three generations of the same families have brought disputes to 'the same bench.' Different judge, obviously. Obviously.">>
+
+<<link "Back to the investigation" "Ch6_Hub">>
+	<<personality "faith" 1>>
+<</link>>
+
+
+:: Ch6_Breakthrough {"position":"1925,5575","size":"100,100"}
+/*==================================================
+CHAPTER 6 — SCENE 4
+The pattern stands up
+==================================================*/
+
+<<set $game.scene = 4>>
+<<set $game.day = 41>>
+<<set $game.time = "Night">>
+
+The inn table disappears under Yasmina's notes, and this time you don't say anything about paper.
+
+"Watch," she says, and builds it in front of you -- and this is the thing about her that the last six weeks have taught you to stand back from and let *run*: three testimonies, a loan-register's missing page, a commission cartouche, an unpicked sampler, seven family names -- and her hands moving among them like a weaver's, until the loose threads are a cloth.
+
+"Every vanished family is old blood -- families that *keep* things. Every one was catalogued by the records commission -- honestly, beautifully. Every one was then surveyed by a cart with good paper and better boots, stripped of exactly what the catalogue said they had, and *then* vanished." She sets down the last note. "Books first. People second. Whoever is doing this isn't killing families, Amir. They're erasing what the families *remembered* -- and the disappearances only started after somebody's list told them where memory lived."
+
+"And where do the books go?"
+
+Her finger comes down on the one thread she hasn't tied: a carter's offhand complaint, hub gossip, third-hand -- *the charity carts always went down Lampmakers' Stair, and nothing honest has been down Lampmakers' Stair since the old under-archive closed.*
+
+"There," she says. "Under the Mirror Quarter. The city's old archive -- closed, condemned, and apparently receiving deliveries."
+
+She looks up at you, and six weeks of road-weariness has burned entirely off her, and underneath it is the scholar from the library steps with her manuscript on fire, except now the fire is hers.
+
+"You were right about the eleven pages," you say. "For the record. Nine wouldn't have held this."
+
+"*Thank* you." A beat. "It was ten. I padded one."
+
+<<relationship "yasmina" 2>>
+<<journal "Yasmina wove it whole: catalogued by the commission, surveyed by the carts, stripped, then vanished -- memory erased in that order. And the books go down Lampmakers' Stair, into the city's condemned under-archive. We go tonight.">>
+
+<<link "Go down Lampmakers' Stair tonight" "Ch6_Archive">><</link>>
+
+
+:: Ch6_Archive {"position":"1825,5675","size":"100,100"}
+/*==================================================
+CHAPTER 6 — SCENE 5
+The under-archive
+==================================================*/
+
+<<set $game.scene = 5>>
+<<set $game.time = "Night">>
+
+Lampmakers' Stair corkscrews down under the Mirror Quarter through four centuries of the city's spine -- and the under-archive at its bottom is not abandoned. It is *staffed*.
+
+You smell it before you see it: smoke. Not a building burning -- something more careful and more obscene. Through the archive's cracked doors, in the great vaulted dark, men are working by lamplight around iron braziers, and they are burning books *methodically* -- checking each one against a written list, tossing it in, checking the next. A clerk of ashes with a manifest. Crates of the charity-carts' plunder stand in rows, and against the far wall, a barred vault of confiscated oddments -- and somewhere in the stacks a voice is dictating, bored: "...Rashidi, property register, three volumes. Burn. Rashidi, letters. Burn..."
+
+Beside you, Yasmina makes a sound you have never heard from her -- low, involuntary, like the sound a person makes at a wound.
+
+There are perhaps eight of them. Mercenaries, by the stance and the boots -- the too-good boots. Hired hands doing hired work at a fair hired price, feeding four hundred years of other people's memory into iron pots.
+
+<<journal "The under-archive isn't abandoned -- it's a furnace with clerks. Mercenaries are burning the stolen records METHODICALLY, checking each against a manifest. Yasmina made a sound I never want to hear again.">>
+
+<<link "Go in now -- every minute is a family unmade" "Ch6_Archive_Fight">>
+	<<personality "mercy" 1>>
+<</link>>
+
+<<link "Thirty seconds -- count them, mark the exits, THEN go in" "Ch6_Archive_Fight">>
+	<<personality "discipline" 1>>
+	You make yourself take the thirty seconds -- eight men, two exits, the vault barred, the dictating voice behind the third stack -- and Yasmina uses them to mark which crates stand *farthest* from the braziers. Still worth saving. Then you go.
+<</link>>
+
+
+:: Ch6_Archive_Fight {"position":"1925,5675","size":"100,100"}
+/*==================================================
+SCENE 5 (cont.) — the fight in the burning archive: Round 1
+==================================================*/
+
+<<set $combat.active = true>>
+<<set $combat.round = 1>>
+
+It goes wrong in the first ten seconds, because fires do.
+
+A brazier tips in the first rush -- yours or theirs, it will never matter -- and four centuries of dry paper and drier shelving does what it has always been waiting to do. Fire climbs a stack like something joyful, and the vaulted dark becomes a vaulted orange, and everything after that happens in the light of what you came to save, burning.
+
+Eight mercenaries. One spreading fire. Yasmina already moving for the crates. The dictating clerk stuffing his manifest into his coat and running.
+
+Everything needs you at once, and you cannot be everything.
+
+<<link "Put yourself between the fire-crew and Yasmina" "Ch6_Archive_Fight2">>
+	<<set $choices.ch6FightFirst = "yasmina">>
+	<<personality "mercy" 1>>
+	<<damage 10>>
+	Two of them have seen what she's doing and moved to stop her, and you arrive first -- shoulder, flat of the blade, a shelf shoved over between them and her. One clips your jaw with a pommel and you keep your feet anyway. Behind you her voice, cataloguing at a run: "*This crate! Amir, this one next!*"
+<</link>>
+
+<<link "Break their line -- scatter the men on the manifest work" "Ch6_Archive_Fight2">>
+	<<set $choices.ch6FightFirst = "line">>
+	<<personality "discipline" 1>>
+	<<damage 5>>
+	You hit the working line where it's thickest, and men who signed on to burn paper discover, one after another, that they did not sign on for *you*. Half scatter for the stair. The other half find their spines and their swords, and the archive rings with it.
+<</link>>
+
+<<link "Go for the running clerk -- the manifest IS the crime" "Ch6_Archive_Fight2">>
+	<<set $choices.ch6FightFirst = "clerk">>
+	<<personality "curiosity" 1>>
+	<<damage 10>>
+	The manifest is the list, and the list is the whole machine -- you go through two swordsmen to reach the clerk, taking a torch-graze along one arm, and get a hand on his coat at the stair's mouth. He twists free of the coat entire and vanishes upward -- but the coat stays, and in it, half the manifest.
+<</link>>
+
+
+:: Ch6_Archive_Fight2 {"position":"2025,5675","size":"100,100"}
+/*==================================================
+SCENE 5 (end) — Round 2: the triage
+==================================================*/
+
+<<set $combat.round = 2>>
+
+The fight ends the way fights end when a building joins one side: the mercenaries break for the stair, because they are paid in coin and coin spends nowhere if you're dead, and the archive is *going*.
+
+What's left is the fire, and the arithmetic of what one man and one woman can carry out of it. People -- there's a beaten watchman chained by the vault, the archive's real keeper, half-conscious in the smoke. History -- Yasmina's marked crates, the unburned stacks, four centuries. And no version of the next five minutes that holds everything.
+
+<<link "The watchman first -- history is ash if people aren't the point" "Ch6_Djinn">>
+	<<set $choices.ch6Triage = "watchman">>
+	<<personality "mercy" 1>>
+	You break the chain with a bar and take the old watchman across your shoulders, and Yasmina -- already understanding, already grieving it -- grabs the one crate she can drag alone and leaves the rest to the light.
+<</link>>
+
+<<link "The crates -- carry out what remembers, then go back for him" "Ch6_Djinn">>
+	<<set $choices.ch6Triage = "crates">>
+	<<personality "discipline" 1>>
+	<<damage 5>>
+	You and Yasmina run the crates in relay to the stair's foot -- two, three, four -- and then you go back through the smoke that has stopped being air for the watchman, and by the time you have him the ceiling beams are talking to each other overhead.
+<</link>>
+
+
+:: Ch6_Djinn {"position":"1825,5775","size":"100,100"}
+/*==================================================
+CHAPTER 6 — SCENE 6
+The vault, the vessel, the Djinn
+==================================================*/
+
+<<set $game.scene = 6>>
+
+The way out dies first.
+
+A beam comes down across the stair's mouth in a haymaker of sparks, and the archive is suddenly a stone throat with fire at one end and the barred vault at the other, and you do the only thing left to do: you take the iron bar to the vault's grate, because a vault has walls, and walls are the only thing down here not burning.
+
+The grate gives. Inside: the archive's confiscations, a century of oddments -- and one iron-banded chest, alone on a stone shelf, older than everything around it, its lock a green-crusted seal of no metal you know.
+
+You will argue afterward -- for years, cheerfully -- about whether you pried it or the falling shelf broke it or it simply *chose*. What happens is: the chest goes over, the seal cracks like a struck bell, something inside breaks with a sound like a held breath ending after four hundred years --
+
+-- and the smoke in the vault stops obeying the fire.
+
+It gathers. It *decides* -- turning in on itself, upward, into a shape the size of the vault's whole height: a suggestion of shoulders, a beard of smoke, two eyes like banked coals looking down at you with an expression of cosmic, unhurried affront.
+
+"*Four hundred years,*" the shape says, in a voice like a door opening in a mountain, "and I am freed by a *falling shelf.*" The eyes narrow. "You. Boy. You broke the seal."
+
+"By accident," you say, honestly, because the smoke is not breathable and honesty is faster.
+
+"Do not *ruin* it."
+
+<<set $npc.djinn.met = true>>
+<<codex "people" "The Djinn">>
+
+Then -- because the ceiling chooses that moment to surrender -- the great shape sighs, says "*Oh, very well,*" like a man asked to carry a second bag, and the fire parts.
+
+It doesn't go out. It *stands aside* -- a corridor of cool dark opening through the blaze, floor to vault, straight to the buried stair -- and something with hands the size of doors gathers you, Yasmina, the watchman, and (with visible, sniffing disdain) the crates, and *walks you out* through the heart of a burning building as if escorting guests from a disappointing party.
+
+<<journal "The vault held an iron-banded chest older than the archive, and the chest held -- him. A djinn. Four centuries sealed, freed by a falling shelf, affronted about everything. He parted a burning building like a curtain and walked us out. I don't have better words yet.">>
+
+<<link "Breathe. Then deal with what you've freed" "Ch6_Djinn_Debt">><</link>>
+
+
+:: Ch6_Djinn_Debt {"position":"1925,5775","size":"100,100"}
+/*==================================================
+SCENE 6 (cont.) — the life-debt
+==================================================*/
+
+<<set $game.time = "Dawn">>
+
+In the grey dawn at the head of Lampmakers' Stair, with the under-archive breathing smoke below and the watchman coughing his way back to life against a wall, you get your first proper look at him.
+
+He has condescended to a size only somewhat larger than a large man, and a solidity somewhere between statue and weather. Robes that might be smoke, or might merely be smoke-colored. Rings on four fingers, each of which you suspect has a story with a body count. He is ancient and proud and absurd and *magnificent*, and he is looking at Maraya's rooftops the way you'd look at a beloved garden gone to weeds.
+
+"The lamps were better," he announces, to the city at large. "Four hundred years, and the *lamps* got worse. Extraordinary."
+
+Then, to you, with the formality of a treaty being executed:
+
+"You broke the seal. That your intent was clumsy chance is between you and whatever teaches you things. The debt does not care." He inclines his head exactly one degree. "I owe you a life, boy. Until it is repaid, my road is your road. I do not serve you --" the coal-eyes come around like siege engines "-- confuse those two things even *once* and I shall be *insufferable* about it."
+
+"You're already --" Yasmina starts, sotto voce.
+
+"*Magnificent,*" the Djinn corrects, without looking at her, "is the word you want, girl-who-reads. I heard you cataloguing in a burning building. We shall get along, or you shall be wrong about things at unbelievable length. Both are acceptable."
+
+He does not offer a name. Somehow you already know better than to ask twice: a djinn's name is a rope around his neck, and this one has just spent four centuries in a box because someone once held the rope.
+
+<<run $party.push("djinn")>>
+<<relationship "djinn" 2>>
+<<relationship "yasmina" 1>>
+<<journal "The djinn owes me a life-debt -- his words, his treaty, one degree of a bow. He does not serve me. He will not give his name. He has opinions about lamps. Yasmina has already started a ledger of things to argue with him about. I think I'm glad he's here. I think.">>
+
+<<link "See to the watchman, and the ashes" "Ch6_Aftermath">><</link>>
+
+
+:: Ch6_Aftermath {"position":"1825,5875","size":"100,100"}
+/*==================================================
+CHAPTER 6 — SCENE 7
+What the fire left
+==================================================*/
+
+<<set $game.scene = 7>>
+<<set $game.day = 42>>
+<<set $game.time = "Midday">>
+
+The arithmetic of the night, in daylight:
+
+Saved -- the watchman, who wakes with a broken wrist and forty years of the archive's true catalogue in his head, which makes him worth more than everything that burned. Saved -- <<if $choices.ch6Triage is "crates">>four crates<<else>>one crate, and everything it took to choose it<</if>> of the stolen records, including, by Yasmina's triage, the Halabi genealogies. Saved -- half a burn-manifest in a clerk's abandoned coat<<if $choices.ch6FightFirst is "clerk">>, torn from the man himself<</if>>: page after page of family names, each with its neat clerical notation, each drawn from a catalogue only one institution in the Sultanate ever compiled.
+
+Lost -- the under-archive itself, and everything the fire and the months of burning took before you ever reached the city. You will not get a number. Nobody alive can compute it.
+
+The mercenaries are scattered or fled, save two the city watch fished coughing out of the Mirror Quarter, who know precisely what hired men ever know: a factor, a purse, a place to bring the carts. The Night Ledger, the watch declares, satisfied, and closes its book.
+
+Yasmina, reading the salvaged half-manifest for the fourth time, is not satisfied.
+
+"This isn't a criminal brotherhood's work," she says quietly. "Criminals *sell* things. This is a bureaucracy. Someone with access to the commission's index has been running an *un-library*, Amir -- acquisitions in reverse, deletions with receipts. And the index --" she taps the cartouche stamped at the manifest's head "-- the index came from the palace's own beautiful, honest, *royal* records commission. Whoever is doing the erasing didn't build the map. They only borrowed it."
+
+Who drew the map, and who borrowed it, and whether those are the same hands -- the manifest doesn't say. The question goes into the satchel with everything else you're carrying now.
+
+<<journal "Daylight arithmetic: the watchman saved, the Halabi genealogies saved, half a burn-manifest captured -- every entry drawn from the royal records commission's index. Yasmina: 'They didn't build the map. They only borrowed it.' The city watch blames the Night Ledger and is content. We are not.">>
+
+<<link "The magistrate sends for you" "Ch6_Judgment">><</link>>
+
+
+:: Ch6_Judgment {"position":"1825,5975","size":"100,100"}
+/*==================================================
+CHAPTER 6 — SCENE 8
+The bench
+==================================================*/
+
+<<set $game.scene = 8>>
+<<set $game.day = 43>>
+<<set $game.time = "Morning">>
+
+The summons, when it comes, is a boy with a wax tablet: *the Old Quarter's court requests the stranger who was in the archive.* Not commands. Requests.
+
+The courtyard is fuller than before -- the fire has made the disappearances speakable at last, and Maraya has come to hear itself think. The magistrate sits beneath the fig tree with the two captured mercenaries before him, and the morning's testimony has already been heard: the factor, the purse, the carts, the burning. One of the two is a hard case going harder. The other is a man named Sef, forty, a dry-docks laborer of Basra Quarter, who took the coin because his daughter's lungs need a physician and the physician needs paying, and who checked books against a list and fed them to iron pots, and who has not once looked up from his hands.
+
+The magistrate hears the last of it. Then he does the thing you did not see coming:
+
+"You were in the archive," he says, to you, across the whole listening courtyard. "You fought for what he burned. The Old Quarter grants standing in its own disputes to the injured party." He turns his ledger around on the table, faces it toward you, and sets the pen across it. "The bench asks the stranger: what is owed, and by whom? Judge."
+
+The courtyard goes silent. Yasmina, beside you, has stopped breathing. Somewhere behind you the Djinn murmurs, with rich interest, "*Oh,* now this is an old custom."
+
+You look at Sef's bowed head, and the hard case's insolence, and the burned centuries no judgment can restore, and you understand -- too late to be ready -- that there is no answer that is simply right. There is only the answer you can put your name to.
+
+<<link "The law's full weight -- for both, alike; the fire does not care why it was lit" "Ch6_Seal">>
+	<<set $choices.ch6Judgment = "law">>
+	<<personality "discipline" 1>>
+	<<reputation "city" 1>>
+	You rule the law, evenly: labor-bond to the city for both men, the full term, no distinction -- because the archive burned the same regardless of which hands fed it, and a court that weighs sympathy over deeds is a court that can be bought with a good story.
+
+	Sef takes it with a nod, like a man who agrees. The hard case laughs at something private. The courtyard murmurs -- respect from some quarters, coldness from others -- and you feel the weight of every face you didn't rule for.
+<</link>>
+
+<<link "Split the weight -- full term for the willing, restitution-labor and the physician's debt for Sef" "Ch6_Seal">>
+	<<set $choices.ch6Judgment = "split">>
+	<<personality "mercy" 1>>
+	You rule them apart: the full bond for the hard case, and for Sef a restitution term rebuilding the archive's shelving under the watchman's eye -- wages garnished to the city, save what a physician in Basra Quarter costs. The courtyard likes it. You distrust, immediately, how much the courtyard likes it -- and you see the hard case already rehearsing his own daughter, his own lungs, for the next bench he stands before. Mercy, you learn in real time, is also a precedent.
+<</link>>
+
+<<link "Turn the small men on the large -- leniency priced in testimony" "Ch6_Seal">>
+	<<set $choices.ch6Judgment = "testimony">>
+	<<personality "curiosity" 1>>
+	You rule pragmatically: reduced bonds for both, priced in every name, face, meeting-place, and paper either man can surrender about the factor and the carts. It buys the city its best map of the machine -- and it buys two arsonists a lighter road than the ashes deserve, and the widow of Coppersmith Row leaves the courtyard without looking at you.
+<</link>>
+
+
+:: Ch6_Seal {"position":"1825,6075","size":"100,100"}
+/*==================================================
+CHAPTER 6 — SCENE 8 (cont.)
+"You chose."
+==================================================*/
+
+You write the judgment in the Old Quarter's ledger with the magistrate's own pen, and sign it, and your hand only betrays you a little.
+
+The courtyard empties by degrees. The fig tree's shade moves. The magistrate reads your ruling once, without expression -- and then, when the last petitioner is gone, he asks Yasmina, quietly, to witness it: "A judgment unwitnessed is only an opinion. Sign after him." She does, puzzled. He does not explain. He seems, if anything, satisfied in some old, filed-away way, as though a form kept in a drawer for a very long time has finally been used.
+
+Then he sits back, and the silence arrives -- and you know this silence now, you have stood in it twice before, in a desert and on a wall at dawn, and your breath goes quiet to meet it.
+
+"There is no ruling you could have written today that was not wrong somewhere," the magistrate says at last. "You know that now. You knew it while the pen was moving. And you signed your name to it anyway, and stayed in the courtyard while they read it." He opens the drawer of his plain table and sets, beside your signed judgment, a stone disc -- pale as court marble, a single unbroken circle worn into its face, warm from a drawer that should not be warm.
+
+"You chose," he says.
+
+That's the whole of it. That is, you understand, the entire examination and the entire verdict, and no one in the emptying courtyard sees anything but a judge passing a paperweight across a table.
+
+<<set $seals.fourth = true>>
+<<set $seals.total += 1>>
+<<run $inventory.keyItems.push("The Fourth Seal")>>
+<<codex "items" "The Fourth Seal">>
+<<relationship "magistrate" 3>>
+<<personality "honor" 1>>
+<<journal "The magistrate had me judge the arsonists myself -- no perfect ruling existed, and he knew it, and made me sign my name to an imperfect one and stand in the courtyard while it was read. Then he set the Fourth Seal beside the judgment. 'You chose.' He had Yasmina witness the page. He didn't explain that. They never explain the Yasmina things.">>
+
+"See before you judge," he adds, at the gate, in the tone of a man returning a borrowed tool. "And when the scales fall against you -- and they will, stranger, they fall against everyone once -- keep your hands off them. It is harder than everything else I do."
+
+<<link "Leave the courtyard" "Ch6_Departure">><</link>>
+
+
+:: Ch6_Departure {"position":"1825,6175","size":"100,100"}
+/*==================================================
+CHAPTER 6 — SCENE 9
+"No. You don't."
+==================================================*/
+
+<<set $game.scene = 9>>
+<<set $game.time = "Dusk">>
+
+You leave Maraya by the west gate at dusk, four Seals against your chest and a djinn drawing stares that he accepts as tribute.
+
+The city recedes into its evening -- lamplighters working the walls, the Mirror Quarter throwing the sunset back at itself, a city that will tell tomorrow's version of the archive fire sideways, twice, once out loud and once underneath. Somewhere in it, a factor has not been caught, and a half-burned manifest of family names is folded in Yasmina's satchel, and an old judge is hearing the evening's small disputes under a fig tree, the way he apparently always has been, no matter who was alive to notice.
+
+At the crest of the west road, the Djinn stops walking and looks back -- not at the city. At the sunset, or at something in it, or through it, with an expression four hundred years too old for the conversation you've been having about supper.
+
+"Do you know," he says, "what kind of man your enemy used to be?"
+
+The question drops into the evening like a stone down a dry well. You wait for the joke. It doesn't come.
+
+"I don't even know who my enemy is," you say, finally.
+
+The coal-eyes stay on the horizon a long moment. When he answers, the theatrical rumble is gone from his voice entirely, and what's left is older and quieter and very far away.
+
+"No," he says. "You don't."
+
+He walks on. He doesn't explain. They never explain -- and it strikes you, as the road takes you west into the failing light, that you have begun collecting silences the way you once collected stories, and that every person you trust most in the world is currently keeping at least one.
+
+<<objective "Return to Zafirah with four Seals">>
+<<journal "Left Maraya at dusk. The Djinn, watching the sunset: 'Do you know what kind of man your enemy used to be?' I told him the truth -- I don't even know who my enemy is. 'No,' he said. 'You don't.' He knows something. He isn't ready to say it. I'm learning to live among kept silences.">>
+
+<!-- End of Chapter 6 -->

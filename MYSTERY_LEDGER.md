@@ -21,10 +21,15 @@
                                                                      meaning
                                                                      still open)
 
-  Why Qadir   Unknown     Corrupted by       Ch1         Ch9         Active
-  Cannot                  infernal pacts                             
-  Claim a                                                            
-  Seal                                                               
+  Why Qadir   Unknown     UNDER REVISION     Ch1         Ch9         Active
+  Cannot                  (Master Story                              
+  Claim a                 File: Qadir is                             
+  Seal                    NOT the Black                              
+                          Vizier; the                                
+                          "infernal                                  
+                          pacts" answer                              
+                          needs a CD                                 
+                          re-ruling)                                 
   ------------------------------------------------------------------------------
 
 ## Active Mysteries (added Ch3)
@@ -76,3 +81,30 @@ dialogue text ahead of their scripted reveal.
   Qadir never touched the orchard; he understood which forgotten
   places would eventually fail and let time do the work. His hands
   stay clean. Reveal: Ch9. Status: Active (concealed).
+- **The Records Commission** (Ch6) — Years earlier, Qadir established a
+  royal commission to preserve historical records — genuinely valuable
+  work that also, quietly, mapped which families still remembered
+  fragments of the Covenant. Someone else later used that map to erase
+  those memories: books vanish, records disappear, bloodlines forget.
+  Qadir ordered no disappearance and signed no manifest; he built the
+  index that made them possible. His greatest weapon is administration,
+  and Chapter 6 gives him no on-screen move for exactly that reason.
+  Reveal: Ch9. Status: Active (concealed).
+
+## Active Mysteries (added Ch6)
+
+- **Who Wields the Commission's Map** — Player believes: a criminal
+  brotherhood (the "Night Ledger") is behind Maraya's disappearances.
+  Truth: someone is erasing Covenant-descendant memory using the
+  commission's index — WHO is deliberately unresolved (candidates
+  overlap with the Unseen Searcher complex: the protective rival
+  faction, Qadir's erasure program, or a hand not yet seen). The
+  captured half-manifest proves the method, not the author. First hint:
+  Ch6. Reveal: TBD (CD, no earlier than Ch8). Status: Active.
+- **The Djinn's Silence** — Player believes: their new companion is a
+  proud, theatrical ally bound by a life-debt. Truth: the Djinn
+  recognizes something about the enemy's nature ("Do you know what kind
+  of man your enemy used to be?") that he is not yet willing to say.
+  What he knows, and why he withholds it, is deliberately open. First
+  hint: Ch6 (west gate). Reveal: TBD (CD). Status: Active (truth
+  concealed).

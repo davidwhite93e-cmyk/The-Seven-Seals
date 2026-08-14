@@ -5,6 +5,12 @@ Specification from the Creative Director. Internal reference only —
 nothing in this file should be exposed to the player through codex,
 journal, or dialogue text ahead of its scripted reveal.
 
+**Newest authoritative source: `MASTER_STORY_FILE.md`** (Book One
+Master Story File, compiled by the Creative Director from the Chapter
+1–9 Story Overviews) — where it conflicts with anything below, the
+Master Story File wins. Its Chapter 9 materially revises prior
+mythology: see the annotations on Design Specs 002/006/007/009 below.
+
 Sources: Design Spec 002 (Book One Production Roadmap, v1.0), Design
 Spec 004 (Book One Production Philosophy, v1.0), Design Spec 005 (The
 Guardian Bible, Part I — Foundational Design, v1.0), Design Spec 006
@@ -30,6 +36,17 @@ obstacle preventing Qadir's freedom. When every Seal is gathered,
 Qadir takes them, breaks his prison, binds the demons to himself, and
 escapes. Book One ends there — the player believes they lost. Book
 Two's central conflict is not to be revealed in Book One.
+
+*(REVISED by the Master Story File, Ch9 "The Seventh Gate," which
+governs: the party themselves perform the Rite with all seven Seals;
+the prison beneath the sanctuary opens; the **Black Vizier — a
+distinct being, not Qadir —** steps free; Qadir kneels to the Covenant
+with "I have kept my promise," revealed as its true keeper serving an
+older promise; the demons answer to the Black Vizier; the Seals remain
+behind, their purpose complete, reclaimed by no one; the Djinn
+sacrifices himself to cover the party's escape, his fate left
+unresolved. The ending emotion is loss + resolve + hope, not the
+"player believes they lost" despair described above.)*
 
 ## The Heart of the Series (Creative Director note — canonical)
 
@@ -75,11 +92,33 @@ play?**
 ## Chapter Story Overviews (authoritative)
 
 The Creative Director has issued per-chapter Story Overviews —
-emotional blueprints, not passage specs. Received so far: **Chapter 1
-(Festival of Lanterns)**, **Chapter 2 (The Shrine Beneath the Sands)**,
-**Chapter 3 (Echoes in the Dust)**, **Chapter 4 (The Fortress That
-Watches the Wind)**, and **Chapter 5 (The Orchard of Forgotten
-Springs)** — Ch5 key beats: a fertile valley village whose ancient
+emotional blueprints, not passage specs. **All nine are now
+consolidated in `MASTER_STORY_FILE.md`, which is the governing
+document** — including the previously unseen Chapter 6 (The City of
+Mirrors), Chapter 7 (The Lighthouse at the Edge of the World), Chapter
+8 (The Gathering Storm), and Chapter 9 (The Seventh Gate), plus
+cross-chapter trackers for Guardians/Seals, Qadir's moves, and
+character arcs. Notes reconciling the shipped chapters against those
+trackers:
+- **Guardian naming (tracker §11.1):** the Master File treats
+  Guardians 2–7 as formally unnamed, while shipped Ch4–6 gave three of
+  them human names (Tariq, Amina, and the Magistrate of the Old
+  Quarter). Flagged for the Creative Director; the names are humble and
+  don't break the hidden-in-plain-sight theme, but renaming is a cheap
+  find/replace if strict anonymity is preferred.
+- **Qadir's moves (tracker §11.2):** his Ch3–5 moves match items 1–3
+  exactly. **Chapter 6 deliberately gives Qadir no on-screen move** —
+  the erasure is powered by the years-earlier Records Commission (see
+  Mystery Ledger), so his hands stay clean, consistent with the "his
+  greatest weapon is administration" note.
+- **Broken-circle symbol (§11.5):** confirmed implemented in Ch5's
+  aqueduct.
+
+Received individually before consolidation: **Chapter 1 (Festival of
+Lanterns)**, **Chapter 2 (The Shrine Beneath the Sands)**, **Chapter 3
+(Echoes in the Dust)**, **Chapter 4 (The Fortress That Watches the
+Wind)**, and **Chapter 5 (The Orchard of Forgotten Springs)** — Ch5
+key beats: a fertile valley village whose ancient
 springs are failing (collapsed Covenant-era aqueducts, the symbol
 beneath mineral deposits); the Third Guardian living unrecognized as
 the valley's oldest gardener; the trial is staying to help when
@@ -436,8 +475,22 @@ continues.
 # Book One Story Architecture (Design Spec 006)
 
 **Status: Approved in principle by the Creative Director, with the
-revisions below.** Architecture only. No dialogue, no passages, no
-implementation. The chapter skeleton (objectives, emotional themes,
+revisions below — but its Chapters 6–9 are now SUPERSEDED by the
+Master Story File** (`MASTER_STORY_FILE.md`), which changes them
+substantially: Ch6 is "The City of Mirrors" (trade city, magistrate
+Guardian, erased Covenant-descendant families, the burning archive,
+**the Djinn introduced**); Ch7 is "The Lighthouse at the Edge of the
+World" (Keeper Guardian, sea-siege — the Amir's-father storyline is
+**dropped from Book One entirely**, held behind its Book 2 Ledger
+flags); Ch8 is "The Gathering Storm" (observatory + cliff monastery,
+the rival faction met face-to-face, no Qadir move needed); Ch9 is "The
+Seventh Gate" (see the revision note under Book One Goal). The Spec 006
+chapter sections below are retained for the ideas that still apply
+(and for Chapters 1–5, which shipped), but where they conflict with
+the Master Story File, the Master Story File wins.
+
+Architecture only. No dialogue, no passages, no implementation. The
+chapter skeleton (objectives, emotional themes,
 mystery/answer/raise structure, Seal pacing, Qadir's per-chapter
 moves, the escalation track) is canon. The revisions below override
 anything in the chapter text that conflicts with them.
@@ -953,8 +1006,35 @@ entrusting earlier than the Guardian intended.)*
 
 # The Mythology Bible (Design Spec 007)
 
+**Status: APPROVED with modifications — but now PARTIALLY SUPERSEDED
+by the Master Story File, pending a Creative Director rewrite.** The
+Master File's Chapter 9 establishes that **Qadir is NOT the Black
+Vizier.** They are distinct beings: the Black Vizier is the imprisoned
+one who steps free at the Seventh Gate; Qadir is the Covenant's true
+keeper, serving an older promise for centuries ("I have kept my
+promise" — spoken kneeling to the Covenant, not to the Vizier). Any
+passage below that identifies the two as one person no longer holds
+as written and must not be used for implementation.
+
+What still stands: the counter-pact concept, the entrusting mechanics,
+Guardian longevity / lent time, the trial / silence / farewell rules,
+the Seals-measure / Seals-disturb mechanics, Qadir's One Rule (every
+word he ever spoke stays true — the Master File §11.5 explicitly
+re-affirms this), and the escalation track.
+
+Newly open questions for the Creative Director: what exactly was
+Qadir's older promise, to whom, and when; why he cannot claim a Seal
+himself (the Ledger's "corrupted by infernal pacts" answer may need
+revision); who the Black Vizier was before imprisonment; and how
+"Qadir has already escaped his prison in every meaningful way except
+physically" (Design Spec 005) reconciles — e.g., whether Qadir's
+"prison" is his centuries of bound service rather than the Vizier's
+cell.
+
+--- *(original approval note, retained for the parts still in force)* ---
+
 **Status: APPROVED by the Creative Director, with modifications — all
-folded into the text below, which now reads as clean canon.**
+folded into the text below.**
 
 Review outcomes: counter-pact — approved. Entrusting — approved
 (responsibility transfers, never power; the burden is inherited, not
@@ -1041,6 +1121,15 @@ Across the centuries since, the bound man has worn many names and
 lived many quiet, exemplary public lives. **"Qadir ibn Salim" is only
 the latest.** No records connect the names, because the man who
 manages the records has always, eventually, been him.
+
+> **SUPERSEDED — see the status note at the head of this Spec.** This
+> section identifies "the bound man" (the Black Vizier) with Qadir.
+> The Master Story File separates them: the Black Vizier is the
+> imprisoned being freed at the Seventh Gate, while Qadir is the
+> Covenant's centuries-old *keeper*, not its prisoner. The imagery here
+> — the many names, the always-managing-the-records — likely transfers
+> to whichever of the two the Creative Director's rewrite assigns it
+> to; do not treat "Qadir = the bound man" as canon in the meantime.
 
 ## III. The Seven Seals — What They Actually Are
 
@@ -1657,6 +1746,14 @@ hinted at, or foreshadowed by implementation without a future spec.
   rather than a partner in Amir's.
 
 ## Qadir ibn Salim
+
+> **UNDER REVISION per the Master Story File:** Qadir is not the Black
+> Vizier. The wound / desire / fear entries below were written on the
+> superseded identification and must be re-derived once the Creative
+> Director rewrites the mythology. What survives unchanged: his One
+> Rule, his patience, his flaw's shape (trust read only as leverage),
+> his Book One surface arc, and the requirement that every kindness he
+> ever showed was textually genuine (Master File §11.5).
 
 - **Core wound:** He was once genuinely the greatest servant his
   empire ever had — and everything he built was consumed by what he
